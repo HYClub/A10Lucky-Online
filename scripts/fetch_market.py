@@ -243,26 +243,59 @@ def merge_stocks(em_stocks, tx_stocks):
 
 # ── Indices ───────────────────────────────────────────────────
 
+INDEX_SECIDS = {"000001": "1.000001", "399001": "0.399001", "399006": "0.399006", "399300": "0.399300"}
+
 def fetch_indices():
-    url = ("https://push2.eastmoney.com/api/qt/ulist.np/get"
-           "?fields=f2,f3,f4,f12,f14"
-           "&secids=1.000001,0.399001,0.399006,0.399300")
+    secids = ",".join(INDEX_SECIDS.values())
+    for host in ["push2.eastmoney.com", "push2delay.eastmoney.com"]:
+        try:
+            url = (f"https://{host}/api/qt/ulist.np/get"
+                   f"?fields=f2,f3,f4,f12,f14&secids={secids}")
+            data = fetch_json_parsed(url)
+            items = data.get("data", {}).get("diff", [])
+            def _idx_num(v):
+                n = safe_num(v)
+                return n / 100 if n is not None else None
+            return [{
+                "code": str(item.get("f12", "")),
+                "name": str(item.get("f14", "")),
+                "price": _idx_num(item.get("f2")),
+                "change_pct": _idx_num(item.get("f3")),
+                "change_amount": _idx_num(item.get("f4")),
+            } for item in items]
+        except Exception as e:
+            log(f"  indices {host}: {e}")
+    return []
+
+def fetch_index_kline(code, days=120):
+    """Fetch daily kline for an index."""
+    secid = INDEX_SECIDS.get(code)
+    if not secid:
+        return None
+    url = ("https://push2his.eastmoney.com/api/qt/stock/kline/get"
+           f"?secid={secid}&fields1=f1,f2,f3&fields2=f51,f52,f53,f54,f55,f56,f57"
+           f"&klt=101&fqt=1&end=20500101&lmt={days}")
     try:
         data = fetch_json_parsed(url)
-        items = data.get("data", {}).get("diff", [])
-        def _idx_num(v):
-            n = safe_num(v)
-            return n / 100 if n is not None else None
-        return [{
-            "code": str(item.get("f12", "")),
-            "name": str(item.get("f14", "")),
-            "price": _idx_num(item.get("f2")),
-            "change_pct": _idx_num(item.get("f3")),
-            "change_amount": _idx_num(item.get("f4")),
-        } for item in items]
+        raw = data.get("data", {}).get("klines", [])
+        kline = []
+        for line in raw:
+            parts = line.split(",")
+            if len(parts) < 7:
+                continue
+            kline.append({
+                "date": parts[0],
+                "open": safe_num(parts[1]),
+                "close": safe_num(parts[2]),
+                "high": safe_num(parts[3]),
+                "low": safe_num(parts[4]),
+                "volume": safe_num(parts[5]),
+                "amount": safe_num(parts[6]),
+            })
+        return kline if len(kline) >= 20 else None
     except Exception as e:
-        log(f"Warning: indices failed: {e}")
-        return []
+        log(f"Warning: kline for {code} failed: {e}")
+        return None
 
 # ── Main ──────────────────────────────────────────────────────
 
@@ -318,11 +351,20 @@ def main():
 
     stocks = merge_stocks(stocks_em, tx_stocks)
     indices = fetch_indices()
+    log("Fetching index klines...")
+    klines = {}
+    for idx in indices:
+        code = idx["code"]
+        k = fetch_index_kline(code)
+        if k:
+            klines[code] = k
+            log(f"  {code}: {len(k)} days")
 
     data = {
         "timestamp": now.strftime("%Y-%m-%dT%H:%M:%S"),
         "date": now.strftime("%Y-%m-%d"),
         "indices": indices,
+        "index_kline": klines,
         "stocks": stocks,
     }
     os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)

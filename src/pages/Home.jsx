@@ -53,6 +53,12 @@ export default function Home() {
         </div>
       </section>
 
+      {marketData?.index_kline?.['000001'] && (
+        <section style={{marginBottom:24}}>
+          <IndexChart data={marketData.index_kline['000001']} />
+        </section>
+      )}
+
       {stats && (
         <section className="market-overview">
           <div className="overview-grid">
@@ -101,6 +107,71 @@ export default function Home() {
           <span className="qa-arrow">→</span>
         </Link>
       </section>
+    </div>
+  )
+}
+
+function IndexChart({ data }) {
+  if (!data || data.length < 2) return null
+  const w = 1100, h = 280
+  const pad = { t: 24, r: 16, b: 36, l: 60 }
+  const cw = w - pad.l - pad.r
+  const ch = h - pad.t - pad.b
+  const close = data.map(d => d.close).filter(v => v != null)
+  const dates = data.map(d => d.date)
+  const max = Math.max(...close)
+  const min = Math.min(...close)
+  const range = max - min || 1
+
+  const stepX = cw / (close.length - 1)
+  const points = close.map((v, i) => ({
+    x: pad.l + i * stepX,
+    y: pad.t + ch - ((v - min) / range) * ch,
+  }))
+  const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ')
+  const areaPath = `${linePath} L${points[points.length - 1].x.toFixed(1)},${(pad.t + ch).toFixed(1)} L${points[0].x.toFixed(1)},${(pad.t + ch).toFixed(1)} Z`
+
+  const first = close[0]
+  const last = close[close.length - 1]
+  const isUp = last >= first
+  const lineColor = isUp ? 'var(--up)' : 'var(--down)'
+
+  const yTicks = [0, 0.25, 0.5, 0.75, 1]
+  const xTicks = [0, Math.floor(close.length / 4), Math.floor(close.length / 2), Math.floor(close.length * 3 / 4), close.length - 1]
+
+  return (
+    <div className="card" style={{padding:0,overflow:'hidden'}}>
+      <div style={{padding:'18px 20px 0',display:'flex',alignItems:'baseline',gap:12}}>
+        <span style={{fontSize:15,fontWeight:600,color:'#fff'}}>上证指数</span>
+        <span style={{fontSize:22,fontWeight:700,fontFamily:'var(--font-num)',color:lineColor}}>{last.toFixed(2)}</span>
+        <span style={{fontSize:13,color:'var(--text-tertiary)'}}>
+          {Math.round((last / first - 1) * 10000) / 100}% {isUp ? '↑' : '↓'}
+        </span>
+        <span style={{fontSize:12,color:'var(--text-tertiary)',marginLeft:'auto'}}>{dates[0]} ~ {dates[dates.length-1]}</span>
+      </div>
+      <svg viewBox={`0 0 ${w} ${h}`} style={{width:'100%',display:'block'}}>
+        <defs>
+          <linearGradient id="idx-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={lineColor} stopOpacity="0.2" />
+            <stop offset="100%" stopColor={lineColor} stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        {yTicks.map(p => {
+          const val = min + range * p
+          const y = pad.t + ch - p * ch
+          return (
+            <g key={p}>
+              <text x={pad.l - 8} y={y + 4} textAnchor="end" fill="var(--text-tertiary)" fontSize="11" fontFamily="var(--font-num)">{val.toFixed(0)}</text>
+              <line x1={pad.l} y1={y} x2={pad.l + cw} y2={y} stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+            </g>
+          )
+        })}
+        {xTicks.map((idx, i) => (
+          <text key={i} x={points[idx]?.x ?? pad.l + idx * stepX} y={pad.t + ch + 20} textAnchor="middle" fill="var(--text-tertiary)" fontSize="11">{dates[idx]?.slice(5) || ''}</text>
+        ))}
+        <path d={areaPath} fill="url(#idx-grad)" />
+        <path d={linePath} fill="none" stroke={lineColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
     </div>
   )
 }
