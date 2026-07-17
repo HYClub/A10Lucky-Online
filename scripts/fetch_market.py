@@ -119,21 +119,21 @@ def fetch_stocks(industry_map):
     stocks.extend(parse_item(it) for it in items)
     total_pages = min(50, (total + page_size - 1) // page_size)
     for p in range(2, total_pages + 1):
-        time.sleep(3.0)
-        retried = False
-        for attempt in range(2):
+        time.sleep(4.5)
+        success = False
+        for attempt in range(3):
             try:
                 d = fetch_page(p, page_size, industry_map)
                 its = d.get("data", {}).get("diff", [])
                 stocks.extend(parse_item(it) for it in its)
-                print(f"  page {p}/{total_pages}: +{len(its)}")
+                print(f"  page {p}/{total_pages}: +{len(its)} (attempt {attempt+1})")
+                success = True
                 break
             except Exception as e:
                 print(f"  page {p} attempt {attempt+1}: {e}")
-                time.sleep(5)
-                retried = True
-        else:
-            print(f"  page {p} gave up after 2 attempts")
+                time.sleep(6)
+        if not success:
+            print(f"  page {p} gave up after 3 attempts")
             break
     return stocks
 
