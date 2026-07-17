@@ -13,10 +13,20 @@ HEADERS = {
     "Referer": "https://quote.eastmoney.com/",
 }
 
-def fetch_json(url):
-    req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=15) as r:
-        return json.loads(r.read().decode("utf-8"))
+def fetch_json(url, retries=3):
+    last_err = None
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(url, headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=20) as r:
+                return json.loads(r.read().decode("utf-8"))
+        except Exception as e:
+            last_err = e
+            if attempt < retries - 1:
+                wait = 2 ** attempt
+                print(f"  fetch_json retry {attempt+1}/{retries} after {wait}s: {e}")
+                time.sleep(wait)
+    raise last_err
 
 def safe_num(v):
     if v == "-" or v is None:
@@ -32,21 +42,26 @@ def fetch_industry_map():
     We match the numeric_id suffix against the sector list's f12/f14.
     """
     mapping = {}
-    try:
-        url = ("https://push2.eastmoney.com/api/qt/clist/get"
-               "?pn=1&pz=500&po=1&np=1&fltt=2&invt=2"
-               "&fields=f12,f14"
-               "&fs=m:90+t:2")
-        data = fetch_json(url)
-        items = data.get("data", {}).get("diff", [])
-        for item in items:
-            code = str(item.get("f12", "") or "")
-            name = str(item.get("f14", "") or "")
-            if code and name:
-                mapping[code] = name
-        print(f"Fetched industry mapping: {len(mapping)} sectors")
-    except Exception as e:
-        print(f"Warning: industry map failed: {e}")
+    for host in ["push2.eastmoney.com", "push2delay.eastmoney.com"]:
+        try:
+            url = (f"https://{host}/api/qt/clist/get"
+                   "?pn=1&pz=500&po=1&np=1&fltt=2&invt=2"
+                   "&fields=f12,f14"
+                   "&fs=m:90+t:2")
+            data = fetch_json(url, retries=2)
+            items = data.get("data", {}).get("diff", [])
+            for item in items:
+                code = str(item.get("f12", "") or "")
+                name = str(item.get("f14", "") or "")
+                if code and name:
+                    mapping[code] = name
+            print(f"Fetched industry mapping: {len(mapping)} sectors")
+            if mapping:
+                return mapping
+        except Exception as e:
+            print(f"  industry map from {host}: {e}")
+            continue
+    print("Warning: industry map failed, will use raw codes")
     return mapping
 
 
