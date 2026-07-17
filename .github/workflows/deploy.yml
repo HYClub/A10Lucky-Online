@@ -19,10 +19,11 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
-      - name: Commit build
+      - name: Deploy to docs/
         run: |
           git config user.name "A10Lucky Bot"
           git config user.email "bot@a10lucky.dev"
+          cp -r dist/* docs/ 2>/dev/null || cp -r dist/. docs/
           git add docs/
           git diff --cached --quiet || git commit -m "auto: deploy $(date +'%Y-%m-%d %H:%M')"
           git push

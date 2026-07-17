@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   base: '/A10Lucky-Online/',
   build: {
-    outDir: 'docs',
+    outDir: 'dist',
   },
 })
