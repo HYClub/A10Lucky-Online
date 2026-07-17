@@ -4,6 +4,8 @@ import { dataUrl } from '../dataUrl.js'
 
 const dimNames = { technical: '技术', momentum: '动量', volume: '成交量', valuation: '估值', sector: '板块', pattern: '形态', volatility: '波动率', sentiment: '情绪', fund_flow: '资金流', trend_strength: '趋势强度', correlation: '相关性', alpha: 'Alpha因子' }
 
+function safeScore(v) { return v != null ? v : '-' }
+
 export default function StockDetail() {
   const { code } = useParams()
   const [stratData, setStratData] = useState(null)
@@ -33,11 +35,20 @@ export default function StockDetail() {
 
   const stock = useMemo(() => marketData?.stocks?.find(s => s.code === code), [marketData, code])
 
+  const industryAvg = useMemo(() => {
+    if (!marketData?.stocks || !stock?.industry) return null
+    const same = marketData.stocks.filter(s => s.industry === stock.industry && s.change_pct != null)
+    if (same.length < 2) return null
+    const avg = same.reduce((a, s) => a + s.change_pct, 0) / same.length
+    const rank = same.filter(s => (s.change_pct ?? 0) > (stock.change_pct ?? 0)).length + 1
+    return { avg: avg.toFixed(2), count: same.length, rank, total: same.length }
+  }, [marketData, stock])
+
   const strategyScores = useMemo(() => {
     if (!stratData?.results) return []
     return stratData.results.map(r => {
       const found = r.stocks.find(s => s.stock.code === code)
-      return { name: r.displayName, key: r.name, totalScore: found?.totalScore || 0, dimScores: found?.dimScores || {} }
+      return { name: r.displayName, key: r.name, totalScore: found?.totalScore, dimScores: found?.dimScores || {} }
     })
   }, [stratData, code])
 
@@ -48,7 +59,6 @@ export default function StockDetail() {
   if (!stock) return <div className="page"><div className="empty">未找到该股票</div></div>
 
   const active = strategyScores.find(s => s.key === activeResult)
-  const kline = stock.kline || []
 
   return (
     <div className="page stock-detail">
@@ -70,21 +80,43 @@ export default function StockDetail() {
 
       <div className="stock-info-row">
         <div className="info-item"><span className="info-label">行业</span><span className="info-value">{stock.industry || '-'}</span></div>
-        <div className="info-item"><span className="info-label">市值</span><span className="info-value">{stock.market_cap_yi?.toFixed(0)}亿</span></div>
-        <div className="info-item"><span className="info-label">PE_TTM</span><span className="info-value">{stock.pe_ttm?.toFixed(2) || '-'}</span></div>
-        <div className="info-item"><span className="info-label">PB</span><span className="info-value">{stock.pb?.toFixed(2) || '-'}</span></div>
-        <div className="info-item"><span className="info-label">换手率</span><span className="info-value">{stock.turnover_pct?.toFixed(2)}%</span></div>
+        <div className="info-item"><span className="info-label">市值</span><span className="info-value">{stock.market_cap_yi?.toFixed(0) ?? '-'}亿</span></div>
+        <div className="info-item"><span className="info-label">PE_TTM</span><span className="info-value">{stock.pe_ttm?.toFixed(2) ?? '-'}</span></div>
+        <div className="info-item"><span className="info-label">PB</span><span className="info-value">{stock.pb?.toFixed(2) ?? '-'}</span></div>
+        <div className="info-item"><span className="info-label">换手率</span><span className="info-value">{stock.turnover_pct?.toFixed(2) ?? '-'}%</span></div>
+        <div className="info-item"><span className="info-label">量比</span><span className="info-value">{stock.volume_ratio?.toFixed(2) ?? '-'}</span></div>
+      </div>
+
+      <div className="stock-info-row">
+        {stock.high != null && <div className="info-item"><span className="info-label">今日高</span><span className="info-value">{stock.high.toFixed(2)}</span></div>}
+        {stock.low != null && <div className="info-item"><span className="info-label">今日低</span><span className="info-value">{stock.low.toFixed(2)}</span></div>}
+        {stock.open != null && <div className="info-item"><span className="info-label">开盘</span><span className="info-value">{stock.open.toFixed(2)}</span></div>}
+        {stock.pre_close != null && <div className="info-item"><span className="info-label">昨收</span><span className="info-value">{stock.pre_close.toFixed(2)}</span></div>}
+        {industryAvg && (
+          <div className="info-item">
+            <span className="info-label">行业表现</span>
+            <span className={'info-value ' + (industryAvg.avg >= 0 ? 'up' : 'down')}>
+              {industryAvg.avg >= 0 ? '+' : ''}{industryAvg.avg}%
+            </span>
+          </div>
+        )}
+        {industryAvg && (
+          <div className="info-item">
+            <span className="info-label">行业排名</span>
+            <span className="info-value">{industryAvg.rank}/{industryAvg.total}</span>
+          </div>
+        )}
       </div>
 
       <div className="card">
-        <h3>多策略评分对比</h3>
+        <h3>多策略评分对比 <span style={{fontSize:12,fontWeight:400,color:'var(--text-tertiary)',marginLeft:8}}>— 不在前10的显示为 -</span></h3>
         {strategyScores.length > 0 ? (
           <>
             <div className="strategy-score-row">
               {strategyScores.map(s => (
                 <div key={s.key} className={'strategy-score-card' + (activeResult === s.key ? ' active' : '')} onClick={() => setActiveResult(s.key)}>
                   <div className="ss-name">{s.name}</div>
-                  <div className={'ss-score ' + (s.totalScore >= 60 ? 'high' : s.totalScore >= 40 ? 'mid' : 'low')}>{s.totalScore}</div>
+                  <div className={'ss-score ' + ((s.totalScore ?? 0) >= 60 ? 'high' : (s.totalScore ?? 0) >= 40 ? 'mid' : 'low')}>{safeScore(s.totalScore)}</div>
                 </div>
               ))}
             </div>
@@ -106,45 +138,6 @@ export default function StockDetail() {
           <div style={{color:'var(--text-tertiary)',fontSize:13}}>暂无评分数据</div>
         )}
       </div>
-
-      {kline.length > 0 && (
-        <div className="card">
-          <h3>K线走势（近 {kline.length} 日）</h3>
-          <MiniKline kline={kline} />
-        </div>
-      )}
     </div>
-  )
-}
-
-function MiniKline({ kline }) {
-  const close = kline.map(k => k.close)
-  const max = Math.max(...close)
-  const min = Math.min(...close)
-  const range = max - min || 1
-  const w = 800, h = 200
-  const padding = { t: 20, r: 10, b: 20, l: 50 }
-  const chartW = w - padding.l - padding.r
-  const chartH = h - padding.t - padding.b
-  const step = chartW / (kline.length - 1)
-  const points = close.map((v, i) => ({ x: padding.l + i * step, y: padding.t + chartH - ((v - min) / range) * chartH }))
-  const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x},${p.y}`).join(' ')
-  const gradId = 'kline-grad'
-  return (
-    <svg viewBox={`0 0 ${w} ${h}`} style={{ width: '100%', maxHeight: 200 }}>
-      <defs>
-        <linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#ef4444" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="#ef4444" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <path d={`${linePath} L${points[points.length-1].x},${padding.t+chartH} L${points[0].x},${padding.t+chartH} Z`} fill={`url(#${gradId})`} />
-      <path d={linePath} fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      {[0,0.25,0.5,0.75,1].map(p => {
-        const val = min + range * p
-        const y = padding.t + chartH - p * chartH
-        return <text key={p} x={padding.l-5} y={y+4} textAnchor="end" fill="var(--text-tertiary)" fontSize="11" fontFamily="monospace">{val.toFixed(2)}</text>
-      })}
-    </svg>
   )
 }
