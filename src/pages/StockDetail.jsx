@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { runStrategy, loadStrategy, listStrategies } from '../engine/index.js'
+import { dataUrl } from '../dataUrl.js'
 
 const dimNames = { technical: '技术', momentum: '动量', volume: '成交量', valuation: '估值', sector: '板块', pattern: '形态', volatility: '波动率', sentiment: '情绪', fund_flow: '资金流' }
 
@@ -14,7 +15,7 @@ export default function StockDetail() {
   const [activeResult, setActiveResult] = useState(null)
 
   useEffect(() => {
-    fetch('/data/market/latest.json?t=' + Date.now())
+    fetch(dataUrl('/data/market/latest.json?t=') + Date.now())
       .then(r => r.ok ? r.json() : null)
       .then(d => d && setMarketData(d))
       .catch(() => {})

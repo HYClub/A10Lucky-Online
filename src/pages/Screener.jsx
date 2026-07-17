@@ -1,13 +1,14 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { runStrategy, listStrategies, loadStrategy, detectRegime } from '../engine/index.js'
+import { dataUrl } from '../dataUrl.js'
 
 export default function Screener() {
   const [marketData, setMarketData] = useState(null)
   const [activeTab, setActiveTab] = useState(0)
 
   useEffect(() => {
-    fetch('/data/market/latest.json?t=' + Date.now())
+    fetch(dataUrl('/data/market/latest.json?t=') + Date.now())
       .then(r => r.ok ? r.json() : null)
       .then(d => d && setMarketData(d))
       .catch(() => {})

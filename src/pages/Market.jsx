@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import { dataUrl } from '../dataUrl.js'
 
 const INDEX_NAMES = { '000001': '上证指数', '399001': '深证成指', '399006': '创业板指', '399300': '沪深300' }
 
@@ -14,7 +15,7 @@ export default function Market() {
   const [sortDir, setSortDir] = useState('desc')
 
   useEffect(() => {
-    fetch('/data/market/latest.json?t=' + Date.now())
+    fetch(dataUrl('/data/market/latest.json?t=') + Date.now())
       .then(r => r.ok ? r.json() : null)
       .then(d => d && setMarketData(d))
       .catch(() => {})

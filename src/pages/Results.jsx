@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { dataUrl } from '../dataUrl.js'
 
 export default function Results() {
   const [history, setHistory] = useState([])
@@ -7,7 +8,7 @@ export default function Results() {
   const [detail, setDetail] = useState(null)
 
   useEffect(() => {
-    fetch('/data/archive/index.json?t=' + Date.now())
+    fetch(dataUrl('/data/archive/index.json?t=') + Date.now())
       .then(r => r.ok ? r.json() : null)
       .then(d => d && setHistory(d))
       .catch(() => {})
@@ -17,7 +18,7 @@ export default function Results() {
     setSelectedDate(date)
     setDetail(null)
     try {
-      const res = await fetch(`/data/archive/${date}.json?t=${Date.now()}`)
+      const res = await fetch(dataUrl(`/data/archive/${date}.json?t=${Date.now()}`))
       if (res.ok) {
         const data = await res.json()
         setDetail(data)
