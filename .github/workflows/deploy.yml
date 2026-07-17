@@ -30,5 +30,4 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           cp -r dist/* docs/ 2>/dev/null || cp -r dist/. docs/
           git add docs/
-          git diff --cached --quiet || git commit -m "auto: deploy $(date +'%Y-%m-%d %H:%M')"
-          git push
+          git diff --cached --quiet || (git commit -m "auto: deploy $(date +'%Y-%m-%d %H:%M')" && git pull --rebase && git push)
