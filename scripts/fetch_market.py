@@ -268,34 +268,38 @@ def fetch_indices():
     return []
 
 def fetch_index_kline(code, days=120):
-    """Fetch daily kline for an index."""
+    """Fetch daily kline for an index with fallback hosts."""
     secid = INDEX_SECIDS.get(code)
     if not secid:
         return None
-    url = ("https://push2his.eastmoney.com/api/qt/stock/kline/get"
-           f"?secid={secid}&fields1=f1,f2,f3&fields2=f51,f52,f53,f54,f55,f56,f57"
-           f"&klt=101&fqt=1&end=20500101&lmt={days}")
-    try:
-        data = fetch_json_parsed(url)
-        raw = data.get("data", {}).get("klines", [])
-        kline = []
-        for line in raw:
-            parts = line.split(",")
-            if len(parts) < 7:
+    for host in ["push2his.eastmoney.com", "push2delay.eastmoney.com"]:
+        try:
+            url = (f"https://{host}/api/qt/stock/kline/get"
+                   f"?secid={secid}&fields1=f1,f2,f3&fields2=f51,f52,f53,f54,f55,f56,f57"
+                   f"&klt=101&fqt=1&end=20500101&lmt={days}")
+            data = fetch_json_parsed(url, retries=2)
+            raw = data.get("data", {}).get("klines", [])
+            if not raw:
                 continue
-            kline.append({
-                "date": parts[0],
-                "open": safe_num(parts[1]),
-                "close": safe_num(parts[2]),
-                "high": safe_num(parts[3]),
-                "low": safe_num(parts[4]),
-                "volume": safe_num(parts[5]),
-                "amount": safe_num(parts[6]),
-            })
-        return kline if len(kline) >= 20 else None
-    except Exception as e:
-        log(f"Warning: kline for {code} failed: {e}")
-        return None
+            kline = []
+            for line in raw:
+                parts = line.split(",")
+                if len(parts) < 7:
+                    continue
+                kline.append({
+                    "date": parts[0],
+                    "open": safe_num(parts[1]),
+                    "close": safe_num(parts[2]),
+                    "high": safe_num(parts[3]),
+                    "low": safe_num(parts[4]),
+                    "volume": safe_num(parts[5]),
+                    "amount": safe_num(parts[6]),
+                })
+            if len(kline) >= 20:
+                return kline
+        except Exception as e:
+            log(f"  kline {code} via {host}: {e}")
+    return None
 
 # ── Main ──────────────────────────────────────────────────────
 
