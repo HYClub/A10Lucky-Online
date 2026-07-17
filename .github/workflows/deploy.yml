@@ -5,8 +5,10 @@ on:
     paths:
       - 'src/**'
       - 'package.json'
+      - 'package-lock.json'
       - 'vite.config.js'
       - 'index.html'
+      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 permissions:
   contents: write
