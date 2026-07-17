@@ -49,6 +49,11 @@ export default function Results() {
                   <span className="up">↑{h.up}</span>
                   <span style={{color:'var(--text-tertiary)',margin:'0 4px'}}>/</span>
                   <span className="down">↓{h.down}</span>
+                  <span style={{color:'var(--text-tertiary)',margin:'0 4px'}}>/</span>
+                  <span style={{color:'var(--text-tertiary)',fontSize:11}}>沪</span>
+                  <span className="up">{h.sh_up ?? '-'}</span>
+                  <span style={{color:'var(--text-tertiary)',fontSize:11}}>深</span>
+                  <span className="up">{h.sz_up ?? '-'}</span>
                 </div>
                 <div className="hist-detail">
                   {h.limitUp > 0 && <span className="up">涨停{h.limitUp}</span>}
