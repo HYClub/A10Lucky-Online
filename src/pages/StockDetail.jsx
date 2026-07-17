@@ -1,25 +1,43 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { useMarketData, useFavorites } from '../hooks/useMarketData.js'
 import { runStrategy, loadStrategy, listStrategies } from '../engine/index.js'
+
+const dimNames = { technical: '技术', momentum: '动量', volume: '成交量', valuation: '估值', sector: '板块', pattern: '形态', volatility: '波动率', sentiment: '情绪', fund_flow: '资金流' }
 
 export default function StockDetail() {
   const { code } = useParams()
-  const { marketData } = useMarketData()
-  const { favs, toggleFav } = useFavorites()
+  const [marketData, setMarketData] = useState(null)
+  const [favs, setFavs] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('a10lucky_favs') || '[]') }
+    catch { return [] }
+  })
   const [activeResult, setActiveResult] = useState(null)
 
-  const stock = useMemo(() => marketData?.stocks?.find(s => s.code === code), [marketData, code])
+  useEffect(() => {
+    fetch('/data/market/latest.json?t=' + Date.now())
+      .then(r => r.ok ? r.json() : null)
+      .then(d => d && setMarketData(d))
+      .catch(() => {})
+  }, [])
 
+  const toggleFav = () => {
+    setFavs(prev => {
+      const next = prev.includes(code) ? prev.filter(c => c !== code) : [...prev, code]
+      localStorage.setItem('a10lucky_favs', JSON.stringify(next))
+      return next
+    })
+  }
+
+  const stock = useMemo(() => marketData?.stocks?.find(s => s.code === code), [marketData, code])
   const strategies = useMemo(() => listStrategies(), [])
 
   const strategyScores = useMemo(() => {
     if (!marketData?.stocks || !stock) return []
-    const singleStockMarket = { stocks: [stock], sectors: marketData.sectors, index_kline: marketData.index_kline }
+    const single = { stocks: [stock], sectors: marketData.sectors, index_kline: marketData.index_kline }
     return strategies.map(s => {
       const cfg = loadStrategy(s.name)
       if (!cfg) return null
-      const result = runStrategy(singleStockMarket, cfg)
+      const result = runStrategy(single, cfg)
       const scored = result.stocks[0]
       return { name: s.displayName, key: s.name, totalScore: scored?.totalScore || 0, dimScores: scored?.dimScores || {} }
     }).filter(Boolean)
@@ -29,12 +47,10 @@ export default function StockDetail() {
     if (strategyScores.length > 0) setActiveResult(strategyScores[0].key)
   }, [strategyScores])
 
-  if (!marketData) return <div className="page"><div className="loading">加载中...</div></div>
   if (!stock) return <div className="page"><div className="empty">未找到该股票</div></div>
 
   const active = strategyScores.find(s => s.key === activeResult)
   const kline = stock.kline || []
-  const dimNames = { technical: '技术', momentum: '动量', volume: '成交量', valuation: '估值', sector: '板块', pattern: '形态', volatility: '波动率', sentiment: '情绪', fund_flow: '资金流' }
 
   return (
     <div className="page stock-detail">
@@ -49,17 +65,17 @@ export default function StockDetail() {
             </span>
           </div>
         </div>
-        <button className={'fav-btn big' + (favs.includes(code) ? ' active' : '')} onClick={() => toggleFav(code)}>
+        <button className={'fav-btn big' + (favs.includes(code) ? ' active' : '')} onClick={toggleFav}>
           {favs.includes(code) ? '★ 已收藏' : '☆ 加入自选'}
         </button>
       </div>
 
       <div className="stock-info-row">
-        <div className="info-item"><span className="info-label">行业</span><span>{stock.industry || '-'}</span></div>
-        <div className="info-item"><span className="info-label">市值</span><span>{stock.market_cap_yi?.toFixed(0)}亿</span></div>
-        <div className="info-item"><span className="info-label">PE_TTM</span><span>{stock.pe_ttm?.toFixed(2) || '-'}</span></div>
-        <div className="info-item"><span className="info-label">PB</span><span>{stock.pb?.toFixed(2) || '-'}</span></div>
-        <div className="info-item"><span className="info-label">换手率</span><span>{stock.turnover_pct?.toFixed(2)}%</span></div>
+        <div className="info-item"><span className="info-label">行业</span><span className="info-value">{stock.industry || '-'}</span></div>
+        <div className="info-item"><span className="info-label">市值</span><span className="info-value">{stock.market_cap_yi?.toFixed(0)}亿</span></div>
+        <div className="info-item"><span className="info-label">PE_TTM</span><span className="info-value">{stock.pe_ttm?.toFixed(2) || '-'}</span></div>
+        <div className="info-item"><span className="info-label">PB</span><span className="info-value">{stock.pb?.toFixed(2) || '-'}</span></div>
+        <div className="info-item"><span className="info-label">换手率</span><span className="info-value">{stock.turnover_pct?.toFixed(2)}%</span></div>
       </div>
 
       <div className="card">
@@ -78,7 +94,7 @@ export default function StockDetail() {
               <div key={dim} className="dim-score-item">
                 <span className="dim-label">{dimNames[dim] || dim}</span>
                 <div className="dim-bar-wrap">
-                  <div className="dim-bar" style={{ width: score + '%', backgroundColor: score >= 60 ? '#4caf50' : score >= 40 ? '#ff9800' : '#f44336' }}></div>
+                  <div className="dim-bar" style={{ width: score + '%', backgroundColor: score >= 60 ? 'var(--up)' : score >= 40 ? '#eab308' : 'var(--down)' }}></div>
                 </div>
                 <span className="dim-val">{Math.round(score)}</span>
               </div>
@@ -107,29 +123,23 @@ function MiniKline({ kline }) {
   const chartW = w - padding.l - padding.r
   const chartH = h - padding.t - padding.b
   const step = chartW / (kline.length - 1)
-
-  const points = close.map((v, i) => ({
-    x: padding.l + i * step,
-    y: padding.t + chartH - ((v - min) / range) * chartH
-  }))
-
+  const points = close.map((v, i) => ({ x: padding.l + i * step, y: padding.t + chartH - ((v - min) / range) * chartH }))
   const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x},${p.y}`).join(' ')
   const gradId = 'kline-grad'
-
   return (
     <svg viewBox={`0 0 ${w} ${h}`} style={{ width: '100%', maxHeight: 200 }}>
       <defs>
         <linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#4caf50" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#4caf50" stopOpacity="0" />
+          <stop offset="0%" stopColor="#22c55e" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#22c55e" stopOpacity="0" />
         </linearGradient>
       </defs>
-      <path d={`${linePath} L${points[points.length - 1].x},${padding.t + chartH} L${points[0].x},${padding.t + chartH} Z`} fill={`url(#${gradId})`} />
-      <path d={linePath} fill="none" stroke="#4caf50" strokeWidth="2" />
-      {[0, 0.25, 0.5, 0.75, 1].map(p => {
+      <path d={`${linePath} L${points[points.length-1].x},${padding.t+chartH} L${points[0].x},${padding.t+chartH} Z`} fill={`url(#${gradId})`} />
+      <path d={linePath} fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      {[0,0.25,0.5,0.75,1].map(p => {
         const val = min + range * p
         const y = padding.t + chartH - p * chartH
-        return <text key={p} x={padding.l - 5} y={y + 4} textAnchor="end" fill="#888" fontSize="11">{val.toFixed(2)}</text>
+        return <text key={p} x={padding.l-5} y={y+4} textAnchor="end" fill="var(--text3)" fontSize="11" fontFamily="monospace">{val.toFixed(2)}</text>
       })}
     </svg>
   )
