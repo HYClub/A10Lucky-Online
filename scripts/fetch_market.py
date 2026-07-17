@@ -156,24 +156,16 @@ def tx_market(code):
     return "sz"
 
 def parse_tencent_line(line):
-    """Parse a single stock from Tencent's batch response.
-    Format: ~分隔的各字段，完整 ~86 fields.
-    Key indices: 1=name, 3=price, 4=prev_close, 5=open, 6=volume,
-                 31=change_amount, 32=change_pct, 33=high, 34=low,
-                 38=turnover_pct, 44=流通市值, 45=总市值, 46=pb
-    """
+    """Parse a single stock from Tencent's batch response."""
     parts = line.split("~")
     if len(parts) < 47:
         return None
-    code_raw = parts[0].split("_")[-1] if "_" in parts[0] else ""
-    name = parts[1] or ""
-    code = code_raw
+    code = parts[2] or ""
     if not code:
-        # extract from the full response line: v_sh600000=...
         return None
     return {
         "code": code,
-        "name": name,
+        "name": parts[1] or "",
         "price": safe_num(parts[3]),
         "change_pct": safe_num(parts[32]),
         "turnover_pct": safe_num(parts[38]),
