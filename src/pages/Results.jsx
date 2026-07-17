@@ -49,8 +49,8 @@ export default function Results() {
                   <span style={{color:'var(--text-tertiary)',fontSize:11,marginLeft:6}}>深</span>
                   <span className={h.sz_index_pct >= 0 ? 'up' : 'down'}>{h.sz_index_pct >= 0 ? '+' : ''}{h.sz_index_pct?.toFixed(2)}%</span>
                 </div>
-                <div className="hist-accuracy">
-                  预测: <span className={h.accuracy >= 50 ? 'up' : 'down'}>{h.accuracy}%</span>
+                <div className="hist-accuracy" style={{color:'var(--text-tertiary)'}}>
+                  预测: 次日验证
                 </div>
                 <div className="hist-strategy">{h.strategies} 策略</div>
               </div>
@@ -116,10 +116,7 @@ export default function Results() {
                 <div className="card" style={{marginTop:16}}>
                   <div className="card-header">
                     <h3>{detail.strategies[activeTab].displayName}</h3>
-                    <span style={{fontSize:13,color:'var(--text-tertiary)'}}>
-                      命中 {detail.strategies[activeTab].up}/{detail.strategies[activeTab].stocks.length}
-                      <span className="up" style={{marginLeft:8,fontWeight:600}}>命中率 {detail.strategies[activeTab].accuracy}%</span>
-                    </span>
+                    <span style={{fontSize:13,color:'var(--text-tertiary)'}}>{detail.strategies[activeTab].stocks.length} 只</span>
                   </div>
                   <div className="table-wrap">
                     <table className="stock-table">
@@ -129,7 +126,6 @@ export default function Results() {
                           <th>代码</th>
                           <th>名称</th>
                           <th>评分</th>
-                          <th>命中</th>
                           <th>涨跌幅</th>
                           <th>行业</th>
                           <th>价格</th>
@@ -142,7 +138,6 @@ export default function Results() {
                             <td><Link to={'/stock/' + s.code} className="stock-link">{s.code}</Link></td>
                             <td>{s.name}</td>
                             <td><span className="score-badge">{s.score}</span></td>
-                            <td className={s.change_pct >= 0 ? 'up' : 'down'}>{s.change_pct >= 0 ? '✔' : '✘'}</td>
                             <td className={s.change_pct >= 0 ? 'up' : 'down'}>{s.change_pct >= 0 ? '+' : ''}{s.change_pct?.toFixed(2)}%</td>
                             <td style={{color:'var(--text-tertiary)'}}>{s.industry || '-'}</td>
                             <td className={s.change_pct >= 0 ? 'up' : 'down'}>{s.price?.toFixed(2)}</td>
