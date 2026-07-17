@@ -1,0 +1,26 @@
+{
+  "id": "alpha_blend",
+  "name": "板块轮动+技术",
+  "description": "板块热度驱动+技术面印证+龙虎榜辅助，捕捉板块轮动",
+  "alpha_blend_weight": 0.0,
+  "filters": {
+    "min_market_cap_yi": 20,
+    "min_turnover_pct": 1.0,
+    "max_turnover_pct": 25.0,
+    "min_change_pct": -8.0,
+    "max_change_pct": 9.95,
+    "max_price": 200,
+    "exclude_st": true
+  },
+  "dimensions": [
+    {"id": "sector",      "name": "板块热度",     "weight": 0.40, "enabled": true},
+    {"id": "technical",   "name": "技术面",       "weight": 0.25, "enabled": true},
+    {"id": "pattern",     "name": "龙虎榜/形态",  "weight": 0.20, "enabled": true},
+    {"id": "volatility",  "name": "波动",         "weight": 0.15, "enabled": true}
+  ],
+  "scoring": {
+    "buy_threshold": 50,
+    "top_n": 10,
+    "sort_desc": true
+  }
+}

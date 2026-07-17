@@ -1,0 +1,30 @@
+{
+  "id": "all_factor",
+  "name": "全因子",
+  "description": "全因子精选: 技术+动量+资金+量价+波动",
+  "alpha_blend_weight": 0.0,
+  "filters": {
+    "min_market_cap_yi": 20,
+    "min_turnover_pct": 0.3,
+    "max_turnover_pct": 30.0,
+    "exclude_st": true
+  },
+  "dimensions": [
+    {"id": "fund_flow",      "name": "资金面",    "weight": 0.15, "enabled": true},
+    {"id": "technical",      "name": "技术面",    "weight": 0.15, "enabled": true},
+    {"id": "momentum",       "name": "动量",      "weight": 0.15, "enabled": true},
+    {"id": "vol_price_corr", "name": "量价配合",  "weight": 0.10, "enabled": true},
+    {"id": "trend_strength", "name": "趋势强度",  "weight": 0.10, "enabled": true},
+    {"id": "volume",         "name": "量能",      "weight": 0.10, "enabled": true},
+    {"id": "volatility",     "name": "波动率",    "weight": 0.10, "enabled": true},
+    {"id": "dist_low_20",    "name": "底部距离",  "weight": 0.10, "enabled": true},
+    {"id": "turnover_avg5",  "name": "换手均值",  "weight": 0.03, "enabled": true},
+    {"id": "correlation",    "name": "关联性共识","weight": 0.02, "enabled": true}
+  ],
+  "scoring": {
+    "mode": "weighted",
+    "buy_threshold": 50,
+    "top_n": 10,
+    "sort_desc": true
+  }
+}

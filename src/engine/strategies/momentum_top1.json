@@ -1,0 +1,23 @@
+{
+  "id": "momentum_top1",
+  "name": "动量先锋",
+  "deprecated": true,
+  "description": "雪藏—回测31.5%准确率",
+  "alpha_blend_weight": 0.0,
+  "filters": {
+    "min_market_cap_yi": 10,
+    "min_turnover_pct": 0.3,
+    "max_turnover_pct": 30.0,
+    "exclude_st": true
+  },
+  "dimensions": [
+    {"id": "ret1",     "name": "当日涨幅",     "weight": 0.70, "enabled": true},
+    {"id": "ma5_dev",  "name": "5日均线偏离",  "weight": 0.30, "enabled": true}
+  ],
+  "scoring": {
+    "mode": "rank",
+    "buy_threshold": 50,
+    "top_n": 1,
+    "sort_desc": true
+  }
+}

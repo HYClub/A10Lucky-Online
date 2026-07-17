@@ -1,0 +1,27 @@
+{
+  "id": "north_focus",
+  "name": "北向资金跟踪策略",
+  "description": "⚠ 北向资金API已停更(2024-08后无数据), 但sector维度仍可用",
+  "deprecated": true,
+  "filters": {
+    "min_market_cap_yi": 20,
+    "min_turnover_pct": 0.3,
+    "max_turnover_pct": 20.0,
+    "exclude_st": true
+  },
+  "dimensions": [
+    {"id": "sector",      "name": "北向/板块",  "weight": 0.30, "enabled": true},
+    {"id": "technical",   "name": "技术面",     "weight": 0.20, "enabled": true},
+    {"id": "momentum",    "name": "动量",       "weight": 0.15, "enabled": true},
+    {"id": "volume",      "name": "量价",       "weight": 0.10, "enabled": true},
+    {"id": "pattern",     "name": "龙虎榜/形态","weight": 0.10, "enabled": true},
+    {"id": "volatility",  "name": "波动",       "weight": 0.05, "enabled": true},
+    {"id": "alpha",       "name": "Alpha",      "weight": 0.05, "enabled": true},
+    {"id": "fund_flow",   "name": "资金面",     "weight": 0.05, "enabled": true}
+  ],
+  "scoring": {
+    "buy_threshold": 50,
+    "top_n": 10,
+    "sort_desc": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "value_pick",
+  "name": "价值精选",
+  "description": "基本面价值: 低PE+低PB+大市值",
+  "alpha_blend_weight": 0.0,
+  "filters": {
+    "min_market_cap_yi": 20,
+    "exclude_st": true
+  },
+  "dimensions": [
+    {"id": "ep",       "name": "低市盈率",  "weight": 0.40, "enabled": true},
+    {"id": "bp",       "name": "低市净率",  "weight": 0.30, "enabled": true},
+    {"id": "size",     "name": "大市值",    "weight": 0.30, "enabled": true}
+  ],
+  "scoring": {
+    "mode": "weighted",
+    "buy_threshold": 50,
+    "top_n": 10,
+    "sort_desc": true
+  }
+}

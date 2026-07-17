@@ -1,0 +1,25 @@
+{
+  "id": "fund_momentum",
+  "name": "资金动量",
+  "description": "资金面+动量: 主力流入+趋势强度+量价配合",
+  "alpha_blend_weight": 0.0,
+  "filters": {
+    "min_market_cap_yi": 20,
+    "min_turnover_pct": 0.5,
+    "max_turnover_pct": 30.0,
+    "exclude_st": true
+  },
+  "dimensions": [
+    {"id": "fund_flow",      "name": "资金面",    "weight": 0.35, "enabled": true},
+    {"id": "trend_strength", "name": "趋势强度",  "weight": 0.25, "enabled": true},
+    {"id": "vol_price_corr", "name": "量价配合",  "weight": 0.20, "enabled": true},
+    {"id": "momentum",       "name": "动量",      "weight": 0.15, "enabled": true},
+    {"id": "correlation",    "name": "关联性共识","weight": 0.05, "enabled": true}
+  ],
+  "scoring": {
+    "mode": "weighted",
+    "buy_threshold": 50,
+    "top_n": 10,
+    "sort_desc": true
+  }
+}

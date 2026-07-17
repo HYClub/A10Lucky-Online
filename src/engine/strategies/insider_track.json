@@ -1,0 +1,23 @@
+{
+  "id": "insider_track",
+  "name": "龙虎榜+资金流",
+  "description": "龙虎榜异动+板块热度+动量，捕捉主力介入信号",
+  "alpha_blend_weight": 0.0,
+  "filters": {
+    "min_market_cap_yi": 10,
+    "min_turnover_pct": 0.3,
+    "max_turnover_pct": 30.0,
+    "exclude_st": true
+  },
+  "dimensions": [
+    {"id": "pattern",     "name": "龙虎榜/形态", "weight": 0.45, "enabled": true},
+    {"id": "sector",      "name": "板块热度",     "weight": 0.30, "enabled": true},
+    {"id": "momentum",    "name": "动量",         "weight": 0.15, "enabled": true},
+    {"id": "volume",      "name": "量价",         "weight": 0.10, "enabled": true}
+  ],
+  "scoring": {
+    "buy_threshold": 50,
+    "top_n": 10,
+    "sort_desc": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "smart_money",
+  "name": "量价异动",
+  "description": "量价背离+龙虎榜印证+板块联动，捕捉聪明钱布局",
+  "alpha_blend_weight": 0.0,
+  "filters": {
+    "min_market_cap_yi": 20,
+    "min_turnover_pct": 0.5,
+    "max_turnover_pct": 25.0,
+    "exclude_st": true
+  },
+  "dimensions": [
+    {"id": "volume",      "name": "量价",         "weight": 0.45, "enabled": true},
+    {"id": "technical",   "name": "技术面",       "weight": 0.25, "enabled": true},
+    {"id": "pattern",     "name": "龙虎榜/形态",  "weight": 0.20, "enabled": true},
+    {"id": "sector",      "name": "板块热度",     "weight": 0.05, "enabled": true},
+    {"id": "correlation","name": "关联性共识",   "weight": 0.05, "enabled": true}
+  ],
+  "scoring": {
+    "buy_threshold": 50,
+    "top_n": 10,
+    "sort_desc": true
+  }
+}

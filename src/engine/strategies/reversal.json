@@ -1,0 +1,25 @@
+{
+  "id": "reversal",
+  "name": "超跌反转",
+  "description": "高波动+技术超卖+动量衰竭，纯反转逻辑",
+  "alpha_blend_weight": 0.0,
+  "filters": {
+    "min_market_cap_yi": 10,
+    "min_turnover_pct": 0.3,
+    "max_turnover_pct": 30.0,
+    "min_change_pct": -8.0,
+    "max_change_pct": 9.95,
+    "exclude_st": true
+  },
+  "dimensions": [
+    {"id": "volatility",  "name": "波动",         "weight": 0.50, "enabled": true},
+    {"id": "momentum",    "name": "动量",         "weight": 0.25, "enabled": true},
+    {"id": "volume",      "name": "量价",         "weight": 0.15, "enabled": true},
+    {"id": "sector",      "name": "板块热度",     "weight": 0.10, "enabled": true}
+  ],
+  "scoring": {
+    "buy_threshold": 50,
+    "top_n": 10,
+    "sort_desc": true
+  }
+}
