@@ -107,7 +107,7 @@ export default function Market() {
                   </td>
                   <td><Link to={'/stock/' + s.code} className="stock-link">{s.code}</Link></td>
                   <td>{s.name}</td>
-                  <td>{s.price?.toFixed(2)}</td>
+                  <td className={s.change_pct >= 0 ? 'up' : 'down'}>{s.price?.toFixed(2)}</td>
                   <td className={s.change_pct >= 0 ? 'up' : 'down'}>{s.change_pct >= 0 ? '+' : ''}{s.change_pct?.toFixed(2)}%</td>
                   <td>{s.turnover_pct?.toFixed(2)}%</td>
                   <td style={{color:'var(--text3)'}}>{s.industry || '-'}</td>

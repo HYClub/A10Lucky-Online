@@ -57,7 +57,7 @@ export default function StockDetail() {
         <div>
           <h2>{stock.name} <span className="stock-code">{stock.code}</span></h2>
           <div className="stock-price-row">
-            <span className="stock-price">{stock.price?.toFixed(2)}</span>
+            <span className={'stock-price ' + (stock.change_pct >= 0 ? 'up' : 'down')}>{stock.price?.toFixed(2)}</span>
             <span className={'stock-pct ' + (stock.change_pct >= 0 ? 'up' : 'down')}>
               {stock.change_pct >= 0 ? '+' : ''}{stock.change_pct?.toFixed(2)}%
             </span>

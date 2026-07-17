@@ -66,7 +66,7 @@ export default function Screener() {
                         <td><Link to={'/stock/' + item.stock.code} className="stock-link">{item.stock.code}</Link></td>
                         <td>{item.stock.name}</td>
                         <td><span className="score-badge">{item.totalScore}</span></td>
-                        <td>{item.stock.price?.toFixed(2)}</td>
+                        <td className={item.stock.change_pct >= 0 ? 'up' : 'down'}>{item.stock.price?.toFixed(2)}</td>
                         <td className={item.stock.change_pct >= 0 ? 'up' : 'down'}>
                           {item.stock.change_pct >= 0 ? '+' : ''}{item.stock.change_pct?.toFixed(2)}%
                         </td>

@@ -108,7 +108,7 @@ export default function Results() {
                             <td><span className="score-badge">{s.score}</span></td>
                             <td className={s.change_pct >= 0 ? 'up' : 'down'}>{s.change_pct >= 0 ? '+' : ''}{s.change_pct?.toFixed(2)}%</td>
                             <td style={{color:'var(--text-tertiary)'}}>{s.industry || '-'}</td>
-                            <td>{s.price?.toFixed(2)}</td>
+                            <td className={s.change_pct >= 0 ? 'up' : 'down'}>{s.price?.toFixed(2)}</td>
                           </tr>
                         ))}
                       </tbody>
