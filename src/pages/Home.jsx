@@ -55,7 +55,7 @@ export default function Home() {
 
       {marketData?.index_kline?.['000001'] && (
         <section style={{marginBottom:24}}>
-          <IndexChart data={marketData.index_kline['000001']} />
+          <IndexChart data={marketData.index_kline['000001']} indexData={marketData.indices?.find(i => i.code === '000001')} />
         </section>
       )}
 
@@ -111,7 +111,7 @@ export default function Home() {
   )
 }
 
-function IndexChart({ data }) {
+function IndexChart({ data, indexData }) {
   if (!data || data.length < 2) return null
   const w = 1100, h = 280
   const pad = { t: 24, r: 16, b: 36, l: 60 }
@@ -122,18 +122,9 @@ function IndexChart({ data }) {
   const max = Math.max(...close)
   const min = Math.min(...close)
   const range = max - min || 1
-
-  const stepX = cw / (close.length - 1)
-  const points = close.map((v, i) => ({
-    x: pad.l + i * stepX,
-    y: pad.t + ch - ((v - min) / range) * ch,
-  }))
-  const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ')
-  const areaPath = `${linePath} L${points[points.length - 1].x.toFixed(1)},${(pad.t + ch).toFixed(1)} L${points[0].x.toFixed(1)},${(pad.t + ch).toFixed(1)} Z`
-
-  const first = close[0]
-  const last = close[close.length - 1]
-  const isUp = last >= first
+  const price = indexData?.price ?? close[close.length - 1]
+  const chg = indexData?.change_pct
+  const isUp = chg != null ? chg >= 0 : close[close.length - 1] >= close[0]
   const lineColor = isUp ? 'var(--up)' : 'var(--down)'
 
   const yTicks = [0, 0.25, 0.5, 0.75, 1]
@@ -143,10 +134,12 @@ function IndexChart({ data }) {
     <div className="card" style={{padding:0,overflow:'hidden'}}>
       <div style={{padding:'18px 20px 0',display:'flex',alignItems:'baseline',gap:12}}>
         <span style={{fontSize:15,fontWeight:600,color:'#fff'}}>上证指数</span>
-        <span style={{fontSize:22,fontWeight:700,fontFamily:'var(--font-num)',color:lineColor}}>{last.toFixed(2)}</span>
-        <span style={{fontSize:13,color:'var(--text-tertiary)'}}>
-          {Math.round((last / first - 1) * 10000) / 100}% {isUp ? '↑' : '↓'}
-        </span>
+        <span style={{fontSize:22,fontWeight:700,fontFamily:'var(--font-num)',color:lineColor}}>{price.toFixed(2)}</span>
+        {chg != null && (
+          <span style={{fontSize:13,color:'var(--text-tertiary)'}}>
+            {chg >= 0 ? '+' : ''}{chg.toFixed(2)}% {isUp ? '↑' : '↓'}
+          </span>
+        )}
         <span style={{fontSize:12,color:'var(--text-tertiary)',marginLeft:'auto'}}>{dates[0]} ~ {dates[dates.length-1]}</span>
       </div>
       <svg viewBox={`0 0 ${w} ${h}`} style={{width:'100%',display:'block'}}>
