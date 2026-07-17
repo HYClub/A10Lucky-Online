@@ -1,6 +1,7 @@
 """Fetch A-share market data from Eastmoney APIs (no external dependencies)."""
 import json
 import os
+import time
 import urllib.request
 from datetime import datetime, timezone, timedelta
 
@@ -104,13 +105,23 @@ def fetch_stocks(industry_map):
     total_pages = min(50, (total + page_size - 1) // page_size)
     for p in range(2, total_pages + 1):
         try:
+            time.sleep(1.5)
             d = fetch_page(p, page_size, industry_map)
             its = d.get("data", {}).get("diff", [])
             stocks.extend(parse_item(it) for it in its)
             print(f"  page {p}/{total_pages}: +{len(its)}")
         except Exception as e:
             print(f"  page {p} failed: {e}")
-            break
+            time.sleep(3)
+            try:
+                time.sleep(2)
+                d = fetch_page(p, page_size, industry_map)
+                its = d.get("data", {}).get("diff", [])
+                stocks.extend(parse_item(it) for it in its)
+                print(f"  page {p} retry: +{len(its)}")
+            except Exception as e2:
+                print(f"  page {p} retry also failed: {e2}")
+                break
     return stocks
 
 
