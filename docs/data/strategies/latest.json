@@ -1,0 +1,1654 @@
+{
+  "timestamp": "2026-07-17T15:22:41",
+  "date": "2026-07-17",
+  "results": [
+    {
+      "name": "all_factor",
+      "displayName": "全因子",
+      "stocks": [
+        {
+          "stock": {
+            "code": "000722",
+            "name": "湖南发展",
+            "price": 13.83,
+            "change_pct": 10.02,
+            "market_cap_yi": 79.01836704,
+            "pe_ttm": 150.96,
+            "pb": 1.99,
+            "industry": "电力",
+            "turnover_pct": 11.88
+          },
+          "totalScore": 66,
+          "dimScores": {
+            "technical": 78,
+            "momentum": 80,
+            "volume": 75,
+            "valuation": 56.666666666666664,
+            "sector": 70,
+            "pattern": 50,
+            "volatility": 75,
+            "sentiment": 50,
+            "fund_flow": 50,
+            "trend_strength": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "300317",
+            "name": "珈伟新能",
+            "price": 4.13,
+            "change_pct": 16.01,
+            "market_cap_yi": 34.28678113,
+            "pe_ttm": 333.1,
+            "pb": 2.41,
+            "industry": "电力",
+            "turnover_pct": 20.48
+          },
+          "totalScore": 66,
+          "dimScores": {
+            "technical": 90,
+            "momentum": 80,
+            "volume": 75,
+            "valuation": 50,
+            "sector": 70,
+            "pattern": 50,
+            "volatility": 75,
+            "sentiment": 50,
+            "fund_flow": 50,
+            "trend_strength": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "600982",
+            "name": "宁波能源",
+            "price": 5.09,
+            "change_pct": 9.94,
+            "market_cap_yi": 56.88723899,
+            "pe_ttm": 19.61,
+            "pb": 1.3,
+            "industry": "电力",
+            "turnover_pct": 8.4
+          },
+          "totalScore": 66,
+          "dimScores": {
+            "technical": 78,
+            "momentum": 80,
+            "volume": 70,
+            "valuation": 63.333333333333336,
+            "sector": 70,
+            "pattern": 50,
+            "volatility": 75,
+            "sentiment": 50,
+            "fund_flow": 50,
+            "trend_strength": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "000037",
+            "name": "深南电A",
+            "price": 9.2,
+            "change_pct": 10.05,
+            "market_cap_yi": 55.45415883,
+            "pe_ttm": 115.28,
+            "pb": 3.32,
+            "industry": "电力",
+            "turnover_pct": 10.66
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "technical": 78,
+            "momentum": 80,
+            "volume": 75,
+            "valuation": 53.333333333333336,
+            "sector": 70,
+            "pattern": 50,
+            "volatility": 75,
+            "sentiment": 50,
+            "fund_flow": 50,
+            "trend_strength": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "000601",
+            "name": "韶能股份",
+            "price": 6.48,
+            "change_pct": 5.54,
+            "market_cap_yi": 68.9694474,
+            "pe_ttm": 163.32,
+            "pb": 1.67,
+            "industry": "电力",
+            "turnover_pct": 11.75
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "technical": 69,
+            "momentum": 80,
+            "volume": 75,
+            "valuation": 56.666666666666664,
+            "sector": 70,
+            "pattern": 50,
+            "volatility": 75,
+            "sentiment": 50,
+            "fund_flow": 50,
+            "trend_strength": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "000899",
+            "name": "赣能股份",
+            "price": 10.7,
+            "change_pct": 9.97,
+            "market_cap_yi": 104.39752032,
+            "pe_ttm": 12.92,
+            "pb": 1.71,
+            "industry": "电力",
+            "turnover_pct": 3.91
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "technical": 78,
+            "momentum": 80,
+            "volume": 65,
+            "valuation": 63.333333333333336,
+            "sector": 70,
+            "pattern": 50,
+            "volatility": 75,
+            "sentiment": 50,
+            "fund_flow": 50,
+            "trend_strength": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "001258",
+            "name": "立新能源",
+            "price": 8.27,
+            "change_pct": 9.97,
+            "market_cap_yi": 77.18666672,
+            "pe_ttm": 304.35,
+            "pb": 2.55,
+            "industry": "电力",
+            "turnover_pct": 6.15
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "technical": 78,
+            "momentum": 80,
+            "volume": 70,
+            "valuation": 53.333333333333336,
+            "sector": 70,
+            "pattern": 50,
+            "volatility": 75,
+            "sentiment": 50,
+            "fund_flow": 50,
+            "trend_strength": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "300040",
+            "name": "九洲集团",
+            "price": 5.78,
+            "change_pct": 8.65,
+            "market_cap_yi": 37.1891232,
+            "pe_ttm": 36.2,
+            "pb": 1.43,
+            "industry": "电力",
+            "turnover_pct": 17.31
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "technical": 75,
+            "momentum": 80,
+            "volume": 75,
+            "valuation": 53.333333333333336,
+            "sector": 70,
+            "pattern": 50,
+            "volatility": 75,
+            "sentiment": 50,
+            "fund_flow": 50,
+            "trend_strength": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "300335",
+            "name": "迪森股份",
+            "price": 5.33,
+            "change_pct": 6.39,
+            "market_cap_yi": 25.42476028,
+            "pe_ttm": 39.55,
+            "pb": 1.35,
+            "industry": "电力",
+            "turnover_pct": 14.11
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "technical": 71,
+            "momentum": 80,
+            "volume": 75,
+            "valuation": 53.333333333333336,
+            "sector": 70,
+            "pattern": 50,
+            "volatility": 75,
+            "sentiment": 50,
+            "fund_flow": 50,
+            "trend_strength": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "600021",
+            "name": "上海电力",
+            "price": 14.91,
+            "change_pct": 7.19,
+            "market_cap_yi": 420.74168253,
+            "pe_ttm": 18.55,
+            "pb": 2.13,
+            "industry": "电力",
+            "turnover_pct": 4.11
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "technical": 72,
+            "momentum": 80,
+            "volume": 65,
+            "valuation": 63.333333333333336,
+            "sector": 70,
+            "pattern": 50,
+            "volatility": 75,
+            "sentiment": 50,
+            "fund_flow": 50,
+            "trend_strength": 50
+          }
+        }
+      ]
+    },
+    {
+      "name": "alpha_blend",
+      "displayName": "板块轮动+技术",
+      "stocks": [
+        {
+          "stock": {
+            "code": "300317",
+            "name": "珈伟新能",
+            "price": 4.13,
+            "change_pct": 16.01,
+            "market_cap_yi": 34.28678113,
+            "pe_ttm": 333.1,
+            "pb": 2.41,
+            "industry": "电力",
+            "turnover_pct": 20.48
+          },
+          "totalScore": 68,
+          "dimScores": {
+            "sector": 70,
+            "technical": 90,
+            "pattern": 50,
+            "sentiment": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "000037",
+            "name": "深南电A",
+            "price": 9.2,
+            "change_pct": 10.05,
+            "market_cap_yi": 55.45415883,
+            "pe_ttm": 115.28,
+            "pb": 3.32,
+            "industry": "电力",
+            "turnover_pct": 10.66
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "sector": 70,
+            "technical": 78,
+            "pattern": 50,
+            "sentiment": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "000722",
+            "name": "湖南发展",
+            "price": 13.83,
+            "change_pct": 10.02,
+            "market_cap_yi": 79.01836704,
+            "pe_ttm": 150.96,
+            "pb": 1.99,
+            "industry": "电力",
+            "turnover_pct": 11.88
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "sector": 70,
+            "technical": 78,
+            "pattern": 50,
+            "sentiment": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "000899",
+            "name": "赣能股份",
+            "price": 10.7,
+            "change_pct": 9.97,
+            "market_cap_yi": 104.39752032,
+            "pe_ttm": 12.92,
+            "pb": 1.71,
+            "industry": "电力",
+            "turnover_pct": 3.91
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "sector": 70,
+            "technical": 78,
+            "pattern": 50,
+            "sentiment": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "001258",
+            "name": "立新能源",
+            "price": 8.27,
+            "change_pct": 9.97,
+            "market_cap_yi": 77.18666672,
+            "pe_ttm": 304.35,
+            "pb": 2.55,
+            "industry": "电力",
+            "turnover_pct": 6.15
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "sector": 70,
+            "technical": 78,
+            "pattern": 50,
+            "sentiment": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "600236",
+            "name": "桂冠电力",
+            "price": 10.62,
+            "change_pct": 10.05,
+            "market_cap_yi": 837.10852257,
+            "pe_ttm": 24.36,
+            "pb": 4.87,
+            "industry": "电力",
+            "turnover_pct": 0.47
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "sector": 70,
+            "technical": 78,
+            "pattern": 50,
+            "sentiment": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "600310",
+            "name": "广西能源",
+            "price": 4.5,
+            "change_pct": 9.76,
+            "market_cap_yi": 65.95698249,
+            "pe_ttm": -47.89,
+            "pb": 2.47,
+            "industry": "电力",
+            "turnover_pct": 10.87
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "sector": 70,
+            "technical": 78,
+            "pattern": 50,
+            "sentiment": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "600644",
+            "name": "乐山电力",
+            "price": 9.01,
+            "change_pct": 10.01,
+            "market_cap_yi": 52.1067057,
+            "pe_ttm": -736.5,
+            "pb": 2.53,
+            "industry": "电力",
+            "turnover_pct": 7.56
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "sector": 70,
+            "technical": 78,
+            "pattern": 50,
+            "sentiment": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "600744",
+            "name": "华银电力",
+            "price": 5.96,
+            "change_pct": 9.96,
+            "market_cap_yi": 121.05500673,
+            "pe_ttm": 21.86,
+            "pb": 9.39,
+            "industry": "电力",
+            "turnover_pct": 4.21
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "sector": 70,
+            "technical": 78,
+            "pattern": 50,
+            "sentiment": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "600982",
+            "name": "宁波能源",
+            "price": 5.09,
+            "change_pct": 9.94,
+            "market_cap_yi": 56.88723899,
+            "pe_ttm": 19.61,
+            "pb": 1.3,
+            "industry": "电力",
+            "turnover_pct": 8.4
+          },
+          "totalScore": 65,
+          "dimScores": {
+            "sector": 70,
+            "technical": 78,
+            "pattern": 50,
+            "sentiment": 50
+          }
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "displayName": "多因子均衡",
+      "stocks": [
+        {
+          "stock": {
+            "code": "300795",
+            "name": "米奥会展",
+            "price": 10.48,
+            "change_pct": 20.05,
+            "market_cap_yi": 31.32407758,
+            "pe_ttm": -31.72,
+            "pb": 5.51,
+            "industry": "专业服务",
+            "turnover_pct": 9.44
+          },
+          "totalScore": 82,
+          "dimScores": {
+            "technical": 98,
+            "momentum": 80,
+            "volume": 70,
+            "volatility": 75
+          }
+        },
+        {
+          "stock": {
+            "code": "300317",
+            "name": "珈伟新能",
+            "price": 4.13,
+            "change_pct": 16.01,
+            "market_cap_yi": 34.28678113,
+            "pe_ttm": 333.1,
+            "pb": 2.41,
+            "industry": "电力",
+            "turnover_pct": 20.48
+          },
+          "totalScore": 81,
+          "dimScores": {
+            "technical": 90,
+            "momentum": 80,
+            "volume": 75,
+            "volatility": 75
+          }
+        },
+        {
+          "stock": {
+            "code": "300577",
+            "name": "开润股份",
+            "price": 20.36,
+            "change_pct": 19.98,
+            "market_cap_yi": 48.83065989,
+            "pe_ttm": 12.36,
+            "pb": 2.3,
+            "industry": "服装家纺",
+            "turnover_pct": 11.91
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "technical": 98,
+            "momentum": 80,
+            "volume": 75,
+            "volatility": 60
+          }
+        },
+        {
+          "stock": {
+            "code": "301609",
+            "name": "山大电力",
+            "price": 35.1,
+            "change_pct": 14.67,
+            "market_cap_yi": 57.17088,
+            "pe_ttm": 98.45,
+            "pb": 4.64,
+            "industry": "电网设备",
+            "turnover_pct": 17.74
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "technical": 87,
+            "momentum": 80,
+            "volume": 75,
+            "volatility": 75
+          }
+        },
+        {
+          "stock": {
+            "code": "000037",
+            "name": "深南电A",
+            "price": 9.2,
+            "change_pct": 10.05,
+            "market_cap_yi": 55.45415883,
+            "pe_ttm": 115.28,
+            "pb": 3.32,
+            "industry": "电力",
+            "turnover_pct": 10.66
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "technical": 78,
+            "momentum": 80,
+            "volume": 75,
+            "volatility": 75
+          }
+        },
+        {
+          "stock": {
+            "code": "000676",
+            "name": "智度股份",
+            "price": 6.84,
+            "change_pct": 9.97,
+            "market_cap_yi": 86.16958231,
+            "pe_ttm": 46.7,
+            "pb": 2.01,
+            "industry": "广告营销",
+            "turnover_pct": 20.42
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "technical": 78,
+            "momentum": 80,
+            "volume": 75,
+            "volatility": 75
+          }
+        },
+        {
+          "stock": {
+            "code": "000722",
+            "name": "湖南发展",
+            "price": 13.83,
+            "change_pct": 10.02,
+            "market_cap_yi": 79.01836704,
+            "pe_ttm": 150.96,
+            "pb": 1.99,
+            "industry": "电力",
+            "turnover_pct": 11.88
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "technical": 78,
+            "momentum": 80,
+            "volume": 75,
+            "volatility": 75
+          }
+        },
+        {
+          "stock": {
+            "code": "001369",
+            "name": "双欣材料",
+            "price": 12.95,
+            "change_pct": 10.03,
+            "market_cap_yi": 148.5365,
+            "pe_ttm": 29.07,
+            "pb": 2.16,
+            "industry": "化学纤维",
+            "turnover_pct": 10.5
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "technical": 78,
+            "momentum": 80,
+            "volume": 75,
+            "volatility": 75
+          }
+        },
+        {
+          "stock": {
+            "code": "001388",
+            "name": "信通电子",
+            "price": 24.74,
+            "change_pct": 10,
+            "market_cap_yi": 57.8337084,
+            "pe_ttm": -118.23,
+            "pb": 4.12,
+            "industry": "电网设备",
+            "turnover_pct": 15.3
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "technical": 78,
+            "momentum": 80,
+            "volume": 75,
+            "volatility": 75
+          }
+        },
+        {
+          "stock": {
+            "code": "002632",
+            "name": "道明光学",
+            "price": 10.59,
+            "change_pct": 9.97,
+            "market_cap_yi": 66.14504363,
+            "pe_ttm": 40.34,
+            "pb": 3.12,
+            "industry": "塑料",
+            "turnover_pct": 12.63
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "technical": 78,
+            "momentum": 80,
+            "volume": 75,
+            "volatility": 75
+          }
+        }
+      ]
+    },
+    {
+      "name": "fund_momentum",
+      "displayName": "资金动量",
+      "stocks": [
+        {
+          "stock": {
+            "code": "000037",
+            "name": "深南电A",
+            "price": 9.2,
+            "change_pct": 10.05,
+            "market_cap_yi": 55.45415883,
+            "pe_ttm": 115.28,
+            "pb": 3.32,
+            "industry": "电力",
+            "turnover_pct": 10.66
+          },
+          "totalScore": 61,
+          "dimScores": {
+            "fund_flow": 50,
+            "trend_strength": 50,
+            "volume": 75,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "000601",
+            "name": "韶能股份",
+            "price": 6.48,
+            "change_pct": 5.54,
+            "market_cap_yi": 68.9694474,
+            "pe_ttm": 163.32,
+            "pb": 1.67,
+            "industry": "电力",
+            "turnover_pct": 11.75
+          },
+          "totalScore": 61,
+          "dimScores": {
+            "fund_flow": 50,
+            "trend_strength": 50,
+            "volume": 75,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "000676",
+            "name": "智度股份",
+            "price": 6.84,
+            "change_pct": 9.97,
+            "market_cap_yi": 86.16958231,
+            "pe_ttm": 46.7,
+            "pb": 2.01,
+            "industry": "广告营销",
+            "turnover_pct": 20.42
+          },
+          "totalScore": 61,
+          "dimScores": {
+            "fund_flow": 50,
+            "trend_strength": 50,
+            "volume": 75,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "000722",
+            "name": "湖南发展",
+            "price": 13.83,
+            "change_pct": 10.02,
+            "market_cap_yi": 79.01836704,
+            "pe_ttm": 150.96,
+            "pb": 1.99,
+            "industry": "电力",
+            "turnover_pct": 11.88
+          },
+          "totalScore": 61,
+          "dimScores": {
+            "fund_flow": 50,
+            "trend_strength": 50,
+            "volume": 75,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "000767",
+            "name": "晋控电力",
+            "price": 3.42,
+            "change_pct": 3.01,
+            "market_cap_yi": 105.23142389,
+            "pe_ttm": 41.83,
+            "pb": 1.74,
+            "industry": "电力",
+            "turnover_pct": 10.29
+          },
+          "totalScore": 61,
+          "dimScores": {
+            "fund_flow": 50,
+            "trend_strength": 50,
+            "volume": 75,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "001369",
+            "name": "双欣材料",
+            "price": 12.95,
+            "change_pct": 10.03,
+            "market_cap_yi": 148.5365,
+            "pe_ttm": 29.07,
+            "pb": 2.16,
+            "industry": "化学纤维",
+            "turnover_pct": 10.5
+          },
+          "totalScore": 61,
+          "dimScores": {
+            "fund_flow": 50,
+            "trend_strength": 50,
+            "volume": 75,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "001388",
+            "name": "信通电子",
+            "price": 24.74,
+            "change_pct": 10,
+            "market_cap_yi": 57.8337084,
+            "pe_ttm": -118.23,
+            "pb": 4.12,
+            "industry": "电网设备",
+            "turnover_pct": 15.3
+          },
+          "totalScore": 61,
+          "dimScores": {
+            "fund_flow": 50,
+            "trend_strength": 50,
+            "volume": 75,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "002141",
+            "name": "贤丰控股",
+            "price": 6.04,
+            "change_pct": 2.2,
+            "market_cap_yi": 62.3893222,
+            "pe_ttm": 156.84,
+            "pb": 7.73,
+            "industry": "元件",
+            "turnover_pct": 36.79
+          },
+          "totalScore": 61,
+          "dimScores": {
+            "fund_flow": 50,
+            "trend_strength": 50,
+            "volume": 75,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "002173",
+            "name": "创新医疗",
+            "price": 17.81,
+            "change_pct": 2.12,
+            "market_cap_yi": 78.59274309,
+            "pe_ttm": -78.12,
+            "pb": 4.56,
+            "industry": "医疗服务",
+            "turnover_pct": 19.54
+          },
+          "totalScore": 61,
+          "dimScores": {
+            "fund_flow": 50,
+            "trend_strength": 50,
+            "volume": 75,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "002632",
+            "name": "道明光学",
+            "price": 10.59,
+            "change_pct": 9.97,
+            "market_cap_yi": 66.14504363,
+            "pe_ttm": 40.34,
+            "pb": 3.12,
+            "industry": "塑料",
+            "turnover_pct": 12.63
+          },
+          "totalScore": 61,
+          "dimScores": {
+            "fund_flow": 50,
+            "trend_strength": 50,
+            "volume": 75,
+            "momentum": 80
+          }
+        }
+      ]
+    },
+    {
+      "name": "insider_track",
+      "displayName": "龙虎榜+资金流",
+      "stocks": [
+        {
+          "stock": {
+            "code": "000037",
+            "name": "深南电A",
+            "price": 9.2,
+            "change_pct": 10.05,
+            "market_cap_yi": 55.45415883,
+            "pe_ttm": 115.28,
+            "pb": 3.32,
+            "industry": "电力",
+            "turnover_pct": 10.66
+          },
+          "totalScore": 64,
+          "dimScores": {
+            "pattern": 50,
+            "sector": 70,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "000601",
+            "name": "韶能股份",
+            "price": 6.48,
+            "change_pct": 5.54,
+            "market_cap_yi": 68.9694474,
+            "pe_ttm": 163.32,
+            "pb": 1.67,
+            "industry": "电力",
+            "turnover_pct": 11.75
+          },
+          "totalScore": 64,
+          "dimScores": {
+            "pattern": 50,
+            "sector": 70,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "000722",
+            "name": "湖南发展",
+            "price": 13.83,
+            "change_pct": 10.02,
+            "market_cap_yi": 79.01836704,
+            "pe_ttm": 150.96,
+            "pb": 1.99,
+            "industry": "电力",
+            "turnover_pct": 11.88
+          },
+          "totalScore": 64,
+          "dimScores": {
+            "pattern": 50,
+            "sector": 70,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "000767",
+            "name": "晋控电力",
+            "price": 3.42,
+            "change_pct": 3.01,
+            "market_cap_yi": 105.23142389,
+            "pe_ttm": 41.83,
+            "pb": 1.74,
+            "industry": "电力",
+            "turnover_pct": 10.29
+          },
+          "totalScore": 64,
+          "dimScores": {
+            "pattern": 50,
+            "sector": 70,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "000862",
+            "name": "银星能源",
+            "price": 5,
+            "change_pct": 3.95,
+            "market_cap_yi": 45.8977348,
+            "pe_ttm": 20.68,
+            "pb": 1.06,
+            "industry": "电力",
+            "turnover_pct": 7.21
+          },
+          "totalScore": 64,
+          "dimScores": {
+            "pattern": 50,
+            "sector": 70,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "000899",
+            "name": "赣能股份",
+            "price": 10.7,
+            "change_pct": 9.97,
+            "market_cap_yi": 104.39752032,
+            "pe_ttm": 12.92,
+            "pb": 1.71,
+            "industry": "电力",
+            "turnover_pct": 3.91
+          },
+          "totalScore": 64,
+          "dimScores": {
+            "pattern": 50,
+            "sector": 70,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "000966",
+            "name": "长源电力",
+            "price": 4.34,
+            "change_pct": 4.58,
+            "market_cap_yi": 151.07691969,
+            "pe_ttm": 36.09,
+            "pb": 1.12,
+            "industry": "电力",
+            "turnover_pct": 3.81
+          },
+          "totalScore": 64,
+          "dimScores": {
+            "pattern": 50,
+            "sector": 70,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "000993",
+            "name": "闽东电力",
+            "price": 10.01,
+            "change_pct": 3.41,
+            "market_cap_yi": 45.84094065,
+            "pe_ttm": -42.16,
+            "pb": 1.8,
+            "industry": "电力",
+            "turnover_pct": 4.57
+          },
+          "totalScore": 64,
+          "dimScores": {
+            "pattern": 50,
+            "sector": 70,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "001258",
+            "name": "立新能源",
+            "price": 8.27,
+            "change_pct": 9.97,
+            "market_cap_yi": 77.18666672,
+            "pe_ttm": 304.35,
+            "pb": 2.55,
+            "industry": "电力",
+            "turnover_pct": 6.15
+          },
+          "totalScore": 64,
+          "dimScores": {
+            "pattern": 50,
+            "sector": 70,
+            "momentum": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "002310",
+            "name": "东方新能",
+            "price": 2.38,
+            "change_pct": 5.78,
+            "market_cap_yi": 142.78386638,
+            "pe_ttm": -258.08,
+            "pb": 5.96,
+            "industry": "电力",
+            "turnover_pct": 6.05
+          },
+          "totalScore": 64,
+          "dimScores": {
+            "pattern": 50,
+            "sector": 70,
+            "momentum": 80
+          }
+        }
+      ]
+    },
+    {
+      "name": "reversal",
+      "displayName": "超跌反转",
+      "stocks": [
+        {
+          "stock": {
+            "code": "300795",
+            "name": "米奥会展",
+            "price": 10.48,
+            "change_pct": 20.05,
+            "market_cap_yi": 31.32407758,
+            "pe_ttm": -31.72,
+            "pb": 5.51,
+            "industry": "专业服务",
+            "turnover_pct": 9.44
+          },
+          "totalScore": 82,
+          "dimScores": {
+            "volatility": 75,
+            "momentum": 80,
+            "technical": 98
+          }
+        },
+        {
+          "stock": {
+            "code": "300317",
+            "name": "珈伟新能",
+            "price": 4.13,
+            "change_pct": 16.01,
+            "market_cap_yi": 34.28678113,
+            "pe_ttm": 333.1,
+            "pb": 2.41,
+            "industry": "电力",
+            "turnover_pct": 20.48
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "volatility": 75,
+            "momentum": 80,
+            "technical": 90
+          }
+        },
+        {
+          "stock": {
+            "code": "300205",
+            "name": "*ST天喻",
+            "price": 5.17,
+            "change_pct": 13.13,
+            "market_cap_yi": 22.2338952,
+            "pe_ttm": -13.05,
+            "pb": 5.35,
+            "industry": "通信设备",
+            "turnover_pct": 1.75
+          },
+          "totalScore": 79,
+          "dimScores": {
+            "volatility": 75,
+            "momentum": 80,
+            "technical": 84
+          }
+        },
+        {
+          "stock": {
+            "code": "301609",
+            "name": "山大电力",
+            "price": 35.1,
+            "change_pct": 14.67,
+            "market_cap_yi": 57.17088,
+            "pe_ttm": 98.45,
+            "pb": 4.64,
+            "industry": "电网设备",
+            "turnover_pct": 17.74
+          },
+          "totalScore": 79,
+          "dimScores": {
+            "volatility": 75,
+            "momentum": 80,
+            "technical": 87
+          }
+        },
+        {
+          "stock": {
+            "code": "000037",
+            "name": "深南电A",
+            "price": 9.2,
+            "change_pct": 10.05,
+            "market_cap_yi": 55.45415883,
+            "pe_ttm": 115.28,
+            "pb": 3.32,
+            "industry": "电力",
+            "turnover_pct": 10.66
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "volatility": 75,
+            "momentum": 80,
+            "technical": 78
+          }
+        },
+        {
+          "stock": {
+            "code": "000676",
+            "name": "智度股份",
+            "price": 6.84,
+            "change_pct": 9.97,
+            "market_cap_yi": 86.16958231,
+            "pe_ttm": 46.7,
+            "pb": 2.01,
+            "industry": "广告营销",
+            "turnover_pct": 20.42
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "volatility": 75,
+            "momentum": 80,
+            "technical": 78
+          }
+        },
+        {
+          "stock": {
+            "code": "000722",
+            "name": "湖南发展",
+            "price": 13.83,
+            "change_pct": 10.02,
+            "market_cap_yi": 79.01836704,
+            "pe_ttm": 150.96,
+            "pb": 1.99,
+            "industry": "电力",
+            "turnover_pct": 11.88
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "volatility": 75,
+            "momentum": 80,
+            "technical": 78
+          }
+        },
+        {
+          "stock": {
+            "code": "000899",
+            "name": "赣能股份",
+            "price": 10.7,
+            "change_pct": 9.97,
+            "market_cap_yi": 104.39752032,
+            "pe_ttm": 12.92,
+            "pb": 1.71,
+            "industry": "电力",
+            "turnover_pct": 3.91
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "volatility": 75,
+            "momentum": 80,
+            "technical": 78
+          }
+        },
+        {
+          "stock": {
+            "code": "001258",
+            "name": "立新能源",
+            "price": 8.27,
+            "change_pct": 9.97,
+            "market_cap_yi": 77.18666672,
+            "pe_ttm": 304.35,
+            "pb": 2.55,
+            "industry": "电力",
+            "turnover_pct": 6.15
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "volatility": 75,
+            "momentum": 80,
+            "technical": 78
+          }
+        },
+        {
+          "stock": {
+            "code": "001369",
+            "name": "双欣材料",
+            "price": 12.95,
+            "change_pct": 10.03,
+            "market_cap_yi": 148.5365,
+            "pe_ttm": 29.07,
+            "pb": 2.16,
+            "industry": "化学纤维",
+            "turnover_pct": 10.5
+          },
+          "totalScore": 77,
+          "dimScores": {
+            "volatility": 75,
+            "momentum": 80,
+            "technical": 78
+          }
+        }
+      ]
+    },
+    {
+      "name": "smart_money",
+      "displayName": "量价异动",
+      "stocks": [
+        {
+          "stock": {
+            "code": "300577",
+            "name": "开润股份",
+            "price": 20.36,
+            "change_pct": 19.98,
+            "market_cap_yi": 48.83065989,
+            "pe_ttm": 12.36,
+            "pb": 2.3,
+            "industry": "服装家纺",
+            "turnover_pct": 11.91
+          },
+          "totalScore": 78,
+          "dimScores": {
+            "volume": 75,
+            "technical": 98,
+            "pattern": 65
+          }
+        },
+        {
+          "stock": {
+            "code": "300795",
+            "name": "米奥会展",
+            "price": 10.48,
+            "change_pct": 20.05,
+            "market_cap_yi": 31.32407758,
+            "pe_ttm": -31.72,
+            "pb": 5.51,
+            "industry": "专业服务",
+            "turnover_pct": 9.44
+          },
+          "totalScore": 76,
+          "dimScores": {
+            "volume": 70,
+            "technical": 98,
+            "pattern": 65
+          }
+        },
+        {
+          "stock": {
+            "code": "000676",
+            "name": "智度股份",
+            "price": 6.84,
+            "change_pct": 9.97,
+            "market_cap_yi": 86.16958231,
+            "pe_ttm": 46.7,
+            "pb": 2.01,
+            "industry": "广告营销",
+            "turnover_pct": 20.42
+          },
+          "totalScore": 73,
+          "dimScores": {
+            "volume": 75,
+            "technical": 78,
+            "pattern": 65
+          }
+        },
+        {
+          "stock": {
+            "code": "002632",
+            "name": "道明光学",
+            "price": 10.59,
+            "change_pct": 9.97,
+            "market_cap_yi": 66.14504363,
+            "pe_ttm": 40.34,
+            "pb": 3.12,
+            "industry": "塑料",
+            "turnover_pct": 12.63
+          },
+          "totalScore": 73,
+          "dimScores": {
+            "volume": 75,
+            "technical": 78,
+            "pattern": 65
+          }
+        },
+        {
+          "stock": {
+            "code": "600162",
+            "name": "香江控股",
+            "price": 3.06,
+            "change_pct": 10.07,
+            "market_cap_yi": 100.01420653,
+            "pe_ttm": -113.6,
+            "pb": 1.75,
+            "industry": "房地产开发",
+            "turnover_pct": 11.6
+          },
+          "totalScore": 73,
+          "dimScores": {
+            "volume": 75,
+            "technical": 78,
+            "pattern": 65
+          }
+        },
+        {
+          "stock": {
+            "code": "603567",
+            "name": "珍宝岛",
+            "price": 6.03,
+            "change_pct": 10.04,
+            "market_cap_yi": 56.69618781,
+            "pe_ttm": -7.88,
+            "pb": 0.93,
+            "industry": "中药Ⅱ",
+            "turnover_pct": 11.12
+          },
+          "totalScore": 73,
+          "dimScores": {
+            "volume": 75,
+            "technical": 78,
+            "pattern": 65
+          }
+        },
+        {
+          "stock": {
+            "code": "300968",
+            "name": "格林精密",
+            "price": 11.16,
+            "change_pct": 8.98,
+            "market_cap_yi": 46.133208,
+            "pe_ttm": -25.59,
+            "pb": 2.59,
+            "industry": "消费电子",
+            "turnover_pct": 11.32
+          },
+          "totalScore": 72,
+          "dimScores": {
+            "volume": 75,
+            "technical": 76,
+            "pattern": 65
+          }
+        },
+        {
+          "stock": {
+            "code": "600664",
+            "name": "哈药股份",
+            "price": 5.33,
+            "change_pct": 7.89,
+            "market_cap_yi": 134.23657639,
+            "pe_ttm": 20.83,
+            "pb": 2.29,
+            "industry": "化学制药",
+            "turnover_pct": 34.7
+          },
+          "totalScore": 72,
+          "dimScores": {
+            "volume": 75,
+            "technical": 74,
+            "pattern": 65
+          }
+        },
+        {
+          "stock": {
+            "code": "300317",
+            "name": "珈伟新能",
+            "price": 4.13,
+            "change_pct": 16.01,
+            "market_cap_yi": 34.28678113,
+            "pe_ttm": 333.1,
+            "pb": 2.41,
+            "industry": "电力",
+            "turnover_pct": 20.48
+          },
+          "totalScore": 71,
+          "dimScores": {
+            "volume": 75,
+            "technical": 90,
+            "pattern": 50
+          }
+        },
+        {
+          "stock": {
+            "code": "301609",
+            "name": "山大电力",
+            "price": 35.1,
+            "change_pct": 14.67,
+            "market_cap_yi": 57.17088,
+            "pe_ttm": 98.45,
+            "pb": 4.64,
+            "industry": "电网设备",
+            "turnover_pct": 17.74
+          },
+          "totalScore": 71,
+          "dimScores": {
+            "volume": 75,
+            "technical": 87,
+            "pattern": 50
+          }
+        }
+      ]
+    },
+    {
+      "name": "value_pick",
+      "displayName": "价值精选",
+      "stocks": [
+        {
+          "stock": {
+            "code": "000001",
+            "name": "平安银行",
+            "price": 10.78,
+            "change_pct": 0.09,
+            "market_cap_yi": 2091.95798174,
+            "pe_ttm": 3.6,
+            "pb": 0.46,
+            "industry": "银行Ⅱ",
+            "turnover_pct": 0.55
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "valuation": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "600000",
+            "name": "浦发银行",
+            "price": 8.87,
+            "change_pct": 0.23,
+            "market_cap_yi": 2954.22785721,
+            "pe_ttm": 4.14,
+            "pb": 0.4,
+            "industry": "银行Ⅱ",
+            "turnover_pct": 0.24
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "valuation": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "600015",
+            "name": "华夏银行",
+            "price": 6.91,
+            "change_pct": -0.14,
+            "market_cap_yi": 1099.72155714,
+            "pe_ttm": 5.51,
+            "pb": 0.34,
+            "industry": "银行Ⅱ",
+            "turnover_pct": 0.49
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "valuation": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "600016",
+            "name": "民生银行",
+            "price": 3.46,
+            "change_pct": 0.29,
+            "market_cap_yi": 1514.87168017,
+            "pe_ttm": 3.29,
+            "pb": 0.26,
+            "industry": "银行Ⅱ",
+            "turnover_pct": 0.94
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "valuation": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "600104",
+            "name": "上汽集团",
+            "price": 10.39,
+            "change_pct": -1.24,
+            "market_cap_yi": 1194.35933267,
+            "pe_ttm": 9.87,
+            "pb": 0.4,
+            "industry": "乘用车",
+            "turnover_pct": 0.52
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "valuation": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "601166",
+            "name": "兴业银行",
+            "price": 17.75,
+            "change_pct": 0.51,
+            "market_cap_yi": 3756.40756356,
+            "pe_ttm": 3.94,
+            "pb": 0.46,
+            "industry": "银行Ⅱ",
+            "turnover_pct": 0.56
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "valuation": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "601169",
+            "name": "北京银行",
+            "price": 5.03,
+            "change_pct": 0,
+            "market_cap_yi": 1063.49210888,
+            "pe_ttm": 3.28,
+            "pb": 0.38,
+            "industry": "银行Ⅱ",
+            "turnover_pct": 0.74
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "valuation": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "601390",
+            "name": "中国中铁",
+            "price": 4.43,
+            "change_pct": -0.23,
+            "market_cap_yi": 1086.73704757,
+            "pe_ttm": 6.23,
+            "pb": 0.34,
+            "industry": "基础建设",
+            "turnover_pct": 0.66
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "valuation": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "601668",
+            "name": "中国建筑",
+            "price": 4.53,
+            "change_pct": 1.34,
+            "market_cap_yi": 1871.81368711,
+            "pe_ttm": 3.37,
+            "pb": 0.39,
+            "industry": "房屋建设Ⅱ",
+            "turnover_pct": 0.75
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "valuation": 80
+          }
+        },
+        {
+          "stock": {
+            "code": "601818",
+            "name": "光大银行",
+            "price": 3.13,
+            "change_pct": 0.32,
+            "market_cap_yi": 1849.37774821,
+            "pe_ttm": 4.03,
+            "pb": 0.37,
+            "industry": "银行Ⅱ",
+            "turnover_pct": 0.57
+          },
+          "totalScore": 80,
+          "dimScores": {
+            "valuation": 80
+          }
+        }
+      ]
+    }
+  ]
+}

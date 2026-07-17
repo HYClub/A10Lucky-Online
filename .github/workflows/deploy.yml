@@ -29,6 +29,7 @@ jobs:
           git config user.email "bot@a10lucky.dev"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           cp -r dist/* docs/ 2>/dev/null || cp -r dist/. docs/
+          cp docs/index.html docs/404.html
           git add docs/
           if ! git diff --cached --quiet; then
             git -c user.name="A10Lucky Bot" -c user.email="bot@a10lucky.dev" commit -m "auto: deploy $(date +'%Y-%m-%d %H:%M')"

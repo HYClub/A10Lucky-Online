@@ -1,12 +1,12 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { runStrategy, loadStrategy, listStrategies } from '../engine/index.js'
 import { dataUrl } from '../dataUrl.js'
 
-const dimNames = { technical: '技术', momentum: '动量', volume: '成交量', valuation: '估值', sector: '板块', pattern: '形态', volatility: '波动率', sentiment: '情绪', fund_flow: '资金流' }
+const dimNames = { technical: '技术', momentum: '动量', volume: '成交量', valuation: '估值', sector: '板块', pattern: '形态', volatility: '波动率', sentiment: '情绪', fund_flow: '资金流', trend_strength: '趋势强度', correlation: '相关性', alpha: 'Alpha因子' }
 
 export default function StockDetail() {
   const { code } = useParams()
+  const [stratData, setStratData] = useState(null)
   const [marketData, setMarketData] = useState(null)
   const [favs, setFavs] = useState(() => {
     try { return JSON.parse(localStorage.getItem('a10lucky_favs') || '[]') }
@@ -15,10 +15,12 @@ export default function StockDetail() {
   const [activeResult, setActiveResult] = useState(null)
 
   useEffect(() => {
+    fetch(dataUrl('/data/strategies/latest.json?t=') + Date.now())
+      .then(r => r.ok ? r.json() : null)
+      .then(d => d && setStratData(d))
     fetch(dataUrl('/data/market/latest.json?t=') + Date.now())
       .then(r => r.ok ? r.json() : null)
       .then(d => d && setMarketData(d))
-      .catch(() => {})
   }, [])
 
   const toggleFav = () => {
@@ -30,19 +32,14 @@ export default function StockDetail() {
   }
 
   const stock = useMemo(() => marketData?.stocks?.find(s => s.code === code), [marketData, code])
-  const strategies = useMemo(() => listStrategies(), [])
 
   const strategyScores = useMemo(() => {
-    if (!marketData?.stocks || !stock) return []
-    const single = { stocks: [stock], sectors: marketData.sectors, index_kline: marketData.index_kline }
-    return strategies.map(s => {
-      const cfg = loadStrategy(s.name)
-      if (!cfg) return null
-      const result = runStrategy(single, cfg)
-      const scored = result.stocks[0]
-      return { name: s.displayName, key: s.name, totalScore: scored?.totalScore || 0, dimScores: scored?.dimScores || {} }
-    }).filter(Boolean)
-  }, [marketData, stock, strategies])
+    if (!stratData?.results) return []
+    return stratData.results.map(r => {
+      const found = r.stocks.find(s => s.stock.code === code)
+      return { name: r.displayName, key: r.name, totalScore: found?.totalScore || 0, dimScores: found?.dimScores || {} }
+    })
+  }, [stratData, code])
 
   useEffect(() => {
     if (strategyScores.length > 0) setActiveResult(strategyScores[0].key)
@@ -81,26 +78,32 @@ export default function StockDetail() {
 
       <div className="card">
         <h3>多策略评分对比</h3>
-        <div className="strategy-score-row">
-          {strategyScores.map(s => (
-            <div key={s.key} className={'strategy-score-card' + (activeResult === s.key ? ' active' : '')} onClick={() => setActiveResult(s.key)}>
-              <div className="ss-name">{s.name}</div>
-              <div className={'ss-score ' + (s.totalScore >= 60 ? 'high' : s.totalScore >= 40 ? 'mid' : 'low')}>{s.totalScore}</div>
-            </div>
-          ))}
-        </div>
-        {active && (
-          <div className="dim-score-list">
-            {Object.entries(active.dimScores).map(([dim, score]) => (
-              <div key={dim} className="dim-score-item">
-                <span className="dim-label">{dimNames[dim] || dim}</span>
-                <div className="dim-bar-wrap">
-                  <div className="dim-bar" style={{ width: score + '%', backgroundColor: score >= 60 ? '#22c55e' : score >= 40 ? '#eab308' : '#ef4444' }}></div>
+        {strategyScores.length > 0 ? (
+          <>
+            <div className="strategy-score-row">
+              {strategyScores.map(s => (
+                <div key={s.key} className={'strategy-score-card' + (activeResult === s.key ? ' active' : '')} onClick={() => setActiveResult(s.key)}>
+                  <div className="ss-name">{s.name}</div>
+                  <div className={'ss-score ' + (s.totalScore >= 60 ? 'high' : s.totalScore >= 40 ? 'mid' : 'low')}>{s.totalScore}</div>
                 </div>
-                <span className="dim-val">{Math.round(score)}</span>
+              ))}
+            </div>
+            {active && (
+              <div className="dim-score-list">
+                {Object.entries(active.dimScores).map(([dim, score]) => (
+                  <div key={dim} className="dim-score-item">
+                    <span className="dim-label">{dimNames[dim] || dim}</span>
+                    <div className="dim-bar-wrap">
+                      <div className="dim-bar" style={{ width: score + '%', backgroundColor: score >= 60 ? '#22c55e' : score >= 40 ? '#eab308' : '#ef4444' }}></div>
+                    </div>
+                    <span className="dim-val">{Math.round(score)}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            )}
+          </>
+        ) : (
+          <div style={{color:'var(--text-tertiary)',fontSize:13}}>暂无评分数据</div>
         )}
       </div>
 
@@ -140,7 +143,7 @@ function MiniKline({ kline }) {
       {[0,0.25,0.5,0.75,1].map(p => {
         const val = min + range * p
         const y = padding.t + chartH - p * chartH
-        return <text key={p} x={padding.l-5} y={y+4} textAnchor="end" fill="var(--text3)" fontSize="11" fontFamily="monospace">{val.toFixed(2)}</text>
+        return <text key={p} x={padding.l-5} y={y+4} textAnchor="end" fill="var(--text-tertiary)" fontSize="11" fontFamily="monospace">{val.toFixed(2)}</text>
       })}
     </svg>
   )
