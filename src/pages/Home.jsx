@@ -15,13 +15,6 @@ function calcStats(stocks) {
   return { up, down, flat, limitUp, limitDown, turnover }
 }
 
-function topGainers(stocks, n = 6) {
-  return [...stocks].sort((a, b) => (b.change_pct ?? 0) - (a.change_pct ?? 0)).slice(0, n)
-}
-function topLosers(stocks, n = 6) {
-  return [...stocks].sort((a, b) => (a.change_pct ?? 0) - (b.change_pct ?? 0)).slice(0, n)
-}
-
 export default function Home() {
   const [marketData, setMarketData] = useState(null)
   useEffect(() => {
@@ -32,13 +25,11 @@ export default function Home() {
   }, [])
 
   const indices = marketData?.indices ?? []
-  const stocks = marketData?.stocks ?? []
-  const stats = calcStats(stocks)
+  const stats = marketData?.stocks ? calcStats(marketData.stocks) : null
 
   return (
     <div className="home">
 
-      {/* 大盘指数 */}
       <section className="index-hero">
         <div className="index-hero-header">
           <h2>A股市场</h2>
@@ -51,18 +42,17 @@ export default function Home() {
               <div className="idxh-price">{idx.price?.toFixed(2) ?? '—'}</div>
               {idx.change_pct != null ? (
                 <div className={'idxh-change ' + (idx.change_pct >= 0 ? 'up' : 'down')}>
-                  <span className="idxh-arrow">{idx.change_pct >= 0 ? '▲' : '▼'}</span>
+                  <span>{idx.change_pct >= 0 ? '▲' : '▼'}</span>
                   {idx.change_pct >= 0 ? '+' : ''}{idx.change_pct.toFixed(2)}%
                 </div>
               ) : (
-                <div className="idxh-change" style={{color:'var(--text3)'}}>—</div>
+                <div className="idxh-change" style={{color:'var(--text-tertiary)'}}>—</div>
               )}
             </div>
           ))}
         </div>
       </section>
 
-      {/* 市场概况 */}
       {stats && (
         <section className="market-overview">
           <div className="overview-grid">
@@ -94,7 +84,6 @@ export default function Home() {
         </section>
       )}
 
-      {/* 快速入口 */}
       <section className="quick-actions">
         <Link to="/market" className="qa-card">
           <span className="qa-icon">📊</span>
@@ -112,46 +101,6 @@ export default function Home() {
           <span className="qa-arrow">→</span>
         </Link>
       </section>
-
-      {/* 涨跌幅榜 */}
-      {stocks.length > 0 && (
-        <div className="leaderboard-grid">
-          <div className="card">
-            <div className="card-header"><h3>涨幅榜</h3></div>
-            <table className="leader-table">
-              <thead><tr><th className="rank">#</th><th>代码</th><th>名称</th><th>涨跌幅</th><th>价格</th></tr></thead>
-              <tbody>
-                {topGainers(stocks).map((s, i) => (
-                  <tr key={s.code}>
-                    <td className="rank">{i + 1}</td>
-                    <td><Link to={'/stock/' + s.code} className="stock-link">{s.code}</Link></td>
-                    <td>{s.name}</td>
-                    <td className="up">+{s.change_pct?.toFixed(2)}%</td>
-                    <td>{s.price?.toFixed(2)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="card">
-            <div className="card-header"><h3>跌幅榜</h3></div>
-            <table className="leader-table">
-              <thead><tr><th className="rank">#</th><th>代码</th><th>名称</th><th>涨跌幅</th><th>价格</th></tr></thead>
-              <tbody>
-                {topLosers(stocks).map((s, i) => (
-                  <tr key={s.code}>
-                    <td className="rank">{i + 1}</td>
-                    <td><Link to={'/stock/' + s.code} className="stock-link">{s.code}</Link></td>
-                    <td>{s.name}</td>
-                    <td className="down">{s.change_pct?.toFixed(2)}%</td>
-                    <td>{s.price?.toFixed(2)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

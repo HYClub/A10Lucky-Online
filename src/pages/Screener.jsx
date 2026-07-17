@@ -18,12 +18,16 @@ export default function Screener() {
 
   const allResults = useMemo(() => {
     if (!marketData?.stocks) return []
-    return strategies.map(s => {
-      const cfg = loadStrategy(s.name)
-      if (!cfg) return null
-      const result = runStrategy(marketData, cfg)
-      return { ...s, result }
-    }).filter(Boolean)
+    return strategies.flatMap(s => {
+      try {
+        const cfg = loadStrategy(s.name)
+        if (!cfg) return []
+        const result = runStrategy(marketData, cfg)
+        return result.stocks.length ? [{ ...s, result }] : []
+      } catch (e) {
+        return []
+      }
+    })
   }, [marketData, strategies])
 
   const regime = useMemo(() => {

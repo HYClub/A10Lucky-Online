@@ -103,9 +103,11 @@ export function loadStrategy(name) {
 
 export function listStrategies() {
   const strategies = import.meta.glob('./strategies/*.json', { eager: true })
-  return Object.entries(strategies).map(([path, mod]) => {
+  return Object.entries(strategies).reduce((acc, [path, mod]) => {
     const s = mod.default || mod
+    if (!s.dimensions) return acc
     const name = path.split('/').pop().replace('.json', '')
-    return { name, displayName: s.display_name || name, description: s.description || '' }
-  })
+    acc.push({ name, displayName: s.display_name || name, description: s.description || '' })
+    return acc
+  }, [])
 }
