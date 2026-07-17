@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-17T17:36:50",
+  "timestamp": "2026-07-17T18:10:05",
   "date": "2026-07-17",
   "results": [
     {
@@ -120,7 +120,7 @@
             "pe_ttm": 163.32,
             "pb": 1.67,
             "industry": "电力",
-            "turnover_pct": 11.75
+            "turnover_pct": 11.77
           },
           "totalScore": 65,
           "dimScores": {
@@ -714,7 +714,7 @@
             "pe_ttm": 163.32,
             "pb": 1.67,
             "industry": "电力",
-            "turnover_pct": 11.75
+            "turnover_pct": 11.77
           },
           "totalScore": 61,
           "dimScores": {
@@ -919,7 +919,7 @@
             "pe_ttm": 163.32,
             "pb": 1.67,
             "industry": "电力",
-            "turnover_pct": 11.75
+            "turnover_pct": 11.77
           },
           "totalScore": 64,
           "dimScores": {
