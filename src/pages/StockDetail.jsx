@@ -95,7 +95,7 @@ export default function StockDetail() {
               <div key={dim} className="dim-score-item">
                 <span className="dim-label">{dimNames[dim] || dim}</span>
                 <div className="dim-bar-wrap">
-                  <div className="dim-bar" style={{ width: score + '%', backgroundColor: score >= 60 ? 'var(--up)' : score >= 40 ? '#eab308' : 'var(--down)' }}></div>
+                  <div className="dim-bar" style={{ width: score + '%', backgroundColor: score >= 60 ? '#22c55e' : score >= 40 ? '#eab308' : '#ef4444' }}></div>
                 </div>
                 <span className="dim-val">{Math.round(score)}</span>
               </div>
@@ -131,12 +131,12 @@ function MiniKline({ kline }) {
     <svg viewBox={`0 0 ${w} ${h}`} style={{ width: '100%', maxHeight: 200 }}>
       <defs>
         <linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#22c55e" stopOpacity="0.25" />
-          <stop offset="100%" stopColor="#22c55e" stopOpacity="0" />
+          <stop offset="0%" stopColor="#ef4444" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="#ef4444" stopOpacity="0" />
         </linearGradient>
       </defs>
       <path d={`${linePath} L${points[points.length-1].x},${padding.t+chartH} L${points[0].x},${padding.t+chartH} Z`} fill={`url(#${gradId})`} />
-      <path d={linePath} fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d={linePath} fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       {[0,0.25,0.5,0.75,1].map(p => {
         const val = min + range * p
         const y = padding.t + chartH - p * chartH
