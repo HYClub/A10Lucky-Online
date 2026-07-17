@@ -23,13 +23,14 @@ def log(msg):
     with _print_lock:
         print(msg)
 
-def fetch_json(url, headers=None, retries=3, timeout=10):
+def fetch_json(url, headers=None, retries=3, timeout=10, encoding="utf-8"):
     last_err = None
     for attempt in range(retries):
         try:
             req = urllib.request.Request(url, headers=headers or EM_HEADERS)
             with urllib.request.urlopen(req, timeout=timeout) as r:
-                return r.read().decode("utf-8")
+                raw = r.read()
+                return raw.decode(encoding, errors="replace")
         except Exception as e:
             last_err = e
             if attempt < retries - 1:
@@ -186,7 +187,7 @@ def fetch_tencent_batch(codes_batch):
     tx_codes = [f"{tx_market(c)}{c}" for c in codes_batch]
     url = f"https://qt.gtimg.cn/q={','.join(tx_codes)}"
     try:
-        text = fetch_json(url, headers=TENCENT_HEADERS, retries=1, timeout=8)
+        text = fetch_json(url, headers=TENCENT_HEADERS, retries=1, timeout=8, encoding="gbk")
         stocks = []
         for line in text.strip().split("\n"):
             s = parse_tencent_line(line)
