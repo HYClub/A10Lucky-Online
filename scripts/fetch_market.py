@@ -66,19 +66,25 @@ def resolve_industry(f100_val, industry_map):
     return raw
 
 
-def fetch_stocks(industry_map):
+BASE_FIELDS = "f2,f3,f8,f9,f10,f12,f14,f15,f16,f17,f18,f20,f21,f23,f100"
+BASE_FS = "m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23"
+
+def fetch_page(page, page_size, industry_map):
     url = ("https://push2.eastmoney.com/api/qt/clist/get"
-           "?pn=1&pz=2000&po=1&np=1&fltt=2&invt=2"
-           "&fields=f2,f3,f8,f9,f10,f12,f14,f15,f16,f17,f18,f20,f21,f23,f100"
-           "&fs=m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23")
-    data = fetch_json(url)
+           f"?pn={page}&pz={page_size}&po=1&np=1&fltt=2&invt=2"
+           f"&fields={BASE_FIELDS}&fs={BASE_FS}")
+    return fetch_json(url)
+
+def fetch_stocks(industry_map):
+    page_size = 100
+    data = fetch_page(1, page_size, industry_map)
     total = data.get("data", {}).get("total", 0)
     items = data.get("data", {}).get("diff", [])
-    print(f"Stocks API total={total}, returned={len(items)}")
+    print(f"Stocks API total={total}, page1={len(items)}")
     stocks = []
-    for item in items:
+    def parse_item(item):
         market_cap = safe_num(item.get("f20"))
-        stocks.append({
+        return {
             "code": str(item.get("f12", "")),
             "name": str(item.get("f14", "")),
             "price": safe_num(item.get("f2")),
@@ -93,7 +99,18 @@ def fetch_stocks(industry_map):
             "market_cap_yi": market_cap / 1e8 if market_cap else None,
             "pb": safe_num(item.get("f23")),
             "industry": resolve_industry(item.get("f100"), industry_map),
-        })
+        }
+    stocks.extend(parse_item(it) for it in items)
+    total_pages = min(50, (total + page_size - 1) // page_size)
+    for p in range(2, total_pages + 1):
+        try:
+            d = fetch_page(p, page_size, industry_map)
+            its = d.get("data", {}).get("diff", [])
+            stocks.extend(parse_item(it) for it in its)
+            print(f"  page {p}/{total_pages}: +{len(its)}")
+        except Exception as e:
+            print(f"  page {p} failed: {e}")
+            break
     return stocks
 
 
