@@ -39,10 +39,29 @@
     "limitDown": 635,
     "total": 5540
   },
+  "sh": {
+    "up": 200,
+    "down": 2085,
+    "flat": 173,
+    "limitUp": 17,
+    "limitDown": 297,
+    "total": 2458
+  },
+  "sz": {
+    "up": 205,
+    "down": 2673,
+    "flat": 204,
+    "limitUp": 22,
+    "limitDown": 338,
+    "total": 3082
+  },
   "strategies": [
     {
       "name": "all_factor",
       "displayName": "全因子",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
       "stocks": [
         {
           "code": "000722",
@@ -129,6 +148,9 @@
     {
       "name": "alpha_blend",
       "displayName": "板块轮动+技术",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
       "stocks": [
         {
           "code": "300317",
@@ -215,6 +237,9 @@
     {
       "name": "balanced",
       "displayName": "多因子均衡",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
       "stocks": [
         {
           "code": "300795",
@@ -301,6 +326,9 @@
     {
       "name": "fund_momentum",
       "displayName": "资金动量",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
       "stocks": [
         {
           "code": "000037",
@@ -387,6 +415,9 @@
     {
       "name": "insider_track",
       "displayName": "龙虎榜+资金流",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
       "stocks": [
         {
           "code": "000037",
@@ -473,6 +504,9 @@
     {
       "name": "reversal",
       "displayName": "超跌反转",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
       "stocks": [
         {
           "code": "300795",
@@ -559,6 +593,9 @@
     {
       "name": "smart_money",
       "displayName": "量价异动",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
       "stocks": [
         {
           "code": "300577",
@@ -645,6 +682,9 @@
     {
       "name": "value_pick",
       "displayName": "价值精选",
+      "up": 6,
+      "down": 3,
+      "accuracy": 60,
       "stocks": [
         {
           "code": "000001",

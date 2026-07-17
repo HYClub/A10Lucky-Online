@@ -7,6 +7,10 @@
     "flat": 377,
     "limitUp": 39,
     "limitDown": 635,
+    "sh_up": 200,
+    "sh_down": 2085,
+    "sz_up": 205,
+    "sz_down": 2673,
     "strategies": 8
   }
 ]

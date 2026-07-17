@@ -61,7 +61,8 @@ export default function Results() {
 
           {detail && (
             <>
-              <div className="index-row" style={{marginBottom:20}}>
+              {/* 大盘指数 */}
+              <div className="index-row" style={{marginBottom:16}}>
                 {detail.indices?.map(idx => (
                   <div key={idx.code} className="index-card">
                     <div className="index-name">{INDEX_NAMES[idx.code] || idx.code}</div>
@@ -73,6 +74,35 @@ export default function Results() {
                 ))}
               </div>
 
+              {/* 深沪涨跌 */}
+              <div className="overview-grid" style={{marginBottom:20}}>
+                <div className="overview-card">
+                  <div className="ov-label">沪市上涨</div>
+                  <div className="ov-value up">{detail.sh?.up ?? '-'}</div>
+                </div>
+                <div className="overview-card">
+                  <div className="ov-label">沪市下跌</div>
+                  <div className="ov-value down">{detail.sh?.down ?? '-'}</div>
+                </div>
+                <div className="overview-card">
+                  <div className="ov-label">深市上涨</div>
+                  <div className="ov-value up">{detail.sz?.up ?? '-'}</div>
+                </div>
+                <div className="overview-card">
+                  <div className="ov-label">深市下跌</div>
+                  <div className="ov-value down">{detail.sz?.down ?? '-'}</div>
+                </div>
+                <div className="overview-card">
+                  <div className="ov-label">涨停</div>
+                  <div className="ov-value" style={{color:'#ff6b35'}}>{detail.market?.limitUp ?? '-'}</div>
+                </div>
+                <div className="overview-card">
+                  <div className="ov-label">跌停</div>
+                  <div className="ov-value" style={{color:'#a855f7'}}>{detail.market?.limitDown ?? '-'}</div>
+                </div>
+              </div>
+
+              {/* 策略预测 */}
               <div className="strategy-tabs-wrap">
                 <div className="strategy-tabs">
                   {detail.strategies?.map((r, i) => (
@@ -86,6 +116,15 @@ export default function Results() {
 
               {detail.strategies?.[activeTab] && (
                 <div className="card" style={{marginTop:16}}>
+                  <div className="card-header">
+                    <h3>{detail.strategies[activeTab].displayName}</h3>
+                    <span style={{fontSize:13,color:'var(--text-tertiary)'}}>
+                      上涨 {detail.strategies[activeTab].up} / 下跌 {detail.strategies[activeTab].down}
+                      <span className="up" style={{marginLeft:8,fontWeight:600}}>
+                        预测概率 {detail.strategies[activeTab].accuracy}%
+                      </span>
+                    </span>
+                  </div>
                   <div className="table-wrap">
                     <table className="stock-table">
                       <thead>
