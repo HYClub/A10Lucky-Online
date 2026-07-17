@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 const LINKS = [
   { to: '/', label: '首页', icon: '🏠' },
   { to: '/market', label: '行情', icon: '📊' },
+  { to: '/favorites', label: '自选', icon: '⭐' },
   { to: '/screener', label: '选股', icon: '🎯' },
   { to: '/results', label: '回顾', icon: '📋' },
 ]
