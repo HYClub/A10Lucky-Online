@@ -1,79 +1,84 @@
-"""Fetch A-share market data from Eastmoney APIs (no external dependencies)."""
+"""Fetch A-share market data from multiple APIs in parallel."""
 import json
 import os
 import time
 import urllib.request
+import concurrent.futures
+import threading
 from datetime import datetime, timezone, timedelta
 
 CST = timezone(timedelta(hours=8))
 OUTPUT = "docs/data/market/latest.json"
-
-HEADERS = {
+EM_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
     "Referer": "https://quote.eastmoney.com/",
 }
+TENCENT_HEADERS = {
+    "User-Agent": "Mozilla/5.0",
+    "Referer": "https://qt.gtimg.cn/",
+}
+_print_lock = threading.Lock()
 
-def fetch_json(url, retries=3):
+def log(msg):
+    with _print_lock:
+        print(msg)
+
+def fetch_json(url, headers=None, retries=3, timeout=20):
     last_err = None
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(url, headers=HEADERS)
-            with urllib.request.urlopen(req, timeout=20) as r:
-                return json.loads(r.read().decode("utf-8"))
+            req = urllib.request.Request(url, headers=headers or EM_HEADERS)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read().decode("utf-8")
         except Exception as e:
             last_err = e
             if attempt < retries - 1:
                 wait = 2 ** attempt
-                print(f"  fetch_json retry {attempt+1}/{retries} after {wait}s: {e}")
+                log(f"  retry {attempt+1}/{retries} after {wait}s: {e}")
                 time.sleep(wait)
     raise last_err
 
+def fetch_json_parsed(url, headers=None, retries=3):
+    return json.loads(fetch_json(url, headers, retries))
+
 def safe_num(v):
-    if v == "-" or v is None:
+    if v in ("-", "", None):
         return None
     try:
         return float(v)
     except:
         return None
 
+# ── industry mapping ──────────────────────────────────────────
+
 def fetch_industry_map():
-    """Fetch Eastmoney industry sector list and build {code: name} mapping.
-    f100 returns 'market.numeric_id' (e.g. '90.9829892863').
-    We match the numeric_id suffix against the sector list's f12/f14.
-    """
     mapping = {}
     for host in ["push2.eastmoney.com", "push2delay.eastmoney.com"]:
         try:
             url = (f"https://{host}/api/qt/clist/get"
                    "?pn=1&pz=500&po=1&np=1&fltt=2&invt=2"
-                   "&fields=f12,f14"
-                   "&fs=m:90+t:2")
-            data = fetch_json(url, retries=2)
+                   "&fields=f12,f14&fs=m:90+t:2")
+            data = fetch_json_parsed(url, retries=2)
             items = data.get("data", {}).get("diff", [])
             for item in items:
                 code = str(item.get("f12", "") or "")
                 name = str(item.get("f14", "") or "")
                 if code and name:
                     mapping[code] = name
-            print(f"Fetched industry mapping: {len(mapping)} sectors")
+            log(f"Industry mapping: {len(mapping)} sectors")
             if mapping:
                 return mapping
         except Exception as e:
-            print(f"  industry map from {host}: {e}")
-            continue
-    print("Warning: industry map failed, will use raw codes")
+            log(f"  industry map {host}: {e}")
+    log("Warning: industry map failed")
     return mapping
 
-
 def resolve_industry(f100_val, industry_map):
-    """Resolve industry code (f100) to Chinese name using the mapping."""
     raw = str(f100_val or "").strip()
     if not raw or raw == "-":
         return ""
-    # Direct match on full value
     if raw in industry_map:
         return industry_map[raw]
-    # Match on suffix after '90.' (Eastmoney industry market prefix)
     if raw.startswith("90."):
         suffix = raw[3:]
         for code, name in industry_map.items():
@@ -81,69 +86,175 @@ def resolve_industry(f100_val, industry_map):
                 return name
     return raw
 
+# ── Eastmoney market categories ───────────────────────────────
 
-BASE_FIELDS = "f2,f3,f8,f9,f10,f12,f14,f15,f16,f17,f18,f20,f21,f23,f100"
-BASE_FS = "m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23"
+EM_FIELDS = "f2,f3,f8,f9,f10,f12,f14,f15,f16,f17,f18,f20,f21,f23,f100"
+# 4 market categories, each assigned to a different host
+EM_CATEGORIES = [
+    ("push2.eastmoney.com", "m:0+t:6"),       # 上海主板
+    ("push2delay.eastmoney.com", "m:0+t:80"),  # 科创板
+    ("push2.eastmoney.com", "m:1+t:2"),        # 深圳主板
+    ("push2delay.eastmoney.com", "m:1+t:23"),   # 创业板
+]
 
-def fetch_page(page, page_size, industry_map):
-    url = ("https://push2.eastmoney.com/api/qt/clist/get"
-           f"?pn={page}&pz={page_size}&po=1&np=1&fltt=2&invt=2"
-           f"&fields={BASE_FIELDS}&fs={BASE_FS}")
-    return fetch_json(url)
+def parse_em_item(item, industry_map):
+    mcap = safe_num(item.get("f20"))
+    return {
+        "code": str(item.get("f12", "")),
+        "name": str(item.get("f14", "")),
+        "price": safe_num(item.get("f2")),
+        "change_pct": safe_num(item.get("f3")),
+        "turnover_pct": safe_num(item.get("f8")),
+        "pe_ttm": safe_num(item.get("f9")),
+        "volume_ratio": safe_num(item.get("f10")),
+        "high": safe_num(item.get("f15")),
+        "low": safe_num(item.get("f16")),
+        "open": safe_num(item.get("f17")),
+        "pre_close": safe_num(item.get("f18")),
+        "market_cap_yi": mcap / 1e8 if mcap else None,
+        "pb": safe_num(item.get("f23")),
+        "industry": resolve_industry(item.get("f100"), industry_map),
+    }
 
-def fetch_stocks(industry_map):
-    page_size = 100
-    data = fetch_page(1, page_size, industry_map)
-    total = data.get("data", {}).get("total", 0)
-    items = data.get("data", {}).get("diff", [])
-    print(f"Stocks API total={total}, page1={len(items)}")
-    stocks = []
-    def parse_item(item):
-        market_cap = safe_num(item.get("f20"))
-        return {
-            "code": str(item.get("f12", "")),
-            "name": str(item.get("f14", "")),
-            "price": safe_num(item.get("f2")),
-            "change_pct": safe_num(item.get("f3")),
-            "turnover_pct": safe_num(item.get("f8")),
-            "pe_ttm": safe_num(item.get("f9")),
-            "volume_ratio": safe_num(item.get("f10")),
-            "high": safe_num(item.get("f15")),
-            "low": safe_num(item.get("f16")),
-            "open": safe_num(item.get("f17")),
-            "pre_close": safe_num(item.get("f18")),
-            "market_cap_yi": market_cap / 1e8 if market_cap else None,
-            "pb": safe_num(item.get("f23")),
-            "industry": resolve_industry(item.get("f100"), industry_map),
-        }
-    stocks.extend(parse_item(it) for it in items)
-    total_pages = min(50, (total + page_size - 1) // page_size)
-    for p in range(2, total_pages + 1):
-        time.sleep(4.5)
-        success = False
-        for attempt in range(3):
-            try:
-                d = fetch_page(p, page_size, industry_map)
-                its = d.get("data", {}).get("diff", [])
-                stocks.extend(parse_item(it) for it in its)
-                print(f"  page {p}/{total_pages}: +{len(its)} (attempt {attempt+1})")
-                success = True
+def fetch_em_category(host, fs, industry_map, page_size=100, delay=7):
+    """Fetch one market category with pagination. Each category is fetched
+    sequentially (rate-limited), but categories run in parallel via threads."""
+    results = []
+    page = 1
+    consecutive_failures = 0
+    while True:
+        if page > 1:
+            time.sleep(delay)
+        url = (f"https://{host}/api/qt/clist/get"
+               f"?pn={page}&pz={page_size}&po=1&np=1&fltt=2&invt=2"
+               f"&fields={EM_FIELDS}&fs={fs}")
+        try:
+            resp = fetch_json_parsed(url)
+            items = resp.get("data", {}).get("diff", [])
+            if not items:
+                log(f"  [{fs}] page {page}: empty, done")
                 break
-            except Exception as e:
-                print(f"  page {p} attempt {attempt+1}: {e}")
-                time.sleep(6)
-        if not success:
-            print(f"  page {p} gave up after 3 attempts")
-            break
-    return stocks
+            parsed = [parse_em_item(it, industry_map) for it in items]
+            results.extend(parsed)
+            log(f"  [{fs}] page {page}: +{len(parsed)} (total {len(results)})")
+            consecutive_failures = 0
+            page += 1
+        except Exception as e:
+            consecutive_failures += 1
+            log(f"  [{fs}] page {page} failed ({consecutive_failures}): {e}")
+            if consecutive_failures >= 3:
+                log(f"  [{fs}] gave up after {consecutive_failures} failures")
+                break
+            time.sleep(delay * 2)
+    return results
 
+# ── Tencent batch quotes ──────────────────────────────────────
+
+def tx_market(code):
+    if code.startswith(("5", "6", "9")):
+        return "sh"
+    return "sz"
+
+def parse_tencent_line(line):
+    """Parse a single stock from Tencent's batch response.
+    Format: ~分隔的各字段，完整 ~86 fields.
+    Key indices: 1=name, 3=price, 4=prev_close, 5=open, 6=volume,
+                 31=change_amount, 32=change_pct, 33=high, 34=low,
+                 38=turnover_pct, 44=流通市值, 45=总市值, 46=pb
+    """
+    parts = line.split("~")
+    if len(parts) < 47:
+        return None
+    code_raw = parts[0].split("_")[-1] if "_" in parts[0] else ""
+    name = parts[1] or ""
+    code = code_raw
+    if not code:
+        # extract from the full response line: v_sh600000=...
+        return None
+    return {
+        "code": code,
+        "name": name,
+        "price": safe_num(parts[3]),
+        "change_pct": safe_num(parts[32]),
+        "turnover_pct": safe_num(parts[38]),
+        "volume_ratio": safe_num(parts[39]),
+        "high": safe_num(parts[33]),
+        "low": safe_num(parts[34]),
+        "open": safe_num(parts[5]),
+        "pre_close": safe_num(parts[4]),
+        "market_cap_yi": safe_num(parts[45]),
+        "pb": safe_num(parts[46]),
+    }
+
+def fetch_tencent_batch(codes_batch):
+    """Fetch a batch of up to ~50 stock codes from Tencent."""
+    if not codes_batch:
+        return []
+    tx_codes = [f"{tx_market(c)}{c}" for c in codes_batch]
+    url = f"https://qt.gtimg.cn/q={','.join(tx_codes)}"
+    try:
+        text = fetch_json(url, headers=TENCENT_HEADERS, retries=2, timeout=10)
+        stocks = []
+        for line in text.strip().split("\n"):
+            s = parse_tencent_line(line)
+            if s and s["code"]:
+                stocks.append(s)
+        return stocks
+    except Exception as e:
+        log(f"  Tencent batch failed ({len(codes_batch)} codes): {e}")
+        return []
+
+def fetch_tencent_all(all_codes, batch_size=50):
+    """Fetch all stocks from Tencent in parallel batches."""
+    if not all_codes:
+        return []
+    codes_list = list(all_codes)
+    batches = [codes_list[i:i+batch_size] for i in range(0, len(codes_list), batch_size)]
+    log(f"Tencent: {len(codes_list)} stocks in {len(batches)} batches")
+    results = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+        fut_to_batch = {ex.submit(fetch_tencent_batch, b): i for i, b in enumerate(batches)}
+        for fut in concurrent.futures.as_completed(fut_to_batch):
+            batch = fut_to_batch[fut]
+            try:
+                stocks = fut.result()
+                results.extend(stocks)
+                log(f"  Tencent batch {batch+1}/{len(batches)}: +{len(stocks)}")
+            except Exception as e:
+                log(f"  Tencent batch {batch+1} failed: {e}")
+    return results
+
+# ── Merge ─────────────────────────────────────────────────────
+
+def merge_stocks(em_stocks, tx_stocks):
+    """Merge Eastmoney and Tencent data, preferring EM fields."""
+    em_map = {s["code"]: s for s in em_stocks}
+    tx_map = {s["code"]: s for s in tx_stocks}
+    merged = {}
+    for code, s in em_map.items():
+        merged[code] = s
+    for code, s in tx_map.items():
+        if code in merged:
+            existing = merged[code]
+            # Fill missing fields from Tencent
+            for key in ("price", "change_pct", "turnover_pct", "market_cap_yi", "pb"):
+                if existing.get(key) is None and s.get(key) is not None:
+                    existing[key] = s[key]
+            if not existing.get("name") and s.get("name"):
+                existing["name"] = s["name"]
+        else:
+            merged[code] = s
+    log(f"Merged: {len(em_stocks)} EM + {len(tx_stocks)} TX = {len(merged)} unique")
+    return list(merged.values())
+
+# ── Indices ───────────────────────────────────────────────────
 
 def fetch_indices():
     url = ("https://push2.eastmoney.com/api/qt/ulist.np/get"
            "?fields=f2,f3,f4,f12,f14"
            "&secids=1.000001,0.399001,0.399006,0.399300")
     try:
-        data = fetch_json(url)
+        data = fetch_json_parsed(url)
         items = data.get("data", {}).get("diff", [])
         def _idx_num(v):
             n = safe_num(v)
@@ -156,15 +267,70 @@ def fetch_indices():
             "change_amount": _idx_num(item.get("f4")),
         } for item in items]
     except Exception as e:
-        print(f"Warning: indices failed: {e}")
+        log(f"Warning: indices failed: {e}")
         return []
 
+# ── Main ──────────────────────────────────────────────────────
 
 def main():
     now = datetime.now(CST)
+
     industry_map = fetch_industry_map()
-    stocks = fetch_stocks(industry_map)
+
+    # Phase 1: Fetch Eastmoney in parallel (one thread per market category)
+    log("Phase 1: Eastmoney categories (parallel)")
+    stocks_em = []
+    stock_codes_seen = set()
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
+        fut_to_cat = {ex.submit(fetch_em_category, host, fs, industry_map): fs
+                      for host, fs in EM_CATEGORIES}
+        for fut in concurrent.futures.as_completed(fut_to_cat):
+            fs = fut_to_cat[fut]
+            try:
+                cat_stocks = fut.result()
+                stocks_em.extend(cat_stocks)
+                for s in cat_stocks:
+                    stock_codes_seen.add(s["code"])
+                log(f"  [{fs}] done: {len(cat_stocks)} stocks")
+            except Exception as e:
+                log(f"  [{fs}] thread failed: {e}")
+
+    log(f"EM total: {len(stocks_em)} unique: {len(stock_codes_seen)}")
+
+    # Phase 2: Tencent fallback — fetch all codes not covered by EM
+    # First get all stock codes from a single minimal EM page
+    log("Phase 2: Tencent bulk fetch for missing stocks")
+    all_known_codes = set(stock_codes_seen)
+    try:
+        # Get the full stock universe from EM (just codes)
+        url = ("https://push2.eastmoney.com/api/qt/clist/get"
+               "?pn=1&pz=6000&po=1&np=1&fltt=2&invt=2"
+               "&fields=f12,f14"
+               "&fs=m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23")
+        data = fetch_json_parsed(url)
+        total = data.get("data", {}).get("total", 0)
+        items = data.get("data", {}).get("diff", [])
+        all_codes = set()
+        for item in items:
+            c = str(item.get("f12", ""))
+            if c:
+                all_codes.add(c)
+        log(f"EM universe: total={total}, codes_fetched={len(all_codes)}")
+        missing_codes = all_codes - all_known_codes
+        log(f"Missing from EM: {len(missing_codes)} stocks")
+        if missing_codes:
+            tx_stocks = fetch_tencent_all(missing_codes)
+            log(f"Tencent fetched: {len(tx_stocks)} stocks")
+        else:
+            tx_stocks = []
+    except Exception as e:
+        log(f"Warning: universe scan failed: {e}, skipping Tencent fallback")
+        tx_stocks = []
+
+    # Merge
+    stocks = merge_stocks(stocks_em, tx_stocks)
     indices = fetch_indices()
+
     data = {
         "timestamp": now.strftime("%Y-%m-%dT%H:%M:%S"),
         "date": now.strftime("%Y-%m-%d"),
@@ -174,7 +340,7 @@ def main():
     os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"Saved {len(stocks)} stocks, {len(indices)} indices to {OUTPUT}")
+    log(f"Saved {len(stocks)} stocks, {len(indices)} indices to {OUTPUT}")
 
 
 if __name__ == "__main__":
