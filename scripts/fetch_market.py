@@ -89,13 +89,11 @@ def resolve_industry(f100_val, industry_map):
 # ── Eastmoney market categories ───────────────────────────────
 
 EM_FIELDS = "f2,f3,f8,f9,f10,f12,f14,f15,f16,f17,f18,f20,f21,f23,f100"
-# 4 market categories, each assigned to a different host
-EM_CATEGORIES = [
-    ("push2.eastmoney.com", "m:0+t:6"),       # 上海主板
-    ("push2delay.eastmoney.com", "m:0+t:80"),  # 科创板
-    ("push2.eastmoney.com", "m:1+t:2"),        # 深圳主板
-    ("push2delay.eastmoney.com", "m:1+t:23"),   # 创业板
-]
+# Group categories by host so each host gets sequential (not concurrent) requests.
+# push2delay has more generous rate limits.
+EM_CATEGORIES = {
+    "push2delay.eastmoney.com": ["m:0+t:6", "m:0+t:80", "m:1+t:2", "m:1+t:23"],
+}
 
 def parse_em_item(item, industry_map):
     mcap = safe_num(item.get("f20"))
@@ -264,42 +262,52 @@ def fetch_indices():
 
 # ── Main ──────────────────────────────────────────────────────
 
+def fetch_host_categories(host, categories, industry_map):
+    """Sequentially fetch all categories assigned to one host."""
+    all_stocks = []
+    codes = set()
+    for fs in categories:
+        cat_stocks = fetch_em_category(host, fs, industry_map)
+        all_stocks.extend(cat_stocks)
+        for s in cat_stocks:
+            codes.add(s["code"])
+        log(f"  [{host}] [{fs}] done: {len(cat_stocks)} stocks")
+    return all_stocks, codes
+
+
 def main():
     now = datetime.now(CST)
-
     industry_map = fetch_industry_map()
 
-    # Phase 1: Fetch Eastmoney in parallel (one thread per market category)
-    log("Phase 1: Eastmoney categories (parallel)")
+    # Phase 1: Fetch Eastmoney — one thread per host, categories sequential per host
+    log("Phase 1: Eastmoney (sequential per host, parallel across hosts)")
     stocks_em = []
     stock_codes_seen = set()
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
-        fut_to_cat = {ex.submit(fetch_em_category, host, fs, industry_map): fs
-                      for host, fs in EM_CATEGORIES}
-        for fut in concurrent.futures.as_completed(fut_to_cat):
-            fs = fut_to_cat[fut]
+        fut_to_host = {}
+        for host, cats in EM_CATEGORIES.items():
+            fut = ex.submit(fetch_host_categories, host, cats, industry_map)
+            fut_to_host[fut] = host
+        for fut in concurrent.futures.as_completed(fut_to_host):
+            host = fut_to_host[fut]
             try:
-                cat_stocks = fut.result()
+                cat_stocks, codes = fut.result()
                 stocks_em.extend(cat_stocks)
-                for s in cat_stocks:
-                    stock_codes_seen.add(s["code"])
-                log(f"  [{fs}] done: {len(cat_stocks)} stocks")
+                stock_codes_seen.update(codes)
+                log(f"  [{host}] all done: {len(cat_stocks)} stocks")
             except Exception as e:
-                log(f"  [{fs}] thread failed: {e}")
+                log(f"  [{host}] thread failed: {e}")
 
     log(f"EM total: {len(stocks_em)} unique: {len(stock_codes_seen)}")
 
-    # Phase 2: Tencent fallback — fetch all codes not covered by EM
-    # First get all stock codes from a single minimal EM page
+    # Phase 2: Tencent fallback
     log("Phase 2: Tencent bulk fetch for missing stocks")
-    all_known_codes = set(stock_codes_seen)
     try:
-        # Get the full stock universe from EM (just codes)
-        url = ("https://push2.eastmoney.com/api/qt/clist/get"
+        url = ("https://push2delay.eastmoney.com/api/qt/clist/get"
                "?pn=1&pz=6000&po=1&np=1&fltt=2&invt=2"
                "&fields=f12,f14"
                "&fs=m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23")
-        data = fetch_json_parsed(url)
+        data = fetch_json_parsed(url, retries=5)
         total = data.get("data", {}).get("total", 0)
         items = data.get("data", {}).get("diff", [])
         all_codes = set()
@@ -308,7 +316,7 @@ def main():
             if c:
                 all_codes.add(c)
         log(f"EM universe: total={total}, codes_fetched={len(all_codes)}")
-        missing_codes = all_codes - all_known_codes
+        missing_codes = all_codes - stock_codes_seen
         log(f"Missing from EM: {len(missing_codes)} stocks")
         if missing_codes:
             tx_stocks = fetch_tencent_all(missing_codes)
@@ -319,7 +327,6 @@ def main():
         log(f"Warning: universe scan failed: {e}, skipping Tencent fallback")
         tx_stocks = []
 
-    # Merge
     stocks = merge_stocks(stocks_em, tx_stocks)
     indices = fetch_indices()
 
