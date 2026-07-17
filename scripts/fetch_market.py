@@ -18,17 +18,63 @@ def fetch_json(url):
         return json.loads(r.read().decode("utf-8"))
 
 def safe_num(v):
-    if v == "-" or v is None: return None
-    try: return float(v)
-    except: return None
+    if v == "-" or v is None:
+        return None
+    try:
+        return float(v)
+    except:
+        return None
 
-def fetch_stocks():
+def fetch_industry_map():
+    """Fetch Eastmoney industry sector list and build {code: name} mapping.
+    f100 returns 'market.numeric_id' (e.g. '90.9829892863').
+    We match the numeric_id suffix against the sector list's f12/f14.
+    """
+    mapping = {}
+    try:
+        url = ("https://push2.eastmoney.com/api/qt/clist/get"
+               "?pn=1&pz=500&po=1&np=1&fltt=2&invt=2"
+               "&fields=f12,f14"
+               "&fs=m:90+t:2")
+        data = fetch_json(url)
+        items = data.get("data", {}).get("diff", [])
+        for item in items:
+            code = str(item.get("f12", "") or "")
+            name = str(item.get("f14", "") or "")
+            if code and name:
+                mapping[code] = name
+        print(f"Fetched industry mapping: {len(mapping)} sectors")
+    except Exception as e:
+        print(f"Warning: industry map failed: {e}")
+    return mapping
+
+
+def resolve_industry(f100_val, industry_map):
+    """Resolve industry code (f100) to Chinese name using the mapping."""
+    raw = str(f100_val or "").strip()
+    if not raw or raw == "-":
+        return ""
+    # Direct match on full value
+    if raw in industry_map:
+        return industry_map[raw]
+    # Match on suffix after '90.' (Eastmoney industry market prefix)
+    if raw.startswith("90."):
+        suffix = raw[3:]
+        for code, name in industry_map.items():
+            if code.endswith(suffix) or suffix in code:
+                return name
+    return raw
+
+
+def fetch_stocks(industry_map):
     url = ("https://push2.eastmoney.com/api/qt/clist/get"
            "?pn=1&pz=2000&po=1&np=1&fltt=2&invt=2"
            "&fields=f2,f3,f8,f9,f10,f12,f14,f15,f16,f17,f18,f20,f21,f23,f100"
            "&fs=m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23")
     data = fetch_json(url)
+    total = data.get("data", {}).get("total", 0)
     items = data.get("data", {}).get("diff", [])
+    print(f"Stocks API total={total}, returned={len(items)}")
     stocks = []
     for item in items:
         market_cap = safe_num(item.get("f20"))
@@ -46,9 +92,10 @@ def fetch_stocks():
             "pre_close": safe_num(item.get("f18")),
             "market_cap_yi": market_cap / 1e8 if market_cap else None,
             "pb": safe_num(item.get("f23")),
-            "industry": str(item.get("f100", "") or ""),
+            "industry": resolve_industry(item.get("f100"), industry_map),
         })
     return stocks
+
 
 def fetch_indices():
     url = ("https://push2.eastmoney.com/api/qt/ulist.np/get"
@@ -57,20 +104,25 @@ def fetch_indices():
     try:
         data = fetch_json(url)
         items = data.get("data", {}).get("diff", [])
+        def _idx_num(v):
+            n = safe_num(v)
+            return n / 100 if n is not None else None
         return [{
             "code": str(item.get("f12", "")),
             "name": str(item.get("f14", "")),
-            "price": safe_num(item.get("f2")),
-            "change_pct": safe_num(item.get("f3")),
-            "change_amount": safe_num(item.get("f4")),
+            "price": _idx_num(item.get("f2")),
+            "change_pct": _idx_num(item.get("f3")),
+            "change_amount": _idx_num(item.get("f4")),
         } for item in items]
     except Exception as e:
         print(f"Warning: indices failed: {e}")
         return []
 
+
 def main():
     now = datetime.now(CST)
-    stocks = fetch_stocks()
+    industry_map = fetch_industry_map()
+    stocks = fetch_stocks(industry_map)
     indices = fetch_indices()
     data = {
         "timestamp": now.strftime("%Y-%m-%dT%H:%M:%S"),
@@ -82,6 +134,7 @@ def main():
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"Saved {len(stocks)} stocks, {len(indices)} indices to {OUTPUT}")
+
 
 if __name__ == "__main__":
     main()
