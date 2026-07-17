@@ -11,6 +11,9 @@
     "sh_down": 2085,
     "sz_up": 205,
     "sz_down": 2673,
-    "strategies": 8
+    "sh_index_pct": -3.05,
+    "sz_index_pct": -5.4,
+    "strategies": 8,
+    "accuracy": 95
   }
 ]

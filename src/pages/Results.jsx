@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { dataUrl } from '../dataUrl.js'
 
-const INDEX_NAMES = { '000001': '上证指数', '399001': '深证成指', '399006': '创业板指', '399300': '沪深300' }
-
 export default function Results() {
   const [history, setHistory] = useState([])
   const [selectedDate, setSelectedDate] = useState(null)
@@ -45,21 +43,16 @@ export default function Results() {
             {history.map(h => (
               <div key={h.date} className={'history-card' + (selectedDate === h.date ? ' active' : '')} onClick={() => loadDetail(h.date)}>
                 <div className="hist-date">{h.date}</div>
-                <div className="hist-market">
-                  <span className="up">↑{h.up}</span>
-                  <span style={{color:'var(--text-tertiary)',margin:'0 4px'}}>/</span>
-                  <span className="down">↓{h.down}</span>
-                  <span style={{color:'var(--text-tertiary)',margin:'0 4px'}}>/</span>
+                <div className="hist-index-row">
                   <span style={{color:'var(--text-tertiary)',fontSize:11}}>沪</span>
-                  <span className="up">{h.sh_up ?? '-'}</span>
-                  <span style={{color:'var(--text-tertiary)',fontSize:11}}>深</span>
-                  <span className="up">{h.sz_up ?? '-'}</span>
+                  <span className={h.sh_index_pct >= 0 ? 'up' : 'down'}>{h.sh_index_pct >= 0 ? '+' : ''}{h.sh_index_pct?.toFixed(2)}%</span>
+                  <span style={{color:'var(--text-tertiary)',fontSize:11,marginLeft:6}}>深</span>
+                  <span className={h.sz_index_pct >= 0 ? 'up' : 'down'}>{h.sz_index_pct >= 0 ? '+' : ''}{h.sz_index_pct?.toFixed(2)}%</span>
                 </div>
-                <div className="hist-detail">
-                  {h.limitUp > 0 && <span className="up">涨停{h.limitUp}</span>}
-                  {h.limitDown > 0 && <span className="down" style={{marginLeft:8}}>跌停{h.limitDown}</span>}
+                <div className="hist-accuracy">
+                  预测: <span className={h.accuracy >= 50 ? 'up' : 'down'}>{h.accuracy}%</span>
                 </div>
-                <div className="hist-strategy">{h.strategies} 个策略</div>
+                <div className="hist-strategy">{h.strategies} 策略</div>
               </div>
             ))}
           </div>
@@ -70,7 +63,7 @@ export default function Results() {
               <div className="index-row" style={{marginBottom:16}}>
                 {detail.indices?.map(idx => (
                   <div key={idx.code} className="index-card">
-                    <div className="index-name">{INDEX_NAMES[idx.code] || idx.code}</div>
+                    <div className="index-name">{idx.code === '000001' ? '上证' : idx.code === '399001' ? '深证' : idx.code === '399006' ? '创业板' : '沪深300'}</div>
                     <div className="index-price">{idx.price?.toFixed(2)}</div>
                     <div className={'index-pct ' + (idx.change_pct >= 0 ? 'up' : 'down')}>
                       {idx.change_pct >= 0 ? '+' : ''}{idx.change_pct?.toFixed(2)}%
@@ -107,7 +100,7 @@ export default function Results() {
                 </div>
               </div>
 
-              {/* 策略预测 */}
+              {/* 策略标签 */}
               <div className="strategy-tabs-wrap">
                 <div className="strategy-tabs">
                   {detail.strategies?.map((r, i) => (
@@ -124,10 +117,8 @@ export default function Results() {
                   <div className="card-header">
                     <h3>{detail.strategies[activeTab].displayName}</h3>
                     <span style={{fontSize:13,color:'var(--text-tertiary)'}}>
-                      上涨 {detail.strategies[activeTab].up} / 下跌 {detail.strategies[activeTab].down}
-                      <span className="up" style={{marginLeft:8,fontWeight:600}}>
-                        预测概率 {detail.strategies[activeTab].accuracy}%
-                      </span>
+                      命中 {detail.strategies[activeTab].up}/{detail.strategies[activeTab].stocks.length}
+                      <span className="up" style={{marginLeft:8,fontWeight:600}}>命中率 {detail.strategies[activeTab].accuracy}%</span>
                     </span>
                   </div>
                   <div className="table-wrap">
@@ -138,7 +129,8 @@ export default function Results() {
                           <th>代码</th>
                           <th>名称</th>
                           <th>评分</th>
-                          <th>当日涨跌幅</th>
+                          <th>命中</th>
+                          <th>涨跌幅</th>
                           <th>行业</th>
                           <th>价格</th>
                         </tr>
@@ -150,6 +142,7 @@ export default function Results() {
                             <td><Link to={'/stock/' + s.code} className="stock-link">{s.code}</Link></td>
                             <td>{s.name}</td>
                             <td><span className="score-badge">{s.score}</span></td>
+                            <td className={s.change_pct >= 0 ? 'up' : 'down'}>{s.change_pct >= 0 ? '✔' : '✘'}</td>
                             <td className={s.change_pct >= 0 ? 'up' : 'down'}>{s.change_pct >= 0 ? '+' : ''}{s.change_pct?.toFixed(2)}%</td>
                             <td style={{color:'var(--text-tertiary)'}}>{s.industry || '-'}</td>
                             <td className={s.change_pct >= 0 ? 'up' : 'down'}>{s.price?.toFixed(2)}</td>

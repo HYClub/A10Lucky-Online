@@ -64,6 +64,8 @@ function main() {
   if (existsSync(INDEX_FILE)) {
     try { index = JSON.parse(readFileSync(INDEX_FILE, 'utf-8')) } catch {}
   }
+  const shIdx = (archive.indices || []).find(i => i.code === '000001')
+  const szIdx = (archive.indices || []).find(i => i.code === '399001')
   const existing = index.findIndex(e => e.date === date)
   const entry = {
     date,
@@ -72,7 +74,10 @@ function main() {
     limitUp: stats.limitUp, limitDown: stats.limitDown,
     sh_up: sh.up, sh_down: sh.down,
     sz_up: sz.up, sz_down: sz.down,
+    sh_index_pct: shIdx?.change_pct,
+    sz_index_pct: szIdx?.change_pct,
     strategies: archive.strategies.length,
+    accuracy: archive.strategies.length > 0 ? Math.round(archive.strategies.reduce((a, s) => a + s.accuracy, 0) / archive.strategies.length) : 0,
   }
   if (existing >= 0) index[existing] = entry
   else index.push(entry)
