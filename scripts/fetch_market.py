@@ -2,17 +2,18 @@
 import json
 import os
 import urllib.request
-import urllib.parse
 from datetime import datetime, timezone, timedelta
 
 CST = timezone(timedelta(hours=8))
 OUTPUT = "docs/data/market/latest.json"
 
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Referer": "https://quote.eastmoney.com/",
+}
+
 def fetch_json(url):
-    req = urllib.request.Request(url, headers={
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Referer": "https://quote.eastmoney.com/",
-    })
+    req = urllib.request.Request(url, headers=HEADERS)
     with urllib.request.urlopen(req, timeout=15) as r:
         return json.loads(r.read().decode("utf-8"))
 
@@ -43,31 +44,37 @@ def fetch_stocks():
     return stocks
 
 def fetch_indices():
-    codes = "1.000001,0.399001,0.399006"
-    url = (f"https://push2.eastmoney.com/api/qt/ulist.np/get"
-           f"?fields=f2,f3,f4,f12,f14&secids={urllib.parse.quote(codes)}")
-    data = fetch_json(url)
-    items = data.get("data", {}).get("diff", [])
-    return [{
-        "code": str(item.get("f12", "")),
-        "name": str(item.get("f14", "")),
-        "price": item.get("f2"),
-        "change_pct": item.get("f3"),
-        "change_amount": item.get("f4"),
-    } for item in items]
+    url = ("https://push2.eastmoney.com/api/qt/ulist.np/get"
+           "?fields=f2,f3,f4,f12,f14"
+           "&secids=1.000001,0.399001,0.399006")
+    try:
+        data = fetch_json(url)
+        items = data.get("data", {}).get("diff", [])
+        return [{
+            "code": str(item.get("f12", "")),
+            "name": str(item.get("f14", "")),
+            "price": item.get("f2"),
+            "change_pct": item.get("f3"),
+            "change_amount": item.get("f4"),
+        } for item in items]
+    except Exception as e:
+        print(f"Warning: failed to fetch indices: {e}")
+        return []
 
 def main():
     now = datetime.now(CST)
+    stocks = fetch_stocks()
+    indices = fetch_indices()
     data = {
         "timestamp": now.strftime("%Y-%m-%dT%H:%M:%S"),
         "date": now.strftime("%Y-%m-%d"),
-        "indices": fetch_indices(),
-        "stocks": fetch_stocks(),
+        "indices": indices,
+        "stocks": stocks,
     }
     os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"Saved {len(data['stocks'])} stocks to {OUTPUT}")
+    print(f"Saved {len(stocks)} stocks, {len(indices)} indices to {OUTPUT}")
 
 if __name__ == "__main__":
     main()
