@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-07-17",
-    "count": 5540
+    "count": 5540,
+    "up": 405,
+    "down": 4758,
+    "flat": 377,
+    "limitUp": 39,
+    "limitDown": 635,
+    "strategies": 8
   }
 ]
