@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-17T15:22:41",
+  "timestamp": "2026-07-17T17:36:50",
   "date": "2026-07-17",
   "indices": [
     {
@@ -67,8 +67,8 @@
     {
       "code": "000003",
       "name": "PT金田A",
-      "price": null,
-      "change_pct": null,
+      "price": 2.71,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -76,15 +76,15 @@
       "low": null,
       "open": null,
       "pre_close": 2.71,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 9.04,
+      "pb": -0.27,
       "industry": ""
     },
     {
       "code": "000004",
       "name": "国华退",
-      "price": null,
-      "change_pct": null,
+      "price": 0.51,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -92,15 +92,15 @@
       "low": null,
       "open": null,
       "pre_close": 0.51,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 0.68,
+      "pb": 0.78,
       "industry": ""
     },
     {
       "code": "000005",
       "name": "ST星源",
-      "price": null,
-      "change_pct": null,
+      "price": 0.83,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -108,8 +108,8 @@
       "low": null,
       "open": null,
       "pre_close": 0.83,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 8.79,
+      "pb": 0.73,
       "industry": ""
     },
     {
@@ -227,8 +227,8 @@
     {
       "code": "000013",
       "name": "*ST石化A",
-      "price": null,
-      "change_pct": null,
+      "price": 2.47,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -236,8 +236,8 @@
       "low": null,
       "open": null,
       "pre_close": 2.47,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 7.49,
+      "pb": -0.23,
       "industry": ""
     },
     {
@@ -259,8 +259,8 @@
     {
       "code": "000015",
       "name": "PT中浩A",
-      "price": null,
-      "change_pct": null,
+      "price": 6.85,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -268,8 +268,8 @@
       "low": null,
       "open": null,
       "pre_close": 6.85,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 10.77,
+      "pb": -0.55,
       "industry": ""
     },
     {
@@ -307,8 +307,8 @@
     {
       "code": "000018",
       "name": "神城A退",
-      "price": null,
-      "change_pct": null,
+      "price": 0.27,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -316,8 +316,8 @@
       "low": null,
       "open": null,
       "pre_close": 0.27,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 4.59,
+      "pb": -0.35,
       "industry": ""
     },
     {
@@ -371,8 +371,8 @@
     {
       "code": "000023",
       "name": "*ST深天",
-      "price": null,
-      "change_pct": null,
+      "price": 1.72,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -380,15 +380,15 @@
       "low": null,
       "open": null,
       "pre_close": 1.72,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 2.39,
+      "pb": -2.66,
       "industry": ""
     },
     {
       "code": "000024",
       "name": "招商地产",
-      "price": null,
-      "change_pct": null,
+      "price": 40.5,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -396,8 +396,8 @@
       "low": null,
       "open": null,
       "pre_close": 40.5,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 1043.26,
+      "pb": 3.17,
       "industry": ""
     },
     {
@@ -531,8 +531,8 @@
     {
       "code": "000033",
       "name": "新都退",
-      "price": null,
-      "change_pct": null,
+      "price": 1.7,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -540,8 +540,8 @@
       "low": null,
       "open": null,
       "pre_close": 1.7,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 7.31,
+      "pb": 31.1,
       "industry": ""
     },
     {
@@ -611,8 +611,8 @@
     {
       "code": "000038",
       "name": "大通退",
-      "price": null,
-      "change_pct": null,
+      "price": 0.52,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -620,8 +620,8 @@
       "low": null,
       "open": null,
       "pre_close": 0.52,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 2.72,
+      "pb": 0.11,
       "industry": ""
     },
     {
@@ -643,8 +643,8 @@
     {
       "code": "000040",
       "name": "*ST旭蓝",
-      "price": null,
-      "change_pct": null,
+      "price": 0.49,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -652,8 +652,8 @@
       "low": null,
       "open": null,
       "pre_close": 0.49,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 7.29,
+      "pb": 0.07,
       "industry": ""
     },
     {
@@ -691,8 +691,8 @@
     {
       "code": "000046",
       "name": "*ST泛海",
-      "price": null,
-      "change_pct": null,
+      "price": 0.38,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -700,15 +700,15 @@
       "low": null,
       "open": null,
       "pre_close": 0.38,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 19.75,
+      "pb": -0.16,
       "industry": ""
     },
     {
       "code": "000047",
       "name": "ST中侨",
-      "price": null,
-      "change_pct": null,
+      "price": 8.03,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -716,8 +716,8 @@
       "low": null,
       "open": null,
       "pre_close": 8.03,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 9.67,
+      "pb": -0.78,
       "industry": ""
     },
     {
@@ -1091,8 +1091,8 @@
     {
       "code": "000150",
       "name": "*ST宜康",
-      "price": null,
-      "change_pct": null,
+      "price": 0.51,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -1100,8 +1100,8 @@
       "low": null,
       "open": null,
       "pre_close": 0.51,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 4.48,
+      "pb": -0.52,
       "industry": ""
     },
     {
@@ -1363,8 +1363,8 @@
     {
       "code": "000405",
       "name": "ST鑫光",
-      "price": null,
-      "change_pct": null,
+      "price": 2.86,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -1372,15 +1372,15 @@
       "low": null,
       "open": null,
       "pre_close": 2.86,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 10.89,
+      "pb": -1.37,
       "industry": ""
     },
     {
       "code": "000406",
       "name": "石油大明",
-      "price": null,
-      "change_pct": null,
+      "price": 10.12,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -1388,8 +1388,8 @@
       "low": null,
       "open": null,
       "pre_close": 10.12,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 36.84,
+      "pb": 1.95,
       "industry": ""
     },
     {
@@ -1475,8 +1475,8 @@
     {
       "code": "000412",
       "name": "ST五环",
-      "price": null,
-      "change_pct": null,
+      "price": 2.89,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -1484,15 +1484,15 @@
       "low": null,
       "open": null,
       "pre_close": 2.89,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 8.35,
+      "pb": -6.75,
       "industry": ""
     },
     {
       "code": "000413",
       "name": "ST旭电",
-      "price": null,
-      "change_pct": null,
+      "price": 0.37,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -1500,8 +1500,8 @@
       "low": null,
       "open": null,
       "pre_close": 0.37,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 20.84,
+      "pb": 0.1,
       "industry": ""
     },
     {
@@ -1523,8 +1523,8 @@
     {
       "code": "000416",
       "name": "*ST民控",
-      "price": null,
-      "change_pct": null,
+      "price": 0.45,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -1532,8 +1532,8 @@
       "low": null,
       "open": null,
       "pre_close": 0.45,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 2.39,
+      "pb": 0.33,
       "industry": ""
     },
     {
@@ -1555,8 +1555,8 @@
     {
       "code": "000418",
       "name": "小天鹅A",
-      "price": null,
-      "change_pct": null,
+      "price": 57.39,
+      "change_pct": 0.0,
       "turnover_pct": 0.0,
       "pe_ttm": null,
       "volume_ratio": null,
@@ -1564,8 +1564,8 @@
       "low": null,
       "open": null,
       "pre_close": 57.39,
-      "market_cap_yi": null,
-      "pb": null,
+      "market_cap_yi": 362.98,
+      "pb": 4.06,
       "industry": ""
     },
     {
@@ -37365,15 +37365,15 @@
       "name": "森霸传感",
       "price": 8.89,
       "change_pct": -4.61,
-      "turnover_pct": 1.73,
-      "pe_ttm": 77.56,
+      "turnover_pct": 1.71,
+      "pe_ttm": 76.7,
       "volume_ratio": 1.07,
       "high": 9.41,
       "low": 8.87,
       "open": 9.31,
       "pre_close": 9.32,
-      "market_cap_yi": 25.13515208,
-      "pb": 2.66,
+      "market_cap_yi": 24.85584677,
+      "pb": 2.63,
       "industry": "光学光电子"
     },
     {
@@ -41325,7 +41325,7 @@
       "open": 13.3,
       "pre_close": 13.34,
       "market_cap_yi": 34.0826449,
-      "pb": 3.24,
+      "pb": 3.31,
       "industry": "专业服务"
     },
     {
@@ -51613,7 +51613,7 @@
       "open": 12.89,
       "pre_close": 12.95,
       "market_cap_yi": 247.56690504,
-      "pb": 2.09,
+      "pb": 2.1,
       "industry": "生物制品"
     },
     {
@@ -80870,14 +80870,14 @@
       "price": 251.0,
       "change_pct": -1.57,
       "turnover_pct": 11.99,
-      "pe_ttm": 327.99,
+      "pe_ttm": 190.98,
       "volume_ratio": 0.99,
       "high": 274.99,
       "low": 239.7,
       "open": 252.0,
       "pre_close": 255.0,
       "market_cap_yi": 1328.82353015,
-      "pb": 23.05,
+      "pb": 22.12,
       "industry": "半导体"
     },
     {
