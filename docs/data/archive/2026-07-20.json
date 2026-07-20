@@ -1,0 +1,772 @@
+{
+  "date": "2026-07-20",
+  "timestamp": "2026-07-20T11:01:45",
+  "indices": [
+    {
+      "code": "000001",
+      "name": "上证指数",
+      "price": 3818.21,
+      "change_pct": 1.44,
+      "change_amount": 54.06
+    },
+    {
+      "code": "399001",
+      "name": "深证成指",
+      "price": 13816.58,
+      "change_pct": 0.8,
+      "change_amount": 109.7
+    },
+    {
+      "code": "399006",
+      "name": "创业板指",
+      "price": 3501.08,
+      "change_pct": 2.11,
+      "change_amount": 72.45
+    },
+    {
+      "code": "399300",
+      "name": "沪深300",
+      "price": 4615.68,
+      "change_pct": 1.91,
+      "change_amount": 86.58
+    }
+  ],
+  "market": {
+    "up": 3449,
+    "down": 1669,
+    "flat": 422,
+    "limitUp": 73,
+    "limitDown": 53,
+    "total": 5540
+  },
+  "sh": {
+    "up": 1536,
+    "down": 743,
+    "flat": 179,
+    "limitUp": 34,
+    "limitDown": 26,
+    "total": 2458
+  },
+  "sz": {
+    "up": 1913,
+    "down": 926,
+    "flat": 243,
+    "limitUp": 39,
+    "limitDown": 27,
+    "total": 3082
+  },
+  "strategies": [
+    {
+      "name": "all_factor",
+      "displayName": "全因子",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300209",
+          "name": "行云科技",
+          "score": 69,
+          "price": 25.94,
+          "change_pct": 15.96,
+          "industry": "软件开发"
+        },
+        {
+          "code": "600938",
+          "name": "中国海油",
+          "score": 68,
+          "price": 31.3,
+          "change_pct": 8.04,
+          "industry": "油气开采Ⅱ"
+        },
+        {
+          "code": "000554",
+          "name": "泰山石油",
+          "score": 67,
+          "price": 6.85,
+          "change_pct": 6.2,
+          "industry": "炼化及贸易"
+        },
+        {
+          "code": "001258",
+          "name": "立新能源",
+          "score": 67,
+          "price": 9.1,
+          "change_pct": 10.04,
+          "industry": "电力"
+        },
+        {
+          "code": "002432",
+          "name": "九安医疗",
+          "score": 67,
+          "price": 83.84,
+          "change_pct": 5.86,
+          "industry": "医疗器械"
+        },
+        {
+          "code": "300368",
+          "name": "汇金股份",
+          "score": 67,
+          "price": 9.41,
+          "change_pct": 20.03,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "300534",
+          "name": "陇神戎发",
+          "score": 67,
+          "price": 12.03,
+          "change_pct": 19.94,
+          "industry": "中药Ⅱ"
+        },
+        {
+          "code": "300779",
+          "name": "惠城环保",
+          "score": 67,
+          "price": 55.9,
+          "change_pct": 12.2,
+          "industry": "环境治理"
+        },
+        {
+          "code": "300795",
+          "name": "米奥会展",
+          "score": 67,
+          "price": 11.71,
+          "change_pct": 11.74,
+          "industry": "专业服务"
+        },
+        {
+          "code": "301190",
+          "name": "善水科技",
+          "score": 67,
+          "price": 15.9,
+          "change_pct": 9.5,
+          "industry": "化学原料"
+        }
+      ]
+    },
+    {
+      "name": "alpha_blend",
+      "displayName": "板块轮动+技术",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "688057",
+          "name": "金达莱",
+          "score": 73,
+          "price": 16.81,
+          "change_pct": 19.99,
+          "industry": "环境治理"
+        },
+        {
+          "code": "300209",
+          "name": "行云科技",
+          "score": 71,
+          "price": 25.94,
+          "change_pct": 15.96,
+          "industry": "软件开发"
+        },
+        {
+          "code": "300368",
+          "name": "汇金股份",
+          "score": 70,
+          "price": 9.41,
+          "change_pct": 20.03,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "300534",
+          "name": "陇神戎发",
+          "score": 70,
+          "price": 12.03,
+          "change_pct": 19.94,
+          "industry": "中药Ⅱ"
+        },
+        {
+          "code": "301228",
+          "name": "实朴检测",
+          "score": 70,
+          "price": 52.59,
+          "change_pct": 13.59,
+          "industry": "专业服务"
+        },
+        {
+          "code": "300164",
+          "name": "通源石油",
+          "score": 69,
+          "price": 11.63,
+          "change_pct": 10.97,
+          "industry": "油服工程"
+        },
+        {
+          "code": "300779",
+          "name": "惠城环保",
+          "score": 69,
+          "price": 55.9,
+          "change_pct": 12.2,
+          "industry": "环境治理"
+        },
+        {
+          "code": "300795",
+          "name": "米奥会展",
+          "score": 69,
+          "price": 11.71,
+          "change_pct": 11.74,
+          "industry": "专业服务"
+        },
+        {
+          "code": "688679",
+          "name": "通源环境",
+          "score": 69,
+          "price": 31.53,
+          "change_pct": 17.3,
+          "industry": "环境治理"
+        },
+        {
+          "code": "000889",
+          "name": "中嘉博创",
+          "score": 68,
+          "price": 3.45,
+          "change_pct": 9.87,
+          "industry": "通信服务"
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "displayName": "多因子均衡",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300534",
+          "name": "陇神戎发",
+          "score": 83,
+          "price": 12.03,
+          "change_pct": 19.94,
+          "industry": "中药Ⅱ"
+        },
+        {
+          "code": "300368",
+          "name": "汇金股份",
+          "score": 82,
+          "price": 9.41,
+          "change_pct": 20.03,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "300209",
+          "name": "行云科技",
+          "score": 81,
+          "price": 25.94,
+          "change_pct": 15.96,
+          "industry": "软件开发"
+        },
+        {
+          "code": "688679",
+          "name": "通源环境",
+          "score": 80,
+          "price": 31.53,
+          "change_pct": 17.3,
+          "industry": "环境治理"
+        },
+        {
+          "code": "300951",
+          "name": "博硕科技",
+          "score": 79,
+          "price": 40.92,
+          "change_pct": 15.79,
+          "industry": "消费电子"
+        },
+        {
+          "code": "688057",
+          "name": "金达莱",
+          "score": 79,
+          "price": 16.81,
+          "change_pct": 19.99,
+          "industry": "环境治理"
+        },
+        {
+          "code": "688702",
+          "name": "盛科通信-U",
+          "score": 79,
+          "price": 355,
+          "change_pct": 13.78,
+          "industry": "半导体"
+        },
+        {
+          "code": "300040",
+          "name": "九洲集团",
+          "score": 78,
+          "price": 6.43,
+          "change_pct": 11.25,
+          "industry": "电力"
+        },
+        {
+          "code": "300795",
+          "name": "米奥会展",
+          "score": 78,
+          "price": 11.71,
+          "change_pct": 11.74,
+          "industry": "专业服务"
+        },
+        {
+          "code": "301218",
+          "name": "华是科技",
+          "score": 78,
+          "price": 40.1,
+          "change_pct": 11.39,
+          "industry": "IT服务Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "fund_momentum",
+      "displayName": "资金动量",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000037",
+          "name": "深南电A",
+          "score": 61,
+          "price": 9.91,
+          "change_pct": 7.72,
+          "industry": "电力"
+        },
+        {
+          "code": "000554",
+          "name": "泰山石油",
+          "score": 61,
+          "price": 6.85,
+          "change_pct": 6.2,
+          "industry": "炼化及贸易"
+        },
+        {
+          "code": "000722",
+          "name": "湖南发展",
+          "score": 61,
+          "price": 14.74,
+          "change_pct": 6.58,
+          "industry": "电力"
+        },
+        {
+          "code": "000759",
+          "name": "中百集团",
+          "score": 61,
+          "price": 7.33,
+          "change_pct": 5.01,
+          "industry": "一般零售"
+        },
+        {
+          "code": "001206",
+          "name": "依依股份",
+          "score": 61,
+          "price": 23.37,
+          "change_pct": 4.66,
+          "industry": "个护用品"
+        },
+        {
+          "code": "001257",
+          "name": "盛龙股份",
+          "score": 61,
+          "price": 25.01,
+          "change_pct": 3.95,
+          "industry": "小金属"
+        },
+        {
+          "code": "002432",
+          "name": "九安医疗",
+          "score": 61,
+          "price": 83.84,
+          "change_pct": 5.86,
+          "industry": "医疗器械"
+        },
+        {
+          "code": "002491",
+          "name": "通鼎互联",
+          "score": 61,
+          "price": 17.71,
+          "change_pct": 3.21,
+          "industry": "通信设备"
+        },
+        {
+          "code": "300040",
+          "name": "九洲集团",
+          "score": 61,
+          "price": 6.43,
+          "change_pct": 11.25,
+          "industry": "电力"
+        },
+        {
+          "code": "300105",
+          "name": "龙源技术",
+          "score": 61,
+          "price": 9.56,
+          "change_pct": 5.05,
+          "industry": "其他电源设备Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "insider_track",
+      "displayName": "龙虎榜+资金流",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000503",
+          "name": "国新健康",
+          "score": 70,
+          "price": 6.82,
+          "change_pct": 6.07,
+          "industry": "软件开发"
+        },
+        {
+          "code": "000554",
+          "name": "泰山石油",
+          "score": 70,
+          "price": 6.85,
+          "change_pct": 6.2,
+          "industry": "炼化及贸易"
+        },
+        {
+          "code": "000617",
+          "name": "中油资本",
+          "score": 70,
+          "price": 6.85,
+          "change_pct": 3.16,
+          "industry": "多元金融"
+        },
+        {
+          "code": "000833",
+          "name": "粤桂股份",
+          "score": 70,
+          "price": 20.01,
+          "change_pct": 6.38,
+          "industry": "综合Ⅱ"
+        },
+        {
+          "code": "000911",
+          "name": "*ST广糖",
+          "score": 70,
+          "price": 4.07,
+          "change_pct": 3.83,
+          "industry": "农产品加工"
+        },
+        {
+          "code": "000968",
+          "name": "蓝焰控股",
+          "score": 70,
+          "price": 6.89,
+          "change_pct": 4.39,
+          "industry": "油气开采Ⅱ"
+        },
+        {
+          "code": "001258",
+          "name": "立新能源",
+          "score": 70,
+          "price": 9.1,
+          "change_pct": 10.04,
+          "industry": "电力"
+        },
+        {
+          "code": "002082",
+          "name": "ST万邦",
+          "score": 70,
+          "price": 11.1,
+          "change_pct": 2.59,
+          "industry": "化学制药"
+        },
+        {
+          "code": "002136",
+          "name": "安 纳 达",
+          "score": 70,
+          "price": 11.76,
+          "change_pct": 2.98,
+          "industry": "化学原料"
+        },
+        {
+          "code": "002380",
+          "name": "科远智慧",
+          "score": 70,
+          "price": 27.69,
+          "change_pct": 5.21,
+          "industry": "IT服务Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "reversal",
+      "displayName": "超跌反转",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300368",
+          "name": "汇金股份",
+          "score": 82,
+          "price": 9.41,
+          "change_pct": 20.03,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "300534",
+          "name": "陇神戎发",
+          "score": 82,
+          "price": 12.03,
+          "change_pct": 19.94,
+          "industry": "中药Ⅱ"
+        },
+        {
+          "code": "688057",
+          "name": "金达莱",
+          "score": 81,
+          "price": 16.81,
+          "change_pct": 19.99,
+          "industry": "环境治理"
+        },
+        {
+          "code": "688679",
+          "name": "通源环境",
+          "score": 81,
+          "price": 31.53,
+          "change_pct": 17.3,
+          "industry": "环境治理"
+        },
+        {
+          "code": "300209",
+          "name": "行云科技",
+          "score": 80,
+          "price": 25.94,
+          "change_pct": 15.96,
+          "industry": "软件开发"
+        },
+        {
+          "code": "300951",
+          "name": "博硕科技",
+          "score": 80,
+          "price": 40.92,
+          "change_pct": 15.79,
+          "industry": "消费电子"
+        },
+        {
+          "code": "301228",
+          "name": "实朴检测",
+          "score": 79,
+          "price": 52.59,
+          "change_pct": 13.59,
+          "industry": "专业服务"
+        },
+        {
+          "code": "301273",
+          "name": "瑞晨环保",
+          "score": 79,
+          "price": 31.41,
+          "change_pct": 12.94,
+          "industry": "通用设备"
+        },
+        {
+          "code": "688702",
+          "name": "盛科通信-U",
+          "score": 79,
+          "price": 355,
+          "change_pct": 13.78,
+          "industry": "半导体"
+        },
+        {
+          "code": "300040",
+          "name": "九洲集团",
+          "score": 78,
+          "price": 6.43,
+          "change_pct": 11.25,
+          "industry": "电力"
+        }
+      ]
+    },
+    {
+      "name": "smart_money",
+      "displayName": "量价异动",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300209",
+          "name": "行云科技",
+          "score": 76,
+          "price": 25.94,
+          "change_pct": 15.96,
+          "industry": "软件开发"
+        },
+        {
+          "code": "300795",
+          "name": "米奥会展",
+          "score": 74,
+          "price": 11.71,
+          "change_pct": 11.74,
+          "industry": "专业服务"
+        },
+        {
+          "code": "300515",
+          "name": "三德科技",
+          "score": 73,
+          "price": 14.86,
+          "change_pct": 20.03,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300534",
+          "name": "陇神戎发",
+          "score": 73,
+          "price": 12.03,
+          "change_pct": 19.94,
+          "industry": "中药Ⅱ"
+        },
+        {
+          "code": "688702",
+          "name": "盛科通信-U",
+          "score": 73,
+          "price": 355,
+          "change_pct": 13.78,
+          "industry": "半导体"
+        },
+        {
+          "code": "600881",
+          "name": "亚泰集团",
+          "score": 72,
+          "price": 2.02,
+          "change_pct": 8.6,
+          "industry": "综合Ⅱ"
+        },
+        {
+          "code": "000554",
+          "name": "泰山石油",
+          "score": 71,
+          "price": 6.85,
+          "change_pct": 6.2,
+          "industry": "炼化及贸易"
+        },
+        {
+          "code": "000938",
+          "name": "紫光股份",
+          "score": 71,
+          "price": 38.64,
+          "change_pct": 9.99,
+          "industry": "IT服务Ⅱ"
+        },
+        {
+          "code": "001258",
+          "name": "立新能源",
+          "score": 71,
+          "price": 9.1,
+          "change_pct": 10.04,
+          "industry": "电力"
+        },
+        {
+          "code": "001399",
+          "name": "惠科股份",
+          "score": 71,
+          "price": 25.86,
+          "change_pct": 10,
+          "industry": "光学光电子"
+        }
+      ]
+    },
+    {
+      "name": "value_pick",
+      "displayName": "价值精选",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "score": 80,
+          "price": 10.91,
+          "change_pct": 1.21,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "score": 80,
+          "price": 9.04,
+          "change_pct": 1.92,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "score": 80,
+          "price": 6.96,
+          "change_pct": 0.72,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600016",
+          "name": "民生银行",
+          "score": 80,
+          "price": 3.52,
+          "change_pct": 1.73,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600104",
+          "name": "上汽集团",
+          "score": 80,
+          "price": 10.46,
+          "change_pct": 0.67,
+          "industry": "乘用车"
+        },
+        {
+          "code": "601166",
+          "name": "兴业银行",
+          "score": 80,
+          "price": 18.14,
+          "change_pct": 2.2,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601169",
+          "name": "北京银行",
+          "score": 80,
+          "price": 5.08,
+          "change_pct": 0.99,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601390",
+          "name": "中国中铁",
+          "score": 80,
+          "price": 4.49,
+          "change_pct": 1.35,
+          "industry": "基础建设"
+        },
+        {
+          "code": "601668",
+          "name": "中国建筑",
+          "score": 80,
+          "price": 4.59,
+          "change_pct": 1.32,
+          "industry": "房屋建设Ⅱ"
+        },
+        {
+          "code": "601800",
+          "name": "中国交建",
+          "score": 80,
+          "price": 6.17,
+          "change_pct": 1.65,
+          "industry": "基础建设"
+        }
+      ]
+    }
+  ]
+}

@@ -49,8 +49,12 @@ export default function Results() {
                   <span style={{color:'var(--text-tertiary)',fontSize:11,marginLeft:6}}>深</span>
                   <span className={h.sz_index_pct >= 0 ? 'up' : 'down'}>{h.sz_index_pct >= 0 ? '+' : ''}{h.sz_index_pct?.toFixed(2)}%</span>
                 </div>
-                <div className="hist-accuracy" style={{color:'var(--text-tertiary)'}}>
-                  预测: 次日验证
+                <div className="hist-accuracy">
+                  {h.accuracy != null ? (
+                    <>预测: <span className={h.accuracy >= 50 ? 'up' : 'down'}>{h.accuracy}%</span></>
+                  ) : (
+                    <span style={{color:'var(--text-tertiary)'}}>预测: 待验证</span>
+                  )}
                 </div>
                 <div className="hist-strategy">{h.strategies} 策略</div>
               </div>
