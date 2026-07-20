@@ -1,7 +1,7 @@
 name: Market Data
 on:
   schedule:
-    - cron: '*/5 2-6 * * 1-5'
+    - cron: '*/5 1,2,3,4,5,6 * * 1-5'
   workflow_dispatch:
 permissions:
   contents: write
