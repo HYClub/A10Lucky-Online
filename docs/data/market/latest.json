@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-20T15:19:57",
+  "timestamp": "2026-07-20T16:06:24",
   "date": "2026-07-20",
   "indices": [
     {
@@ -51959,7 +51959,7 @@
       "open": 122.0,
       "pre_close": 116.62,
       "market_cap_yi": 127.153423,
-      "pb": 11.75,
+      "pb": 8.25,
       "industry": "电子化学品Ⅱ"
     },
     {
@@ -72800,14 +72800,14 @@
       "price": 35.4,
       "change_pct": -2.72,
       "turnover_pct": 2.28,
-      "pe_ttm": 297.7,
+      "pe_ttm": 3800.31,
       "volume_ratio": 0.96,
       "high": 36.84,
       "low": 35.0,
       "open": 36.2,
       "pre_close": 36.39,
       "market_cap_yi": 96.41397444,
-      "pb": 6.57,
+      "pb": 6.42,
       "industry": "旅游及景区"
     },
     {
@@ -73568,14 +73568,14 @@
       "price": 10.2,
       "change_pct": -3.13,
       "turnover_pct": 11.14,
-      "pe_ttm": 16.67,
+      "pe_ttm": 13.4,
       "volume_ratio": 0.79,
       "high": 10.77,
       "low": 10.0,
       "open": 10.53,
       "pre_close": 10.53,
       "market_cap_yi": 140.31274581,
-      "pb": 3.05,
+      "pb": 2.88,
       "industry": "航运港口"
     },
     {
@@ -81088,14 +81088,14 @@
       "price": 6.05,
       "change_pct": -1.94,
       "turnover_pct": 7.87,
-      "pe_ttm": 56.08,
+      "pe_ttm": 43.15,
       "volume_ratio": 2.2,
       "high": 6.36,
       "low": 5.88,
       "open": 6.25,
       "pre_close": 6.17,
       "market_cap_yi": 40.94841828,
-      "pb": 1.07,
+      "pb": 1.06,
       "industry": "化学制品"
     },
     {
