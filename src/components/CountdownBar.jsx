@@ -1,46 +1,35 @@
 import { useState, useEffect, useRef } from 'react'
 import { dataUrl } from '../dataUrl.js'
 
-function parseMeta() {
-  return fetch(dataUrl('/data/market/meta.json?t=') + Date.now())
-    .then(r => r.ok ? r.json() : null)
-}
-
 export default function CountdownBar() {
   const [nextRefresh, setNextRefresh] = useState(null)
   const [now, setNow] = useState(Date.now())
-  const [polling, setPolling] = useState(false)
   const fetched = useRef(false)
+  const pollId = useRef(null)
 
-  useEffect(() => {
-    if (fetched.current) return
-    fetched.current = true
-    parseMeta().then(d => {
-      if (d?._updated_at) setNextRefresh(new Date(d._updated_at).getTime() + 5 * 60 * 1000)
-    })
-  }, [])
-
-  useEffect(() => {
-    const id = setInterval(() => setNow(Date.now()), 1000)
-    return () => clearInterval(id)
-  }, [])
-
-  /* poll for new meta when countdown expires */
-  useEffect(() => {
-    if (!nextRefresh || now < nextRefresh) return
-    setPolling(true)
-    const id = setInterval(() => {
-      parseMeta().then(d => {
-        if (d?._updated_at) {
-          const t = new Date(d._updated_at).getTime() + 5 * 60 * 1000
-          if (t !== nextRefresh) {
-            setNextRefresh(t)
-            setPolling(false)
-          }
-        }
+  const setFromMeta = () => {
+    fetch(dataUrl('/data/market/meta.json?t=') + Date.now())
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (d?._updated_at) setNextRefresh(new Date(d._updated_at).getTime() + 5 * 60 * 1000)
       })
-    }, 3000)
-    return () => { clearInterval(id); setPolling(false) }
+  }
+
+  useEffect(() => {
+    if (!fetched.current) { fetched.current = true; setFromMeta() }
+    const tick = setInterval(() => setNow(Date.now()), 1000)
+    return () => clearInterval(tick)
+  }, [])
+
+  /* poll for new data when countdown expires */
+  useEffect(() => {
+    if (nextRefresh && now >= nextRefresh) {
+      if (!pollId.current) {
+        pollId.current = setInterval(setFromMeta, 3000)
+      }
+    } else {
+      if (pollId.current) { clearInterval(pollId.current); pollId.current = null }
+    }
   }, [nextRefresh, now])
 
   if (!nextRefresh) return null
@@ -52,9 +41,7 @@ export default function CountdownBar() {
 
   return (
     <div className="countdown-bar">
-      <span className="countdown-label">
-        {polling ? '···' : `${m}:${s}`}
-      </span>
+      <span className="countdown-label">{m}:{s}</span>
     </div>
   )
 }
