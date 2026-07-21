@@ -1,2 +1,2 @@
-const BASE = import.meta.env.BASE_URL || '/'
-export const dataUrl = (path) => `${BASE}${path.replace(/^\//, '')}`
+const WORKER = 'https://a10lucky-data.hyclub.workers.dev'
+export const dataUrl = (path) => `${WORKER}${path}`
