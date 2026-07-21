@@ -1,6 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import CountdownBar from './components/CountdownBar.jsx'
+import { MarketDataProvider } from './hooks/MarketDataContext.jsx'
+import { useSharedMarketData } from './hooks/MarketDataContext.jsx'
 import Home from './pages/Home.jsx'
 import Market from './pages/Market.jsx'
 import Favorites from './pages/Favorites.jsx'
@@ -8,11 +10,12 @@ import Screener from './pages/Screener.jsx'
 import Results from './pages/Results.jsx'
 import StockDetail from './pages/StockDetail.jsx'
 
-export default function App() {
+function AppInner() {
+  const { refresh, refreshing } = useSharedMarketData()
   return (
     <div className="app">
       <Nav />
-      <CountdownBar />
+      <CountdownBar onRefresh={refresh} refreshing={refreshing} />
       <main className="main">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,5 +28,13 @@ export default function App() {
         </Routes>
       </main>
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <MarketDataProvider>
+      <AppInner />
+    </MarketDataProvider>
   )
 }

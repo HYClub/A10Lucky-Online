@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { dataUrl } from '../dataUrl.js'
+import { useSharedMarketData } from '../hooks/MarketDataContext.jsx'
 
 const dimNames = { technical: '技术', momentum: '动量', volume: '成交量', valuation: '估值', sector: '板块', pattern: '形态', volatility: '波动率', sentiment: '情绪', fund_flow: '资金流', trend_strength: '趋势强度', correlation: '相关性', alpha: 'Alpha因子' }
 
@@ -8,22 +8,12 @@ function safeScore(v) { return v != null ? v : '-' }
 
 export default function StockDetail() {
   const { code } = useParams()
-  const [stratData, setStratData] = useState(null)
-  const [marketData, setMarketData] = useState(null)
+  const { marketData, strategies } = useSharedMarketData()
   const [favs, setFavs] = useState(() => {
     try { return JSON.parse(localStorage.getItem('a10lucky_favs') || '[]') }
     catch { return [] }
   })
   const [activeResult, setActiveResult] = useState(null)
-
-  useEffect(() => {
-    fetch(dataUrl('/data/strategies/latest.json?t=') + Date.now())
-      .then(r => r.ok ? r.json() : null)
-      .then(d => d && setStratData(d))
-    fetch(dataUrl('/data/market/latest.json?t=') + Date.now())
-      .then(r => r.ok ? r.json() : null)
-      .then(d => d && setMarketData(d))
-  }, [])
 
   const toggleFav = () => {
     setFavs(prev => {
@@ -45,12 +35,12 @@ export default function StockDetail() {
   }, [marketData, stock])
 
   const strategyScores = useMemo(() => {
-    if (!stratData?.results) return []
-    return stratData.results.map(r => {
+    if (!strategies?.length) return []
+    return strategies.map(r => {
       const found = r.stocks.find(s => s.stock.code === code)
       return { name: r.displayName, key: r.name, totalScore: found?.totalScore, dimScores: found?.dimScores || {} }
     })
-  }, [stratData, code])
+  }, [strategies, code])
 
   useEffect(() => {
     if (strategyScores.length > 0) setActiveResult(strategyScores[0].key)

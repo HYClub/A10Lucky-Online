@@ -1,11 +1,11 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { dataUrl } from '../dataUrl.js'
+import { useSharedMarketData } from '../hooks/MarketDataContext.jsx'
 
 const INDEX_NAMES = { '000001': '上证指数', '399001': '深证成指', '399006': '创业板指', '399300': '沪深300' }
 
 export default function Market() {
-  const [marketData, setMarketData] = useState(null)
+  const { marketData } = useSharedMarketData()
   const [favs, setFavs] = useState(() => {
     try { return JSON.parse(localStorage.getItem('a10lucky_favs') || '[]') }
     catch { return [] }
@@ -13,13 +13,6 @@ export default function Market() {
   const [tab, setTab] = useState('all')
   const [sortField, setSortField] = useState('change_pct')
   const [sortDir, setSortDir] = useState('desc')
-
-  useEffect(() => {
-    fetch(dataUrl('/data/market/latest.json?t=') + Date.now())
-      .then(r => r.ok ? r.json() : null)
-      .then(d => d && setMarketData(d))
-      .catch(() => {})
-  }, [])
 
   const toggleFav = (code) => {
     setFavs(prev => {

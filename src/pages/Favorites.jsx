@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { dataUrl } from '../dataUrl.js'
+import { useSharedMarketData } from '../hooks/MarketDataContext.jsx'
 
 function StockSearch({ stocks, favs, onToggle }) {
   const [query, setQuery] = useState('')
@@ -74,18 +74,11 @@ function StockSearch({ stocks, favs, onToggle }) {
 }
 
 export default function Favorites() {
-  const [marketData, setMarketData] = useState(null)
+  const { marketData } = useSharedMarketData()
   const [favs, setFavs] = useState(() => {
     try { return JSON.parse(localStorage.getItem('a10lucky_favs') || '[]') }
     catch { return [] }
   })
-
-  useEffect(() => {
-    fetch(dataUrl('/data/market/latest.json?t=') + Date.now())
-      .then(r => r.ok ? r.json() : null)
-      .then(d => d && setMarketData(d))
-      .catch(() => {})
-  }, [])
 
   const toggleFav = (code) => {
     setFavs(prev => {

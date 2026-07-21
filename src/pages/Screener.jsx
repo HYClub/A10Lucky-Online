@@ -1,32 +1,25 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { dataUrl } from '../dataUrl.js'
+import { useSharedMarketData } from '../hooks/MarketDataContext.jsx'
 
 export default function Screener() {
-  const [data, setData] = useState(null)
+  const { strategies, marketData } = useSharedMarketData()
   const [activeTab, setActiveTab] = useState(0)
 
-  useEffect(() => {
-    fetch(dataUrl('/data/strategies/latest.json?t=') + Date.now())
-      .then(r => r.ok ? r.json() : null)
-      .then(d => d && setData(d))
-      .catch(() => {})
-  }, [])
-
-  const results = data?.results ?? []
+  const results = strategies ?? []
   const active = results[activeTab]
 
   return (
     <div className="page screener">
       <div className="page-header">
         <h2>策略选股</h2>
-        {data?.date && <span style={{fontSize:13,color:'var(--text-tertiary)'}}>{data.date}</span>}
+        {marketData?.date && <span style={{fontSize:13,color:'var(--text-tertiary)'}}>{marketData.date}</span>}
       </div>
 
       {results.length === 0 ? (
         <div className="empty">
-          <p>策略结果尚未生成</p>
-          <p className="hint">GitHub Actions 将在每次行情更新后自动计算</p>
+          <p>策略计算中...</p>
+          <p className="hint">实时行情数据到达后自动计算</p>
         </div>
       ) : (
         <>
