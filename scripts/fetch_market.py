@@ -364,7 +364,9 @@ def main():
             klines[code] = k
             log(f"  {code}: {len(k)} days")
 
+    updated = datetime.now(CST).strftime("%Y-%m-%dT%H:%M:%S")
     data = {
+        "_updated_at": updated,
         "timestamp": now.strftime("%Y-%m-%dT%H:%M:%S"),
         "date": now.strftime("%Y-%m-%d"),
         "indices": indices,
@@ -374,6 +376,8 @@ def main():
     os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+    with open("docs/data/market/meta.json", "w", encoding="utf-8") as f:
+        json.dump({"_updated_at": updated}, f, ensure_ascii=False)
     log(f"Saved {len(stocks)} stocks, {len(indices)} indices to {OUTPUT}")
 
 

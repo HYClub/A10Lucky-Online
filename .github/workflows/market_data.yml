@@ -23,6 +23,6 @@ jobs:
           git config user.name "A10Lucky Bot"
           git config user.email "bot@a10lucky.dev"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git add docs/data/market/latest.json docs/data/strategies/latest.json docs/data/archive/
+          git add docs/data/market/ docs/data/strategies/latest.json docs/data/archive/
           git diff --cached --quiet || git commit -m "auto: market data + strategies $(date +'%Y-%m-%d %H:%M')"
           git push
