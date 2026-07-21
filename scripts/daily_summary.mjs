@@ -15,9 +15,9 @@ function calcStats(stocks) {
   return { up, down, flat, limitUp, limitDown, total: stocks.length }
 }
 
-function verifyPreviousDay(index, stocksMap) {
-  /* Find unverified entries (no accuracy field set) */
-  const prev = index.find(e => e.accuracy == null && e.date !== index[0]?.date)
+function verifyPreviousDay(index, stocksMap, todayDate) {
+  if (!todayDate) return
+  const prev = index.find(e => e.accuracy == null && e.date !== todayDate)
   if (!prev) return
   const path = `${ARCHIVE_DIR}/${prev.date}.json`
   if (!existsSync(path)) return
@@ -100,7 +100,7 @@ function main() {
   }
   /* Verify previous day's predictions against today's data */
   const stocksMap = new Map(stocks.map(s => [s.code, s]))
-  verifyPreviousDay(index, stocksMap)
+  verifyPreviousDay(index, stocksMap, date)
 
   const shIdx = (archive.indices || []).find(i => i.code === '000001')
   const szIdx = (archive.indices || []).find(i => i.code === '399001')
