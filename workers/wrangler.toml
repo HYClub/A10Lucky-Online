@@ -1,0 +1,7 @@
+name = "a10lucky-data"
+main = "src/index.js"
+compatibility_date = "2025-07-21"
+
+kv_namespaces = [
+  { binding = "A10LUCKY_DATA", id = "61d5066be76943c89e1788a004449cba" }
+]
