@@ -44,8 +44,9 @@ a { color: inherit; text-decoration: none; }
 /* ── Nav ── */
 .nav { position: sticky; top: 0; z-index: 100; background: rgba(8,12,22,0.88); backdrop-filter: blur(20px) saturate(1.2); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; height: 56px; padding: 0 24px; gap: 36px; }
-.nav-right { margin-left: auto; display: flex; align-items: center; }
-.nav-right .countdown-label { font-size: 12px; color: var(--text-tertiary); font-variant-numeric: tabular-nums; letter-spacing: 0.3px; }
+/* ── Countdown Bar ── */
+.countdown-bar { text-align: center; padding: 6px 0; background: rgba(75,130,255,0.04); border-bottom: 1px solid var(--border); }
+.countdown-bar .countdown-label { font-size: 12px; color: var(--text-tertiary); letter-spacing: 0.5px; font-variant-numeric: tabular-nums; }
 .nav-brand { font-size: 20px; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.3px; flex-shrink: 0; }
 .nav-links { display: flex; gap: 2px; }
 .nav-link { display: flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; color: var(--text-secondary); transition: all 0.2s; position: relative; }

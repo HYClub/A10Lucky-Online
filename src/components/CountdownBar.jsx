@@ -51,8 +51,10 @@ export default function CountdownBar() {
   const s = String(secs % 60).padStart(2, '0')
 
   return (
-    <span className="countdown-label">
-      {polling ? '···' : `${m}:${s}`}
-    </span>
+    <div className="countdown-bar">
+      <span className="countdown-label">
+        {polling ? '···' : `${m}:${s}`}
+      </span>
+    </div>
   )
 }
