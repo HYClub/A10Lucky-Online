@@ -15,10 +15,32 @@ function calcStats(stocks) {
 }
 
 export default function Home() {
-  const { marketData } = useSharedMarketData()
+  const { marketData, loading } = useSharedMarketData()
 
   const indices = marketData?.indices ?? []
   const stats = marketData?.stocks ? calcStats(marketData.stocks) : null
+
+  if (loading && !marketData) {
+    return (
+      <div className="home">
+        <section className="index-hero">
+          <div className="index-hero-header"><h2>A股市场</h2></div>
+          <div className="index-hero-grid">
+            {[1,2,3,4].map(i => (
+              <div key={i} className="index-hero-card">
+                <div className="idxh-name" style={{opacity:0.3}}>——</div>
+                <div className="idxh-price" style={{opacity:0.15}}>——</div>
+                <div className="idxh-change" style={{opacity:0.1}}>——</div>
+              </div>
+            ))}
+          </div>
+        </section>
+        <div style={{textAlign:'center',padding:40,color:'var(--text-tertiary)',fontSize:14}}>
+          加载行情数据中...<span className="loading-dots"></span>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="home">

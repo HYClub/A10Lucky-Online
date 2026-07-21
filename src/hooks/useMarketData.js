@@ -95,15 +95,35 @@ function computeStrategies(marketData) {
   }).filter(Boolean)
 }
 
+const CACHE_KEY = 'a10lucky_data'
+const CACHE_DURATION = 3600000
+
+function loadCachedMarketData() {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY)
+    if (!raw) return null
+    const p = JSON.parse(raw)
+    if (Date.now() - p._ts < CACHE_DURATION) return p
+  } catch {}
+  return null
+}
+
+function saveCachedMarketData(data, strategies) {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ _ts: Date.now(), data, strategies }))
+  } catch {}
+}
+
 export function useMarketData() {
-  const [marketData, setMarketData] = useState(null)
-  const [strategies, setStrategies] = useState([])
-  const [loading, setLoading] = useState(true)
+  const cached = useRef(loadCachedMarketData())
+  const [marketData, setMarketData] = useState(cached.current?.data ?? null)
+  const [strategies, setStrategies] = useState(cached.current?.strategies ?? [])
+  const [loading, setLoading] = useState(!cached.current)
   const [refreshing, setRefreshing] = useState(false)
   const [error, setError] = useState(null)
   const codesRef = useRef(null)
   const metaRef = useRef(null)
-  const lastDataRef = useRef(null)
+  const lastDataRef = useRef(cached.current || null)
   const mountedRef = useRef(true)
 
   const fetchAll = useCallback(async () => {
@@ -139,6 +159,7 @@ export function useMarketData() {
       const stratResults = computeStrategies(data)
 
       lastDataRef.current = { data, strategies: stratResults }
+      saveCachedMarketData(data, stratResults)
       if (mountedRef.current) {
         setMarketData(data)
         setStrategies(stratResults)
