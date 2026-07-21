@@ -1,5 +1,22 @@
 [
   {
+    "date": "2026-07-21",
+    "count": 5540,
+    "up": 2518,
+    "down": 2566,
+    "flat": 456,
+    "limitUp": 122,
+    "limitDown": 29,
+    "sh_up": 1088,
+    "sh_down": 1170,
+    "sz_up": 1430,
+    "sz_down": 1396,
+    "sh_index_pct": 0.62,
+    "sz_index_pct": 3.41,
+    "strategies": 8,
+    "accuracy": null
+  },
+  {
     "date": "2026-07-20",
     "count": 5540,
     "up": 1709,
