@@ -21,7 +21,9 @@ function verifyPreviousDay(index, stocksMap, todayDate) {
   if (!prev) return
   const path = `${ARCHIVE_DIR}/${prev.date}.json`
   if (!existsSync(path)) return
-  const archive = JSON.parse(readFileSync(path, 'utf-8'))
+  let archive
+  try { archive = JSON.parse(readFileSync(path, 'utf-8')) } catch { return }
+  if (!archive?.strategies?.length) return
   let totalHits = 0, totalPicks = 0
   archive.strategies.forEach(s => {
     let hits = 0
