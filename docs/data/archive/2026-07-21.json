@@ -1,58 +1,58 @@
 {
   "date": "2026-07-21",
-  "timestamp": "2026-07-21T12:14:30",
+  "timestamp": "2026-07-21T12:58:20",
   "indices": [
     {
       "code": "000001",
       "name": "上证指数",
-      "price": 3819.66,
-      "change_pct": 0.62,
-      "change_amount": 23.38
+      "price": 3837.08,
+      "change_pct": 1.07,
+      "change_amount": 40.8
     },
     {
       "code": "399001",
       "name": "深证成指",
-      "price": 14074.22,
-      "change_pct": 3.41,
-      "change_amount": 463.99
+      "price": 14163.81,
+      "change_pct": 4.07,
+      "change_amount": 553.58
     },
     {
       "code": "399006",
       "name": "创业板指",
-      "price": 3622.27,
-      "change_pct": 5.2,
-      "change_amount": 179.17
+      "price": 3645.12,
+      "change_pct": 5.87,
+      "change_amount": 202.02
     },
     {
       "code": "399300",
       "name": "沪深300",
-      "price": 4679.41,
-      "change_pct": 1.76,
-      "change_amount": 81.09
+      "price": 4704.6,
+      "change_pct": 2.31,
+      "change_amount": 106.28
     }
   ],
   "market": {
-    "up": 2518,
-    "down": 2566,
-    "flat": 456,
-    "limitUp": 122,
-    "limitDown": 29,
+    "up": 2713,
+    "down": 2366,
+    "flat": 461,
+    "limitUp": 155,
+    "limitDown": 27,
     "total": 5540
   },
   "sh": {
-    "up": 1088,
-    "down": 1170,
-    "flat": 200,
-    "limitUp": 60,
+    "up": 1200,
+    "down": 1060,
+    "flat": 198,
+    "limitUp": 79,
     "limitDown": 13,
     "total": 2458
   },
   "sz": {
-    "up": 1430,
-    "down": 1396,
-    "flat": 256,
-    "limitUp": 62,
-    "limitDown": 16,
+    "up": 1513,
+    "down": 1306,
+    "flat": 263,
+    "limitUp": 76,
+    "limitDown": 14,
     "total": 3082
   },
   "strategies": [
@@ -75,8 +75,8 @@
           "code": "688809",
           "name": "强一股份",
           "score": 70,
-          "price": 425.15,
-          "change_pct": 18.75,
+          "price": 429.61,
+          "change_pct": 20,
           "industry": "半导体"
         },
         {
@@ -91,8 +91,8 @@
           "code": "301421",
           "name": "波长光电",
           "score": 69,
-          "price": 68,
-          "change_pct": 16.18,
+          "price": 69.64,
+          "change_pct": 18.98,
           "industry": "光学光电子"
         },
         {
@@ -104,44 +104,44 @@
           "industry": "军工电子Ⅱ"
         },
         {
-          "code": "300604",
-          "name": "长川科技",
-          "score": 68,
-          "price": 306.88,
-          "change_pct": 15.8,
+          "code": "688110",
+          "name": "东芯股份",
+          "score": 69,
+          "price": 119.68,
+          "change_pct": 19.23,
           "industry": "半导体"
         },
         {
-          "code": "301012",
-          "name": "扬电科技",
-          "score": 68,
-          "price": 24.46,
-          "change_pct": 20.02,
-          "industry": "电网设备"
+          "code": "688596",
+          "name": "正帆科技",
+          "score": 69,
+          "price": 48.56,
+          "change_pct": 16.06,
+          "industry": "专用设备"
         },
         {
-          "code": "301282",
-          "name": "金禄电子",
-          "score": 68,
-          "price": 20.1,
-          "change_pct": 15.78,
-          "industry": "元件"
-        },
-        {
-          "code": "301536",
-          "name": "星宸科技",
-          "score": 68,
-          "price": 118.99,
-          "change_pct": 11.57,
+          "code": "688729",
+          "name": "屹唐股份",
+          "score": 69,
+          "price": 29.72,
+          "change_pct": 19.98,
           "industry": "半导体"
         },
         {
-          "code": "600884",
-          "name": "杉杉股份",
+          "code": "300137",
+          "name": "先河环保",
           "score": 68,
-          "price": 12.45,
-          "change_pct": 9.98,
-          "industry": "电池"
+          "price": 12.08,
+          "change_pct": 18.9,
+          "industry": "环保设备Ⅱ"
+        },
+        {
+          "code": "300201",
+          "name": "海伦哲",
+          "score": 68,
+          "price": 12.38,
+          "change_pct": 17.01,
+          "industry": "工程机械"
         }
       ]
     },
@@ -156,8 +156,8 @@
           "code": "688806",
           "name": "N泰诺-U",
           "score": 74,
-          "price": 39,
-          "change_pct": 169.71,
+          "price": 40.2,
+          "change_pct": 178.01,
           "industry": "生物制品"
         },
         {
@@ -177,6 +177,22 @@
           "industry": "通用设备"
         },
         {
+          "code": "301310",
+          "name": "鑫宏业",
+          "score": 73,
+          "price": 64.07,
+          "change_pct": 20,
+          "industry": "汽车零部件"
+        },
+        {
+          "code": "301421",
+          "name": "波长光电",
+          "score": 73,
+          "price": 69.64,
+          "change_pct": 18.98,
+          "industry": "光学光电子"
+        },
+        {
           "code": "688002",
           "name": "睿创微纳",
           "score": 73,
@@ -185,52 +201,36 @@
           "industry": "军工电子Ⅱ"
         },
         {
+          "code": "688110",
+          "name": "东芯股份",
+          "score": 73,
+          "price": 119.68,
+          "change_pct": 19.23,
+          "industry": "半导体"
+        },
+        {
           "code": "688141",
           "name": "杰华特",
           "score": 73,
-          "price": 137.34,
-          "change_pct": 19.98,
+          "price": 137.36,
+          "change_pct": 20,
           "industry": "半导体"
         },
         {
-          "code": "688809",
-          "name": "强一股份",
+          "code": "688261",
+          "name": "东微半导",
           "score": 73,
-          "price": 425.15,
-          "change_pct": 18.75,
-          "industry": "半导体"
-        },
-        {
-          "code": "688347",
-          "name": "华虹宏力",
-          "score": 72,
-          "price": 389.85,
-          "change_pct": 17.61,
+          "price": 71.81,
+          "change_pct": 20,
           "industry": "半导体"
         },
         {
           "code": "688729",
           "name": "屹唐股份",
-          "score": 72,
-          "price": 29.34,
-          "change_pct": 18.45,
+          "score": 73,
+          "price": 29.72,
+          "change_pct": 19.98,
           "industry": "半导体"
-        },
-        {
-          "code": "300604",
-          "name": "长川科技",
-          "score": 71,
-          "price": 306.88,
-          "change_pct": 15.8,
-          "industry": "半导体"
-        },
-        {
-          "code": "301282",
-          "name": "金禄电子",
-          "score": 71,
-          "price": 20.1,
-          "change_pct": 15.78,
-          "industry": "元件"
         }
       ]
     },
@@ -241,6 +241,14 @@
       "down": 0,
       "accuracy": 100,
       "stocks": [
+        {
+          "code": "300137",
+          "name": "先河环保",
+          "score": 83,
+          "price": 12.08,
+          "change_pct": 18.9,
+          "industry": "环保设备Ⅱ"
+        },
         {
           "code": "300285",
           "name": "国瓷材料",
@@ -258,19 +266,27 @@
           "industry": "电网设备"
         },
         {
-          "code": "688596",
-          "name": "正帆科技",
+          "code": "301421",
+          "name": "波长光电",
           "score": 83,
-          "price": 50.21,
+          "price": 69.64,
+          "change_pct": 18.98,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "301580",
+          "name": "爱迪特",
+          "score": 83,
+          "price": 55.2,
           "change_pct": 20,
-          "industry": "专用设备"
+          "industry": "医疗器械"
         },
         {
           "code": "688809",
           "name": "强一股份",
           "score": 83,
-          "price": 425.15,
-          "change_pct": 18.75,
+          "price": 429.61,
+          "change_pct": 20,
           "industry": "半导体"
         },
         {
@@ -290,14 +306,6 @@
           "industry": "通用设备"
         },
         {
-          "code": "301580",
-          "name": "爱迪特",
-          "score": 82,
-          "price": 53.8,
-          "change_pct": 16.96,
-          "industry": "医疗器械"
-        },
-        {
           "code": "688002",
           "name": "睿创微纳",
           "score": 82,
@@ -306,20 +314,12 @@
           "industry": "军工电子Ⅱ"
         },
         {
-          "code": "300137",
-          "name": "先河环保",
-          "score": 81,
-          "price": 11.85,
-          "change_pct": 16.63,
-          "industry": "环保设备Ⅱ"
-        },
-        {
-          "code": "301421",
-          "name": "波长光电",
-          "score": 81,
-          "price": 68,
-          "change_pct": 16.18,
-          "industry": "光学光电子"
+          "code": "688110",
+          "name": "东芯股份",
+          "score": 82,
+          "price": 119.68,
+          "change_pct": 19.23,
+          "industry": "半导体"
         }
       ]
     },
@@ -420,6 +420,14 @@
       "accuracy": 100,
       "stocks": [
         {
+          "code": "000815",
+          "name": "美利云",
+          "score": 70,
+          "price": 14.66,
+          "change_pct": 9.98,
+          "industry": "IT服务Ⅱ"
+        },
+        {
           "code": "001306",
           "name": "夏厦精密",
           "score": 70,
@@ -479,25 +487,17 @@
           "code": "003031",
           "name": "中瓷电子",
           "score": 70,
-          "price": 105.32,
-          "change_pct": 5.32,
+          "price": 106.5,
+          "change_pct": 6.5,
           "industry": "通信设备"
         },
         {
           "code": "300042",
           "name": "朗科科技",
           "score": 70,
-          "price": 42.37,
-          "change_pct": 7.16,
+          "price": 42.36,
+          "change_pct": 7.13,
           "industry": "计算机设备"
-        },
-        {
-          "code": "300097",
-          "name": "智云股份",
-          "score": 70,
-          "price": 7.21,
-          "change_pct": 11.44,
-          "industry": "自动化设备"
         }
       ]
     },
@@ -508,6 +508,14 @@
       "down": 0,
       "accuracy": 100,
       "stocks": [
+        {
+          "code": "300137",
+          "name": "先河环保",
+          "score": 82,
+          "price": 12.08,
+          "change_pct": 18.9,
+          "industry": "环保设备Ⅱ"
+        },
         {
           "code": "300285",
           "name": "国瓷材料",
@@ -541,6 +549,22 @@
           "industry": "通用设备"
         },
         {
+          "code": "301421",
+          "name": "波长光电",
+          "score": 82,
+          "price": 69.64,
+          "change_pct": 18.98,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "301580",
+          "name": "爱迪特",
+          "score": 82,
+          "price": 55.2,
+          "change_pct": 20,
+          "industry": "医疗器械"
+        },
+        {
           "code": "688002",
           "name": "睿创微纳",
           "score": 82,
@@ -549,12 +573,12 @@
           "industry": "军工电子Ⅱ"
         },
         {
-          "code": "688596",
-          "name": "正帆科技",
+          "code": "688110",
+          "name": "东芯股份",
           "score": 82,
-          "price": 50.21,
-          "change_pct": 20,
-          "industry": "专用设备"
+          "price": 119.68,
+          "change_pct": 19.23,
+          "industry": "半导体"
         },
         {
           "code": "688728",
@@ -562,30 +586,6 @@
           "score": 82,
           "price": 16.9,
           "change_pct": 20.03,
-          "industry": "半导体"
-        },
-        {
-          "code": "688809",
-          "name": "强一股份",
-          "score": 82,
-          "price": 425.15,
-          "change_pct": 18.75,
-          "industry": "半导体"
-        },
-        {
-          "code": "301580",
-          "name": "爱迪特",
-          "score": 81,
-          "price": 53.8,
-          "change_pct": 16.96,
-          "industry": "医疗器械"
-        },
-        {
-          "code": "301583",
-          "name": "托伦斯",
-          "score": 81,
-          "price": 132.26,
-          "change_pct": 20,
           "industry": "半导体"
         }
       ]
@@ -614,20 +614,28 @@
           "industry": "电网设备"
         },
         {
-          "code": "688596",
-          "name": "正帆科技",
+          "code": "301580",
+          "name": "爱迪特",
           "score": 78,
-          "price": 50.21,
+          "price": 55.2,
           "change_pct": 20,
-          "industry": "专用设备"
+          "industry": "医疗器械"
         },
         {
           "code": "688809",
           "name": "强一股份",
-          "score": 77,
-          "price": 425.15,
-          "change_pct": 18.75,
+          "score": 78,
+          "price": 429.61,
+          "change_pct": 20,
           "industry": "半导体"
+        },
+        {
+          "code": "301421",
+          "name": "波长光电",
+          "score": 77,
+          "price": 69.64,
+          "change_pct": 18.98,
+          "industry": "光学光电子"
         },
         {
           "code": "301273",
@@ -638,22 +646,6 @@
           "industry": "通用设备"
         },
         {
-          "code": "301421",
-          "name": "波长光电",
-          "score": 76,
-          "price": 68,
-          "change_pct": 16.18,
-          "industry": "光学光电子"
-        },
-        {
-          "code": "301580",
-          "name": "爱迪特",
-          "score": 76,
-          "price": 53.8,
-          "change_pct": 16.96,
-          "industry": "医疗器械"
-        },
-        {
           "code": "688002",
           "name": "睿创微纳",
           "score": 76,
@@ -662,20 +654,28 @@
           "industry": "军工电子Ⅱ"
         },
         {
-          "code": "301282",
-          "name": "金禄电子",
-          "score": 74,
-          "price": 20.1,
-          "change_pct": 15.78,
-          "industry": "元件"
+          "code": "688596",
+          "name": "正帆科技",
+          "score": 76,
+          "price": 48.56,
+          "change_pct": 16.06,
+          "industry": "专用设备"
         },
         {
-          "code": "301536",
-          "name": "星宸科技",
-          "score": 74,
-          "price": 118.99,
-          "change_pct": 11.57,
+          "code": "688110",
+          "name": "东芯股份",
+          "score": 75,
+          "price": 119.68,
+          "change_pct": 19.23,
           "industry": "半导体"
+        },
+        {
+          "code": "300201",
+          "name": "海伦哲",
+          "score": 74,
+          "price": 12.38,
+          "change_pct": 17.01,
+          "industry": "工程机械"
         }
       ]
     },
@@ -698,72 +698,72 @@
           "code": "600000",
           "name": "浦发银行",
           "score": 80,
-          "price": 8.93,
-          "change_pct": -2.3,
+          "price": 8.92,
+          "change_pct": -2.41,
           "industry": "银行Ⅱ"
         },
         {
           "code": "600015",
           "name": "华夏银行",
           "score": 80,
-          "price": 6.9,
-          "change_pct": -1.15,
+          "price": 6.89,
+          "change_pct": -1.29,
           "industry": "银行Ⅱ"
         },
         {
           "code": "600016",
           "name": "民生银行",
           "score": 80,
-          "price": 3.52,
-          "change_pct": -0.28,
+          "price": 3.51,
+          "change_pct": -0.57,
           "industry": "银行Ⅱ"
         },
         {
           "code": "600104",
           "name": "上汽集团",
           "score": 80,
-          "price": 10.48,
-          "change_pct": -1.13,
+          "price": 10.5,
+          "change_pct": -0.94,
           "industry": "乘用车"
         },
         {
           "code": "601166",
           "name": "兴业银行",
           "score": 80,
-          "price": 17.96,
-          "change_pct": -2.07,
+          "price": 17.93,
+          "change_pct": -2.24,
           "industry": "银行Ⅱ"
         },
         {
           "code": "601169",
           "name": "北京银行",
           "score": 80,
-          "price": 5.06,
-          "change_pct": -1.17,
+          "price": 5.04,
+          "change_pct": -1.56,
           "industry": "银行Ⅱ"
         },
         {
           "code": "601390",
           "name": "中国中铁",
           "score": 80,
-          "price": 4.5,
-          "change_pct": -0.66,
+          "price": 4.48,
+          "change_pct": -1.1,
           "industry": "基础建设"
         },
         {
           "code": "601668",
           "name": "中国建筑",
           "score": 80,
-          "price": 4.61,
-          "change_pct": -0.86,
+          "price": 4.63,
+          "change_pct": -0.43,
           "industry": "房屋建设Ⅱ"
         },
         {
           "code": "601800",
           "name": "中国交建",
           "score": 80,
-          "price": 6.19,
-          "change_pct": -0.8,
+          "price": 6.17,
+          "change_pct": -1.12,
           "industry": "基础建设"
         }
       ]
