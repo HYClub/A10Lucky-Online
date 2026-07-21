@@ -31,7 +31,9 @@
     "sh_index_pct": 0.85,
     "sz_index_pct": -0.71,
     "strategies": 8,
-    "accuracy": null
+    "accuracy": 36,
+    "verified_hits": 29,
+    "verified_total": 80
   },
   {
     "date": "2026-07-17",

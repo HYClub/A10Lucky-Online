@@ -1,6 +1,6 @@
 {
-  "_updated_at": "2026-07-21T11:39:22",
-  "timestamp": "2026-07-21T11:31:07",
+  "_updated_at": "2026-07-21T12:22:29",
+  "timestamp": "2026-07-21T12:14:30",
   "date": "2026-07-21",
   "indices": [
     {
@@ -24126,7 +24126,7 @@
       "low": null,
       "open": null,
       "pre_close": 0.37,
-      "market_cap_yi": null,
+      "market_cap_yi": 0.6512,
       "pb": null,
       "industry": ""
     },
@@ -28751,7 +28751,7 @@
       "open": 4.15,
       "pre_close": 4.37,
       "market_cap_yi": 30.6098709,
-      "pb": -14.87,
+      "pb": -16.33,
       "industry": "通用设备"
     },
     {
