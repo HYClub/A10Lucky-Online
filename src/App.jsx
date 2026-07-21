@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
-import CountdownBar from './components/CountdownBar.jsx'
 import Home from './pages/Home.jsx'
 import Market from './pages/Market.jsx'
 import Favorites from './pages/Favorites.jsx'
@@ -12,7 +11,6 @@ export default function App() {
   return (
     <div className="app">
       <Nav />
-      <CountdownBar />
       <main className="main">
         <Routes>
           <Route path="/" element={<Home />} />

@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import CountdownBar from './CountdownBar.jsx'
 
 const LINKS = [
   { to: '/', label: '首页', icon: '🏠' },
@@ -20,6 +21,9 @@ export default function Nav() {
               <span className="nav-label">{link.label}</span>
             </NavLink>
           ))}
+        </div>
+        <div className="nav-right">
+          <CountdownBar />
         </div>
       </div>
     </nav>
