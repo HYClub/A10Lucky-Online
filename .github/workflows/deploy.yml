@@ -1,0 +1,37 @@
+name: Deploy
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.js'
+      - 'index.html'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - run: npm install
+      - run: npm run build
+      - name: Deploy to docs/
+        run: |
+          git config user.name "A10Lucky Bot"
+          git config user.email "bot@a10lucky.dev"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          cp -r dist/* docs/ 2>/dev/null || cp -r dist/. docs/
+          cp docs/index.html docs/404.html
+          git add docs/
+          if ! git diff --cached --quiet; then
+            git -c user.name="A10Lucky Bot" -c user.email="bot@a10lucky.dev" commit -m "auto: deploy $(date +'%Y-%m-%d %H:%M')"
+            git push origin main || (git pull --rebase origin main && git push origin main)
+          fi

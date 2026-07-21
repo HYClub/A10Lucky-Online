@@ -1,0 +1,29 @@
+name: Daily Summary
+on:
+  schedule:
+    - cron: '5 7 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Fetch market data
+        run: python scripts/fetch_market.py
+      - name: Compute strategies
+        run: node scripts/run_strategies.mjs
+      - name: Generate client assets
+        run: node scripts/generate_client_assets.js
+      - name: Generate archive & verify previous day
+        run: node scripts/daily_summary.mjs
+      - name: Commit all
+        run: |
+          git config user.name "A10Lucky Bot"
+          git config user.email "bot@a10lucky.dev"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git add docs/data/
+          git diff --cached --quiet || (git commit -m "auto: daily summary $(date +'%Y-%m-%d %H:%M')" && git push origin main || (git pull --rebase origin main && git push origin main))
