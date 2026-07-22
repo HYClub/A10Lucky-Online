@@ -1,0 +1,772 @@
+{
+  "date": "2026-07-22",
+  "timestamp": "2026-07-22T15:53:01",
+  "indices": [
+    {
+      "code": "000001",
+      "name": "上证指数",
+      "price": 3867.03,
+      "change_pct": 0.07,
+      "change_amount": 2.66
+    },
+    {
+      "code": "399001",
+      "name": "深证成指",
+      "price": 14061.44,
+      "change_pct": -1.42,
+      "change_amount": -202.85
+    },
+    {
+      "code": "399006",
+      "name": "创业板指",
+      "price": 3566.73,
+      "change_pct": -3.23,
+      "change_amount": -119.24
+    },
+    {
+      "code": "399300",
+      "name": "沪深300",
+      "price": 4717.24,
+      "change_pct": -0.46,
+      "change_amount": -21.99
+    }
+  ],
+  "market": {
+    "up": 1432,
+    "down": 3649,
+    "flat": 459,
+    "limitUp": 74,
+    "limitDown": 18,
+    "total": 5540
+  },
+  "sh": {
+    "up": 718,
+    "down": 1529,
+    "flat": 211,
+    "limitUp": 33,
+    "limitDown": 10,
+    "total": 2458
+  },
+  "sz": {
+    "up": 714,
+    "down": 2120,
+    "flat": 248,
+    "limitUp": 41,
+    "limitDown": 8,
+    "total": 3082
+  },
+  "strategies": [
+    {
+      "name": "all_factor",
+      "displayName": "全因子",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000426",
+          "name": "兴业银锡",
+          "score": 67,
+          "price": 31.73,
+          "change_pct": 7.12,
+          "industry": "贵金属"
+        },
+        {
+          "code": "300688",
+          "name": "创业黑马",
+          "score": 67,
+          "price": 25.01,
+          "change_pct": 20.01,
+          "industry": "教育"
+        },
+        {
+          "code": "000526",
+          "name": "学大教育",
+          "score": 66,
+          "price": 33,
+          "change_pct": 6.52,
+          "industry": "教育"
+        },
+        {
+          "code": "000975",
+          "name": "山金国际",
+          "score": 66,
+          "price": 22.52,
+          "change_pct": 10.01,
+          "industry": "贵金属"
+        },
+        {
+          "code": "300040",
+          "name": "九洲集团",
+          "score": 66,
+          "price": 7.25,
+          "change_pct": 11.88,
+          "industry": "电力"
+        },
+        {
+          "code": "600489",
+          "name": "中金黄金",
+          "score": 66,
+          "price": 22.11,
+          "change_pct": 6.4,
+          "industry": "贵金属"
+        },
+        {
+          "code": "600726",
+          "name": "华电能源",
+          "score": 66,
+          "price": 6.6,
+          "change_pct": 10,
+          "industry": "电力"
+        },
+        {
+          "code": "600744",
+          "name": "华银电力",
+          "score": 66,
+          "price": 7.94,
+          "change_pct": 9.97,
+          "industry": "电力"
+        },
+        {
+          "code": "000506",
+          "name": "招金黄金",
+          "score": 65,
+          "price": 13.02,
+          "change_pct": 9.97,
+          "industry": "贵金属"
+        },
+        {
+          "code": "001337",
+          "name": "四川黄金",
+          "score": 65,
+          "price": 36.6,
+          "change_pct": 5.57,
+          "industry": "贵金属"
+        }
+      ]
+    },
+    {
+      "name": "alpha_blend",
+      "displayName": "板块轮动+技术",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300688",
+          "name": "创业黑马",
+          "score": 70,
+          "price": 25.01,
+          "change_pct": 20.01,
+          "industry": "教育"
+        },
+        {
+          "code": "000506",
+          "name": "招金黄金",
+          "score": 68,
+          "price": 13.02,
+          "change_pct": 9.97,
+          "industry": "贵金属"
+        },
+        {
+          "code": "000975",
+          "name": "山金国际",
+          "score": 68,
+          "price": 22.52,
+          "change_pct": 10.01,
+          "industry": "贵金属"
+        },
+        {
+          "code": "000426",
+          "name": "兴业银锡",
+          "score": 67,
+          "price": 31.73,
+          "change_pct": 7.12,
+          "industry": "贵金属"
+        },
+        {
+          "code": "001258",
+          "name": "立新能源",
+          "score": 67,
+          "price": 11.01,
+          "change_pct": 9.99,
+          "industry": "电力"
+        },
+        {
+          "code": "600988",
+          "name": "赤峰黄金",
+          "score": 67,
+          "price": 38.22,
+          "change_pct": 7.72,
+          "industry": "贵金属"
+        },
+        {
+          "code": "603619",
+          "name": "中曼石油",
+          "score": 67,
+          "price": 21.34,
+          "change_pct": 10,
+          "industry": "油服工程"
+        },
+        {
+          "code": "000526",
+          "name": "学大教育",
+          "score": 66,
+          "price": 33,
+          "change_pct": 6.52,
+          "industry": "教育"
+        },
+        {
+          "code": "001337",
+          "name": "四川黄金",
+          "score": 66,
+          "price": 36.6,
+          "change_pct": 5.57,
+          "industry": "贵金属"
+        },
+        {
+          "code": "300040",
+          "name": "九洲集团",
+          "score": 66,
+          "price": 7.25,
+          "change_pct": 11.88,
+          "industry": "电力"
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "displayName": "多因子均衡",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300688",
+          "name": "创业黑马",
+          "score": 83,
+          "price": 25.01,
+          "change_pct": 20.01,
+          "industry": "教育"
+        },
+        {
+          "code": "300779",
+          "name": "惠城环保",
+          "score": 83,
+          "price": 69.12,
+          "change_pct": 20,
+          "industry": "环境治理"
+        },
+        {
+          "code": "300006",
+          "name": "莱美药业",
+          "score": 81,
+          "price": 5.27,
+          "change_pct": 16.59,
+          "industry": "化学制药"
+        },
+        {
+          "code": "300834",
+          "name": "星辉环材",
+          "score": 81,
+          "price": 38.08,
+          "change_pct": 20.01,
+          "industry": "塑料"
+        },
+        {
+          "code": "688049",
+          "name": "炬芯科技",
+          "score": 80,
+          "price": 42.7,
+          "change_pct": 15.09,
+          "industry": "半导体"
+        },
+        {
+          "code": "300040",
+          "name": "九洲集团",
+          "score": 79,
+          "price": 7.25,
+          "change_pct": 11.88,
+          "industry": "电力"
+        },
+        {
+          "code": "300988",
+          "name": "津荣天宇",
+          "score": 79,
+          "price": 15.49,
+          "change_pct": 13.56,
+          "industry": "专用设备"
+        },
+        {
+          "code": "000034",
+          "name": "神州数码",
+          "score": 77,
+          "price": 27.41,
+          "change_pct": 8.6,
+          "industry": "IT服务Ⅱ"
+        },
+        {
+          "code": "002759",
+          "name": "ST天际",
+          "score": 77,
+          "price": 12.63,
+          "change_pct": 8.41,
+          "industry": "电池"
+        },
+        {
+          "code": "002879",
+          "name": "长缆科技",
+          "score": 77,
+          "price": 14.92,
+          "change_pct": 10.03,
+          "industry": "电网设备"
+        }
+      ]
+    },
+    {
+      "name": "fund_momentum",
+      "displayName": "资金动量",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000034",
+          "name": "神州数码",
+          "score": 61,
+          "price": 27.41,
+          "change_pct": 8.6,
+          "industry": "IT服务Ⅱ"
+        },
+        {
+          "code": "000815",
+          "name": "美利云",
+          "score": 61,
+          "price": 16.13,
+          "change_pct": 10.03,
+          "industry": "IT服务Ⅱ"
+        },
+        {
+          "code": "000889",
+          "name": "中嘉博创",
+          "score": 61,
+          "price": 3.99,
+          "change_pct": 5,
+          "industry": "通信服务"
+        },
+        {
+          "code": "002436",
+          "name": "兴森科技",
+          "score": 61,
+          "price": 35.01,
+          "change_pct": 7.13,
+          "industry": "元件"
+        },
+        {
+          "code": "002759",
+          "name": "ST天际",
+          "score": 61,
+          "price": 12.63,
+          "change_pct": 8.41,
+          "industry": "电池"
+        },
+        {
+          "code": "002879",
+          "name": "长缆科技",
+          "score": 61,
+          "price": 14.92,
+          "change_pct": 10.03,
+          "industry": "电网设备"
+        },
+        {
+          "code": "300006",
+          "name": "莱美药业",
+          "score": 61,
+          "price": 5.27,
+          "change_pct": 16.59,
+          "industry": "化学制药"
+        },
+        {
+          "code": "300040",
+          "name": "九洲集团",
+          "score": 61,
+          "price": 7.25,
+          "change_pct": 11.88,
+          "industry": "电力"
+        },
+        {
+          "code": "300139",
+          "name": "晓程科技",
+          "score": 61,
+          "price": 39.54,
+          "change_pct": 8.51,
+          "industry": "贵金属"
+        },
+        {
+          "code": "300643",
+          "name": "万通智控",
+          "score": 61,
+          "price": 19.93,
+          "change_pct": 6.92,
+          "industry": "汽车零部件"
+        }
+      ]
+    },
+    {
+      "name": "insider_track",
+      "displayName": "龙虎榜+资金流",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000426",
+          "name": "兴业银锡",
+          "score": 70,
+          "price": 31.73,
+          "change_pct": 7.12,
+          "industry": "贵金属"
+        },
+        {
+          "code": "000526",
+          "name": "学大教育",
+          "score": 70,
+          "price": 33,
+          "change_pct": 6.52,
+          "industry": "教育"
+        },
+        {
+          "code": "000975",
+          "name": "山金国际",
+          "score": 69,
+          "price": 22.52,
+          "change_pct": 10.01,
+          "industry": "贵金属"
+        },
+        {
+          "code": "001337",
+          "name": "四川黄金",
+          "score": 69,
+          "price": 36.6,
+          "change_pct": 5.57,
+          "industry": "贵金属"
+        },
+        {
+          "code": "600489",
+          "name": "中金黄金",
+          "score": 69,
+          "price": 22.11,
+          "change_pct": 6.4,
+          "industry": "贵金属"
+        },
+        {
+          "code": "000506",
+          "name": "招金黄金",
+          "score": 68,
+          "price": 13.02,
+          "change_pct": 9.97,
+          "industry": "贵金属"
+        },
+        {
+          "code": "001258",
+          "name": "立新能源",
+          "score": 68,
+          "price": 11.01,
+          "change_pct": 9.99,
+          "industry": "电力"
+        },
+        {
+          "code": "300164",
+          "name": "通源石油",
+          "score": 68,
+          "price": 12.12,
+          "change_pct": 8.89,
+          "industry": "油服工程"
+        },
+        {
+          "code": "300191",
+          "name": "潜能恒信",
+          "score": 68,
+          "price": 28.46,
+          "change_pct": 7.84,
+          "industry": "油服工程"
+        },
+        {
+          "code": "600759",
+          "name": "ST洲际",
+          "score": 68,
+          "price": 2.6,
+          "change_pct": 2.36,
+          "industry": "油气开采Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "reversal",
+      "displayName": "超跌反转",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300688",
+          "name": "创业黑马",
+          "score": 82,
+          "price": 25.01,
+          "change_pct": 20.01,
+          "industry": "教育"
+        },
+        {
+          "code": "300779",
+          "name": "惠城环保",
+          "score": 82,
+          "price": 69.12,
+          "change_pct": 20,
+          "industry": "环境治理"
+        },
+        {
+          "code": "300834",
+          "name": "星辉环材",
+          "score": 82,
+          "price": 38.08,
+          "change_pct": 20.01,
+          "industry": "塑料"
+        },
+        {
+          "code": "300006",
+          "name": "莱美药业",
+          "score": 80,
+          "price": 5.27,
+          "change_pct": 16.59,
+          "industry": "化学制药"
+        },
+        {
+          "code": "688049",
+          "name": "炬芯科技",
+          "score": 80,
+          "price": 42.7,
+          "change_pct": 15.09,
+          "industry": "半导体"
+        },
+        {
+          "code": "300988",
+          "name": "津荣天宇",
+          "score": 79,
+          "price": 15.49,
+          "change_pct": 13.56,
+          "industry": "专用设备"
+        },
+        {
+          "code": "300040",
+          "name": "九洲集团",
+          "score": 78,
+          "price": 7.25,
+          "change_pct": 11.88,
+          "industry": "电力"
+        },
+        {
+          "code": "300105",
+          "name": "龙源技术",
+          "score": 78,
+          "price": 10.2,
+          "change_pct": 17.51,
+          "industry": "其他电源设备Ⅱ"
+        },
+        {
+          "code": "300818",
+          "name": "耐普矿机",
+          "score": 78,
+          "price": 18.34,
+          "change_pct": 11.22,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300875",
+          "name": "捷强装备",
+          "score": 78,
+          "price": 30.22,
+          "change_pct": 11.72,
+          "industry": "地面兵装Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "smart_money",
+      "displayName": "量价异动",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000815",
+          "name": "美利云",
+          "score": 73,
+          "price": 16.13,
+          "change_pct": 10.03,
+          "industry": "IT服务Ⅱ"
+        },
+        {
+          "code": "002879",
+          "name": "长缆科技",
+          "score": 73,
+          "price": 14.92,
+          "change_pct": 10.03,
+          "industry": "电网设备"
+        },
+        {
+          "code": "300688",
+          "name": "创业黑马",
+          "score": 73,
+          "price": 25.01,
+          "change_pct": 20.01,
+          "industry": "教育"
+        },
+        {
+          "code": "300779",
+          "name": "惠城环保",
+          "score": 73,
+          "price": 69.12,
+          "change_pct": 20,
+          "industry": "环境治理"
+        },
+        {
+          "code": "300834",
+          "name": "星辉环材",
+          "score": 73,
+          "price": 38.08,
+          "change_pct": 20.01,
+          "industry": "塑料"
+        },
+        {
+          "code": "300006",
+          "name": "莱美药业",
+          "score": 72,
+          "price": 5.27,
+          "change_pct": 16.59,
+          "industry": "化学制药"
+        },
+        {
+          "code": "301012",
+          "name": "扬电科技",
+          "score": 72,
+          "price": 26.47,
+          "change_pct": 8.22,
+          "industry": "电网设备"
+        },
+        {
+          "code": "301583",
+          "name": "托伦斯",
+          "score": 72,
+          "price": 158.71,
+          "change_pct": 20,
+          "industry": "半导体"
+        },
+        {
+          "code": "688049",
+          "name": "炬芯科技",
+          "score": 71,
+          "price": 42.7,
+          "change_pct": 15.09,
+          "industry": "半导体"
+        },
+        {
+          "code": "000889",
+          "name": "中嘉博创",
+          "score": 70,
+          "price": 3.99,
+          "change_pct": 5,
+          "industry": "通信服务"
+        }
+      ]
+    },
+    {
+      "name": "value_pick",
+      "displayName": "价值精选",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "score": 80,
+          "price": 10.98,
+          "change_pct": 1.29,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "score": 80,
+          "price": 9.01,
+          "change_pct": 0.67,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "score": 80,
+          "price": 6.95,
+          "change_pct": 1.31,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600016",
+          "name": "民生银行",
+          "score": 80,
+          "price": 3.54,
+          "change_pct": 1.14,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601166",
+          "name": "兴业银行",
+          "score": 80,
+          "price": 18.18,
+          "change_pct": 1.62,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601169",
+          "name": "北京银行",
+          "score": 80,
+          "price": 5.08,
+          "change_pct": 0.99,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601390",
+          "name": "中国中铁",
+          "score": 80,
+          "price": 4.57,
+          "change_pct": 1.78,
+          "industry": "基础建设"
+        },
+        {
+          "code": "601668",
+          "name": "中国建筑",
+          "score": 80,
+          "price": 4.7,
+          "change_pct": 1.51,
+          "industry": "房屋建设Ⅱ"
+        },
+        {
+          "code": "601800",
+          "name": "中国交建",
+          "score": 80,
+          "price": 6.28,
+          "change_pct": 0.96,
+          "industry": "基础建设"
+        },
+        {
+          "code": "601818",
+          "name": "光大银行",
+          "score": 80,
+          "price": 3.15,
+          "change_pct": 0.96,
+          "industry": "银行Ⅱ"
+        }
+      ]
+    }
+  ]
+}
