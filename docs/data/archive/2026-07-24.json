@@ -1,0 +1,772 @@
+{
+  "date": "2026-07-24",
+  "timestamp": "2026-07-24T15:52:34",
+  "indices": [
+    {
+      "code": "000001",
+      "name": "上证指数",
+      "price": 3814.2,
+      "change_pct": -1.61,
+      "change_amount": -62.58
+    },
+    {
+      "code": "399001",
+      "name": "深证成指",
+      "price": 13774.68,
+      "change_pct": -2.47,
+      "change_amount": -348.63
+    },
+    {
+      "code": "399006",
+      "name": "创业板指",
+      "price": 3480.87,
+      "change_pct": -2.65,
+      "change_amount": -94.65
+    },
+    {
+      "code": "399300",
+      "name": "沪深300",
+      "price": 4649.19,
+      "change_pct": -1.67,
+      "change_amount": -78.81
+    }
+  ],
+  "market": {
+    "up": 534,
+    "down": 4632,
+    "flat": 376,
+    "limitUp": 51,
+    "limitDown": 45,
+    "total": 5542
+  },
+  "sh": {
+    "up": 247,
+    "down": 2043,
+    "flat": 169,
+    "limitUp": 18,
+    "limitDown": 19,
+    "total": 2459
+  },
+  "sz": {
+    "up": 287,
+    "down": 2589,
+    "flat": 207,
+    "limitUp": 33,
+    "limitDown": 26,
+    "total": 3083
+  },
+  "strategies": [
+    {
+      "name": "all_factor",
+      "displayName": "全因子",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300922",
+          "name": "天秦装备",
+          "score": 65,
+          "price": 16.16,
+          "change_pct": 8.46,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "301357",
+          "name": "北方长龙",
+          "score": 65,
+          "price": 92.58,
+          "change_pct": 7.24,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "601606",
+          "name": "长城军工",
+          "score": 65,
+          "price": 32.05,
+          "change_pct": 9.99,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "300214",
+          "name": "日科化学",
+          "score": 64,
+          "price": 11.86,
+          "change_pct": 15.59,
+          "industry": "化学制品"
+        },
+        {
+          "code": "001258",
+          "name": "立新能源",
+          "score": 63,
+          "price": 13.03,
+          "change_pct": 7.6,
+          "industry": "电力"
+        },
+        {
+          "code": "002083",
+          "name": "孚日股份",
+          "score": 63,
+          "price": 11.52,
+          "change_pct": 10.03,
+          "industry": "纺织制造"
+        },
+        {
+          "code": "002218",
+          "name": "拓日新能",
+          "score": 63,
+          "price": 4.2,
+          "change_pct": 9.95,
+          "industry": "电力"
+        },
+        {
+          "code": "002298",
+          "name": "中电鑫龙",
+          "score": 63,
+          "price": 8.1,
+          "change_pct": 10.05,
+          "industry": "电网设备"
+        },
+        {
+          "code": "002300",
+          "name": "太阳电缆",
+          "score": 63,
+          "price": 7.1,
+          "change_pct": 10.08,
+          "industry": "电网设备"
+        },
+        {
+          "code": "301583",
+          "name": "托伦斯",
+          "score": 63,
+          "price": 174,
+          "change_pct": 20,
+          "industry": "半导体"
+        }
+      ]
+    },
+    {
+      "name": "alpha_blend",
+      "displayName": "板块轮动+技术",
+      "up": 7,
+      "down": 3,
+      "accuracy": 70,
+      "stocks": [
+        {
+          "code": "601606",
+          "name": "长城军工",
+          "score": 68,
+          "price": 32.05,
+          "change_pct": 9.99,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "300922",
+          "name": "天秦装备",
+          "score": 64,
+          "price": 16.16,
+          "change_pct": 8.46,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "301357",
+          "name": "北方长龙",
+          "score": 64,
+          "price": 92.58,
+          "change_pct": 7.24,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "600967",
+          "name": "内蒙一机",
+          "score": 62,
+          "price": 11.56,
+          "change_pct": 3.77,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "000519",
+          "name": "中兵红箭",
+          "score": 61,
+          "price": 14.17,
+          "change_pct": 0.78,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "301583",
+          "name": "托伦斯",
+          "score": 61,
+          "price": 174,
+          "change_pct": 20,
+          "industry": "半导体"
+        },
+        {
+          "code": "688543",
+          "name": "国科军工",
+          "score": 61,
+          "price": 37.04,
+          "change_pct": 1.79,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "000576",
+          "name": "甘化科工",
+          "score": 60,
+          "price": 6.39,
+          "change_pct": -0.62,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "600435",
+          "name": "北方导航",
+          "score": 60,
+          "price": 10.33,
+          "change_pct": -0.58,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "002519",
+          "name": "银河电子",
+          "score": 59,
+          "price": 4.98,
+          "change_pct": -0.8,
+          "industry": "地面兵装Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "displayName": "多因子均衡",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "688237",
+          "name": "超卓航科",
+          "score": 82,
+          "price": 65.45,
+          "change_pct": 20,
+          "industry": "航空装备Ⅱ"
+        },
+        {
+          "code": "300214",
+          "name": "日科化学",
+          "score": 81,
+          "price": 11.86,
+          "change_pct": 15.59,
+          "industry": "化学制品"
+        },
+        {
+          "code": "300414",
+          "name": "中光防雷",
+          "score": 79,
+          "price": 11.27,
+          "change_pct": 20.02,
+          "industry": "通信设备"
+        },
+        {
+          "code": "301122",
+          "name": "采纳股份",
+          "score": 79,
+          "price": 28.66,
+          "change_pct": 12.39,
+          "industry": "医疗器械"
+        },
+        {
+          "code": "301535",
+          "name": "浙江华远",
+          "score": 79,
+          "price": 16.41,
+          "change_pct": 14.36,
+          "industry": "汽车零部件"
+        },
+        {
+          "code": "300480",
+          "name": "光力科技",
+          "score": 78,
+          "price": 31.66,
+          "change_pct": 20.02,
+          "industry": "专用设备"
+        },
+        {
+          "code": "688151",
+          "name": "华强科技",
+          "score": 78,
+          "price": 16.82,
+          "change_pct": 14.81,
+          "industry": "医疗器械"
+        },
+        {
+          "code": "688622",
+          "name": "*ST禾信",
+          "score": 78,
+          "price": 101.93,
+          "change_pct": 20,
+          "industry": "通用设备"
+        },
+        {
+          "code": "002218",
+          "name": "拓日新能",
+          "score": 77,
+          "price": 4.2,
+          "change_pct": 9.95,
+          "industry": "电力"
+        },
+        {
+          "code": "002300",
+          "name": "太阳电缆",
+          "score": 77,
+          "price": 7.1,
+          "change_pct": 10.08,
+          "industry": "电网设备"
+        }
+      ]
+    },
+    {
+      "name": "fund_momentum",
+      "displayName": "资金动量",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000595",
+          "name": "新能股份",
+          "score": 61,
+          "price": 6.07,
+          "change_pct": 9.96,
+          "industry": "电力"
+        },
+        {
+          "code": "000779",
+          "name": "甘咨询",
+          "score": 61,
+          "price": 9.99,
+          "change_pct": 6.28,
+          "industry": "工程咨询服务Ⅱ"
+        },
+        {
+          "code": "001258",
+          "name": "立新能源",
+          "score": 61,
+          "price": 13.03,
+          "change_pct": 7.6,
+          "industry": "电力"
+        },
+        {
+          "code": "002112",
+          "name": "三变科技",
+          "score": 61,
+          "price": 14.87,
+          "change_pct": 2.41,
+          "industry": "电网设备"
+        },
+        {
+          "code": "002218",
+          "name": "拓日新能",
+          "score": 61,
+          "price": 4.2,
+          "change_pct": 9.95,
+          "industry": "电力"
+        },
+        {
+          "code": "002300",
+          "name": "太阳电缆",
+          "score": 61,
+          "price": 7.1,
+          "change_pct": 10.08,
+          "industry": "电网设备"
+        },
+        {
+          "code": "300062",
+          "name": "中能电气",
+          "score": 61,
+          "price": 6.8,
+          "change_pct": 7.09,
+          "industry": "电网设备"
+        },
+        {
+          "code": "300214",
+          "name": "日科化学",
+          "score": 61,
+          "price": 11.86,
+          "change_pct": 15.59,
+          "industry": "化学制品"
+        },
+        {
+          "code": "300427",
+          "name": "红相股份",
+          "score": 61,
+          "price": 6.36,
+          "change_pct": 6.53,
+          "industry": "电网设备"
+        },
+        {
+          "code": "300444",
+          "name": "双杰电气",
+          "score": 61,
+          "price": 9.85,
+          "change_pct": 3.25,
+          "industry": "电网设备"
+        }
+      ]
+    },
+    {
+      "name": "insider_track",
+      "displayName": "龙虎榜+资金流",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "601606",
+          "name": "长城军工",
+          "score": 69,
+          "price": 32.05,
+          "change_pct": 9.99,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "300922",
+          "name": "天秦装备",
+          "score": 64,
+          "price": 16.16,
+          "change_pct": 8.46,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "301357",
+          "name": "北方长龙",
+          "score": 64,
+          "price": 92.58,
+          "change_pct": 7.24,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "600967",
+          "name": "内蒙一机",
+          "score": 64,
+          "price": 11.56,
+          "change_pct": 3.77,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "688099",
+          "name": "晶晨股份",
+          "score": 62,
+          "price": 98,
+          "change_pct": 6.45,
+          "industry": "半导体"
+        },
+        {
+          "code": "000011",
+          "name": "深物业A",
+          "score": 60,
+          "price": 8.26,
+          "change_pct": 9.99,
+          "industry": "房地产开发"
+        },
+        {
+          "code": "000519",
+          "name": "中兵红箭",
+          "score": 60,
+          "price": 14.17,
+          "change_pct": 0.78,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "000595",
+          "name": "新能股份",
+          "score": 60,
+          "price": 6.07,
+          "change_pct": 9.96,
+          "industry": "电力"
+        },
+        {
+          "code": "001258",
+          "name": "立新能源",
+          "score": 60,
+          "price": 13.03,
+          "change_pct": 7.6,
+          "industry": "电力"
+        },
+        {
+          "code": "002199",
+          "name": "东晶电子",
+          "score": 60,
+          "price": 11.8,
+          "change_pct": 9.97,
+          "industry": "元件"
+        }
+      ]
+    },
+    {
+      "name": "reversal",
+      "displayName": "超跌反转",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "688237",
+          "name": "超卓航科",
+          "score": 82,
+          "price": 65.45,
+          "change_pct": 20,
+          "industry": "航空装备Ⅱ"
+        },
+        {
+          "code": "300414",
+          "name": "中光防雷",
+          "score": 81,
+          "price": 11.27,
+          "change_pct": 20.02,
+          "industry": "通信设备"
+        },
+        {
+          "code": "688622",
+          "name": "*ST禾信",
+          "score": 81,
+          "price": 101.93,
+          "change_pct": 20,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300214",
+          "name": "日科化学",
+          "score": 80,
+          "price": 11.86,
+          "change_pct": 15.59,
+          "industry": "化学制品"
+        },
+        {
+          "code": "300480",
+          "name": "光力科技",
+          "score": 80,
+          "price": 31.66,
+          "change_pct": 20.02,
+          "industry": "专用设备"
+        },
+        {
+          "code": "688151",
+          "name": "华强科技",
+          "score": 80,
+          "price": 16.82,
+          "change_pct": 14.81,
+          "industry": "医疗器械"
+        },
+        {
+          "code": "301535",
+          "name": "浙江华远",
+          "score": 79,
+          "price": 16.41,
+          "change_pct": 14.36,
+          "industry": "汽车零部件"
+        },
+        {
+          "code": "301067",
+          "name": "显盈科技",
+          "score": 78,
+          "price": 25.19,
+          "change_pct": 13.78,
+          "industry": "消费电子"
+        },
+        {
+          "code": "301122",
+          "name": "采纳股份",
+          "score": 78,
+          "price": 28.66,
+          "change_pct": 12.39,
+          "industry": "医疗器械"
+        },
+        {
+          "code": "301583",
+          "name": "托伦斯",
+          "score": 78,
+          "price": 174,
+          "change_pct": 20,
+          "industry": "半导体"
+        }
+      ]
+    },
+    {
+      "name": "smart_money",
+      "displayName": "量价异动",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300214",
+          "name": "日科化学",
+          "score": 76,
+          "price": 11.86,
+          "change_pct": 15.59,
+          "industry": "化学制品"
+        },
+        {
+          "code": "000595",
+          "name": "新能股份",
+          "score": 73,
+          "price": 6.07,
+          "change_pct": 9.96,
+          "industry": "电力"
+        },
+        {
+          "code": "002218",
+          "name": "拓日新能",
+          "score": 73,
+          "price": 4.2,
+          "change_pct": 9.95,
+          "industry": "电力"
+        },
+        {
+          "code": "002300",
+          "name": "太阳电缆",
+          "score": 73,
+          "price": 7.1,
+          "change_pct": 10.08,
+          "industry": "电网设备"
+        },
+        {
+          "code": "001258",
+          "name": "立新能源",
+          "score": 72,
+          "price": 13.03,
+          "change_pct": 7.6,
+          "industry": "电力"
+        },
+        {
+          "code": "002083",
+          "name": "孚日股份",
+          "score": 71,
+          "price": 11.52,
+          "change_pct": 10.03,
+          "industry": "纺织制造"
+        },
+        {
+          "code": "002298",
+          "name": "中电鑫龙",
+          "score": 71,
+          "price": 8.1,
+          "change_pct": 10.05,
+          "industry": "电网设备"
+        },
+        {
+          "code": "300062",
+          "name": "中能电气",
+          "score": 71,
+          "price": 6.8,
+          "change_pct": 7.09,
+          "industry": "电网设备"
+        },
+        {
+          "code": "688237",
+          "name": "超卓航科",
+          "score": 71,
+          "price": 65.45,
+          "change_pct": 20,
+          "industry": "航空装备Ⅱ"
+        },
+        {
+          "code": "301122",
+          "name": "采纳股份",
+          "score": 70,
+          "price": 28.66,
+          "change_pct": 12.39,
+          "industry": "医疗器械"
+        }
+      ]
+    },
+    {
+      "name": "value_pick",
+      "displayName": "价值精选",
+      "up": 3,
+      "down": 6,
+      "accuracy": 30,
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "score": 80,
+          "price": 11.1,
+          "change_pct": 0.18,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "score": 80,
+          "price": 9.04,
+          "change_pct": -0.11,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "score": 80,
+          "price": 7.01,
+          "change_pct": 0.43,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600016",
+          "name": "民生银行",
+          "score": 80,
+          "price": 3.5,
+          "change_pct": -0.85,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600104",
+          "name": "上汽集团",
+          "score": 80,
+          "price": 10.38,
+          "change_pct": -2.17,
+          "industry": "乘用车"
+        },
+        {
+          "code": "601166",
+          "name": "兴业银行",
+          "score": 80,
+          "price": 18.33,
+          "change_pct": 0.38,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601169",
+          "name": "北京银行",
+          "score": 80,
+          "price": 5.06,
+          "change_pct": -0.59,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601390",
+          "name": "中国中铁",
+          "score": 80,
+          "price": 4.52,
+          "change_pct": -1.74,
+          "industry": "基础建设"
+        },
+        {
+          "code": "601668",
+          "name": "中国建筑",
+          "score": 80,
+          "price": 4.7,
+          "change_pct": 0,
+          "industry": "房屋建设Ⅱ"
+        },
+        {
+          "code": "601818",
+          "name": "光大银行",
+          "score": 80,
+          "price": 3.15,
+          "change_pct": -0.32,
+          "industry": "银行Ⅱ"
+        }
+      ]
+    }
+  ]
+}
