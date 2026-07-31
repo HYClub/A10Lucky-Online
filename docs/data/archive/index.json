@@ -1,5 +1,22 @@
 [
   {
+    "date": "2026-07-31",
+    "count": 5545,
+    "up": 4395,
+    "down": 695,
+    "flat": 455,
+    "limitUp": 215,
+    "limitDown": 1,
+    "sh_up": 1858,
+    "sh_down": 387,
+    "sz_up": 2537,
+    "sz_down": 308,
+    "sh_index_pct": 0.72,
+    "sz_index_pct": 2.21,
+    "strategies": 8,
+    "accuracy": null
+  },
+  {
     "date": "2026-07-30",
     "count": 5543,
     "up": 1636,
@@ -14,7 +31,9 @@
     "sh_index_pct": -0.62,
     "sz_index_pct": -2.73,
     "strategies": 8,
-    "accuracy": null
+    "accuracy": 59,
+    "verified_hits": 47,
+    "verified_total": 80
   },
   {
     "date": "2026-07-29",

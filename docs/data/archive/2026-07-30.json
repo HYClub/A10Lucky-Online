@@ -69,7 +69,9 @@
           "score": 67,
           "price": 20.52,
           "change_pct": 9.67,
-          "industry": "厨卫电器"
+          "industry": "厨卫电器",
+          "next_change_pct": 4.14,
+          "hit": 1
         },
         {
           "code": "300688",
@@ -77,7 +79,9 @@
           "score": 66,
           "price": 30.64,
           "change_pct": 11.42,
-          "industry": "教育"
+          "industry": "教育",
+          "next_change_pct": 5.03,
+          "hit": 1
         },
         {
           "code": "300894",
@@ -85,7 +89,9 @@
           "score": 66,
           "price": 11.8,
           "change_pct": 20.04,
-          "industry": "厨卫电器"
+          "industry": "厨卫电器",
+          "next_change_pct": -2.29,
+          "hit": 0
         },
         {
           "code": "300996",
@@ -93,7 +99,9 @@
           "score": 66,
           "price": 15.52,
           "change_pct": 20.03,
-          "industry": "软件开发"
+          "industry": "软件开发",
+          "next_change_pct": 19.97,
+          "hit": 1
         },
         {
           "code": "601003",
@@ -101,7 +109,9 @@
           "score": 66,
           "price": 4.19,
           "change_pct": 9.97,
-          "industry": "普钢"
+          "industry": "普钢",
+          "next_change_pct": -1.67,
+          "hit": 0
         },
         {
           "code": "605033",
@@ -109,7 +119,9 @@
           "score": 66,
           "price": 18.7,
           "change_pct": 10,
-          "industry": "农化制品"
+          "industry": "农化制品",
+          "next_change_pct": 1.93,
+          "hit": 1
         },
         {
           "code": "600199",
@@ -117,7 +129,9 @@
           "score": 65,
           "price": 8.08,
           "change_pct": 7.45,
-          "industry": "白酒Ⅱ"
+          "industry": "白酒Ⅱ",
+          "next_change_pct": -2.85,
+          "hit": 0
         },
         {
           "code": "600686",
@@ -125,7 +139,9 @@
           "score": 65,
           "price": 12.3,
           "change_pct": 5.49,
-          "industry": "商用车"
+          "industry": "商用车",
+          "next_change_pct": -0.65,
+          "hit": 0
         },
         {
           "code": "603589",
@@ -133,7 +149,9 @@
           "score": 65,
           "price": 20.78,
           "change_pct": 5.59,
-          "industry": "白酒Ⅱ"
+          "industry": "白酒Ⅱ",
+          "next_change_pct": 0.29,
+          "hit": 1
         },
         {
           "code": "603919",
@@ -141,9 +159,14 @@
           "score": 65,
           "price": 16.89,
           "change_pct": 10.03,
-          "industry": "白酒Ⅱ"
+          "industry": "白酒Ⅱ",
+          "next_change_pct": -1.54,
+          "hit": 0
         }
-      ]
+      ],
+      "verified_hits": 5,
+      "verified_total": 10,
+      "verified_accuracy": 50
     },
     {
       "name": "alpha_blend",
@@ -158,7 +181,9 @@
           "score": 70,
           "price": 11.8,
           "change_pct": 20.04,
-          "industry": "厨卫电器"
+          "industry": "厨卫电器",
+          "next_change_pct": -2.29,
+          "hit": 0
         },
         {
           "code": "300688",
@@ -166,7 +191,9 @@
           "score": 69,
           "price": 30.64,
           "change_pct": 11.42,
-          "industry": "教育"
+          "industry": "教育",
+          "next_change_pct": 5.03,
+          "hit": 1
         },
         {
           "code": "002258",
@@ -174,7 +201,9 @@
           "score": 68,
           "price": 16.18,
           "change_pct": 9.99,
-          "industry": "农化制品"
+          "industry": "农化制品",
+          "next_change_pct": -1.73,
+          "hit": 0
         },
         {
           "code": "003032",
@@ -182,7 +211,9 @@
           "score": 68,
           "price": 8.01,
           "change_pct": 10.03,
-          "industry": "教育"
+          "industry": "教育",
+          "next_change_pct": 9.99,
+          "hit": 1
         },
         {
           "code": "300911",
@@ -190,7 +221,9 @@
           "score": 68,
           "price": 20.52,
           "change_pct": 9.67,
-          "industry": "厨卫电器"
+          "industry": "厨卫电器",
+          "next_change_pct": 4.14,
+          "hit": 1
         },
         {
           "code": "601003",
@@ -198,7 +231,9 @@
           "score": 68,
           "price": 4.19,
           "change_pct": 9.97,
-          "industry": "普钢"
+          "industry": "普钢",
+          "next_change_pct": -1.67,
+          "hit": 0
         },
         {
           "code": "605033",
@@ -206,7 +241,9 @@
           "score": 68,
           "price": 18.7,
           "change_pct": 10,
-          "industry": "农化制品"
+          "industry": "农化制品",
+          "next_change_pct": 1.93,
+          "hit": 1
         },
         {
           "code": "300164",
@@ -214,7 +251,9 @@
           "score": 67,
           "price": 11.94,
           "change_pct": 10.56,
-          "industry": "油服工程"
+          "industry": "油服工程",
+          "next_change_pct": -0.08,
+          "hit": 0
         },
         {
           "code": "300191",
@@ -222,7 +261,9 @@
           "score": 65,
           "price": 29.85,
           "change_pct": 7.1,
-          "industry": "油服工程"
+          "industry": "油服工程",
+          "next_change_pct": -3.35,
+          "hit": 0
         },
         {
           "code": "600702",
@@ -230,9 +271,14 @@
           "score": 65,
           "price": 37.49,
           "change_pct": 10.01,
-          "industry": "白酒Ⅱ"
+          "industry": "白酒Ⅱ",
+          "next_change_pct": 3.44,
+          "hit": 1
         }
-      ]
+      ],
+      "verified_hits": 5,
+      "verified_total": 10,
+      "verified_accuracy": 50
     },
     {
       "name": "balanced",
@@ -247,7 +293,9 @@
           "score": 83,
           "price": 15.52,
           "change_pct": 20.03,
-          "industry": "软件开发"
+          "industry": "软件开发",
+          "next_change_pct": 19.97,
+          "hit": 1
         },
         {
           "code": "301449",
@@ -255,7 +303,9 @@
           "score": 83,
           "price": 39.08,
           "change_pct": 19.99,
-          "industry": "专业服务"
+          "industry": "专业服务",
+          "next_change_pct": 2.92,
+          "hit": 1
         },
         {
           "code": "301667",
@@ -263,7 +313,9 @@
           "score": 83,
           "price": 65.82,
           "change_pct": 20,
-          "industry": "汽车零部件"
+          "industry": "汽车零部件",
+          "next_change_pct": 1.05,
+          "hit": 1
         },
         {
           "code": "301668",
@@ -271,7 +323,9 @@
           "score": 83,
           "price": 37.26,
           "change_pct": 20,
-          "industry": "电网设备"
+          "industry": "电网设备",
+          "next_change_pct": 4.27,
+          "hit": 1
         },
         {
           "code": "300605",
@@ -279,7 +333,9 @@
           "score": 80,
           "price": 10.25,
           "change_pct": 13.51,
-          "industry": "软件开发"
+          "industry": "软件开发",
+          "next_change_pct": 7.32,
+          "hit": 1
         },
         {
           "code": "300894",
@@ -287,7 +343,9 @@
           "score": 80,
           "price": 11.8,
           "change_pct": 20.04,
-          "industry": "厨卫电器"
+          "industry": "厨卫电器",
+          "next_change_pct": -2.29,
+          "hit": 0
         },
         {
           "code": "301677",
@@ -295,7 +353,9 @@
           "score": 79,
           "price": 82.4,
           "change_pct": 145.38,
-          "industry": "通用设备"
+          "industry": "通用设备",
+          "next_change_pct": 6.82,
+          "hit": 1
         },
         {
           "code": "688260",
@@ -303,7 +363,9 @@
           "score": 79,
           "price": 102.81,
           "change_pct": 16.16,
-          "industry": "消费电子"
+          "industry": "消费电子",
+          "next_change_pct": -2.66,
+          "hit": 0
         },
         {
           "code": "300981",
@@ -311,7 +373,9 @@
           "score": 78,
           "price": 14.18,
           "change_pct": 10.35,
-          "industry": "医疗器械"
+          "industry": "医疗器械",
+          "next_change_pct": 4.3,
+          "hit": 1
         },
         {
           "code": "300989",
@@ -319,9 +383,14 @@
           "score": 78,
           "price": 11.17,
           "change_pct": 11.92,
-          "industry": "工程咨询服务Ⅱ"
+          "industry": "工程咨询服务Ⅱ",
+          "next_change_pct": 4.74,
+          "hit": 1
         }
-      ]
+      ],
+      "verified_hits": 8,
+      "verified_total": 10,
+      "verified_accuracy": 80
     },
     {
       "name": "fund_momentum",
@@ -336,7 +405,9 @@
           "score": 61,
           "price": 5.95,
           "change_pct": 9.98,
-          "industry": "化学制药"
+          "industry": "化学制药",
+          "next_change_pct": -1.51,
+          "hit": 0
         },
         {
           "code": "000948",
@@ -344,7 +415,9 @@
           "score": 61,
           "price": 15.38,
           "change_pct": 6.36,
-          "industry": "软件开发"
+          "industry": "软件开发",
+          "next_change_pct": 2.6,
+          "hit": 1
         },
         {
           "code": "000995",
@@ -352,7 +425,9 @@
           "score": 61,
           "price": 10.45,
           "change_pct": 2.96,
-          "industry": "白酒Ⅱ"
+          "industry": "白酒Ⅱ",
+          "next_change_pct": 1.05,
+          "hit": 1
         },
         {
           "code": "002131",
@@ -360,7 +435,9 @@
           "score": 61,
           "price": 4.24,
           "change_pct": 3.67,
-          "industry": "通用设备"
+          "industry": "通用设备",
+          "next_change_pct": 9.91,
+          "hit": 1
         },
         {
           "code": "002199",
@@ -368,7 +445,9 @@
           "score": 61,
           "price": 14.24,
           "change_pct": 6.35,
-          "industry": "元件"
+          "industry": "元件",
+          "next_change_pct": -4,
+          "hit": 0
         },
         {
           "code": "002580",
@@ -376,7 +455,9 @@
           "score": 61,
           "price": 19.36,
           "change_pct": 4.03,
-          "industry": "电池"
+          "industry": "电池",
+          "next_change_pct": 0.57,
+          "hit": 1
         },
         {
           "code": "002585",
@@ -384,7 +465,9 @@
           "score": 61,
           "price": 8.66,
           "change_pct": 10.04,
-          "industry": "塑料"
+          "industry": "塑料",
+          "next_change_pct": 5.08,
+          "hit": 1
         },
         {
           "code": "002612",
@@ -392,7 +475,9 @@
           "score": 61,
           "price": 15.6,
           "change_pct": 9.7,
-          "industry": "服装家纺"
+          "industry": "服装家纺",
+          "next_change_pct": -5.19,
+          "hit": 0
         },
         {
           "code": "300242",
@@ -400,7 +485,9 @@
           "score": 61,
           "price": 4.58,
           "change_pct": 5.29,
-          "industry": "广告营销"
+          "industry": "广告营销",
+          "next_change_pct": -1.31,
+          "hit": 0
         },
         {
           "code": "300359",
@@ -408,9 +495,14 @@
           "score": 61,
           "price": 4.6,
           "change_pct": 3.84,
-          "industry": "教育"
+          "industry": "教育",
+          "next_change_pct": -4.13,
+          "hit": 0
         }
-      ]
+      ],
+      "verified_hits": 5,
+      "verified_total": 10,
+      "verified_accuracy": 50
     },
     {
       "name": "insider_track",
@@ -425,7 +517,9 @@
           "score": 70,
           "price": 20.52,
           "change_pct": 9.67,
-          "industry": "厨卫电器"
+          "industry": "厨卫电器",
+          "next_change_pct": 4.14,
+          "hit": 1
         },
         {
           "code": "601003",
@@ -433,7 +527,9 @@
           "score": 70,
           "price": 4.19,
           "change_pct": 9.97,
-          "industry": "普钢"
+          "industry": "普钢",
+          "next_change_pct": -1.67,
+          "hit": 0
         },
         {
           "code": "605033",
@@ -441,7 +537,9 @@
           "score": 70,
           "price": 18.7,
           "change_pct": 10,
-          "industry": "农化制品"
+          "industry": "农化制品",
+          "next_change_pct": 1.93,
+          "hit": 1
         },
         {
           "code": "688363",
@@ -449,7 +547,9 @@
           "score": 70,
           "price": 38.9,
           "change_pct": 2.75,
-          "industry": "医疗美容"
+          "industry": "医疗美容",
+          "next_change_pct": 2.9,
+          "hit": 1
         },
         {
           "code": "003032",
@@ -457,7 +557,9 @@
           "score": 69,
           "price": 8.01,
           "change_pct": 10.03,
-          "industry": "教育"
+          "industry": "教育",
+          "next_change_pct": 9.99,
+          "hit": 1
         },
         {
           "code": "300688",
@@ -465,7 +567,9 @@
           "score": 69,
           "price": 30.64,
           "change_pct": 11.42,
-          "industry": "教育"
+          "industry": "教育",
+          "next_change_pct": 5.03,
+          "hit": 1
         },
         {
           "code": "002258",
@@ -473,7 +577,9 @@
           "score": 68,
           "price": 16.18,
           "change_pct": 9.99,
-          "industry": "农化制品"
+          "industry": "农化制品",
+          "next_change_pct": -1.73,
+          "hit": 0
         },
         {
           "code": "300164",
@@ -481,7 +587,9 @@
           "score": 68,
           "price": 11.94,
           "change_pct": 10.56,
-          "industry": "油服工程"
+          "industry": "油服工程",
+          "next_change_pct": -0.08,
+          "hit": 0
         },
         {
           "code": "300191",
@@ -489,7 +597,9 @@
           "score": 68,
           "price": 29.85,
           "change_pct": 7.1,
-          "industry": "油服工程"
+          "industry": "油服工程",
+          "next_change_pct": -3.35,
+          "hit": 0
         },
         {
           "code": "603619",
@@ -497,9 +607,14 @@
           "score": 68,
           "price": 22.5,
           "change_pct": 5.53,
-          "industry": "油服工程"
+          "industry": "油服工程",
+          "next_change_pct": -3.38,
+          "hit": 0
         }
-      ]
+      ],
+      "verified_hits": 5,
+      "verified_total": 10,
+      "verified_accuracy": 50
     },
     {
       "name": "reversal",
@@ -514,7 +629,9 @@
           "score": 82,
           "price": 15.52,
           "change_pct": 20.03,
-          "industry": "软件开发"
+          "industry": "软件开发",
+          "next_change_pct": 19.97,
+          "hit": 1
         },
         {
           "code": "301449",
@@ -522,7 +639,9 @@
           "score": 82,
           "price": 39.08,
           "change_pct": 19.99,
-          "industry": "专业服务"
+          "industry": "专业服务",
+          "next_change_pct": 2.92,
+          "hit": 1
         },
         {
           "code": "301667",
@@ -530,7 +649,9 @@
           "score": 82,
           "price": 65.82,
           "change_pct": 20,
-          "industry": "汽车零部件"
+          "industry": "汽车零部件",
+          "next_change_pct": 1.05,
+          "hit": 1
         },
         {
           "code": "301668",
@@ -538,7 +659,9 @@
           "score": 82,
           "price": 37.26,
           "change_pct": 20,
-          "industry": "电网设备"
+          "industry": "电网设备",
+          "next_change_pct": 4.27,
+          "hit": 1
         },
         {
           "code": "300894",
@@ -546,7 +669,9 @@
           "score": 81,
           "price": 11.8,
           "change_pct": 20.04,
-          "industry": "厨卫电器"
+          "industry": "厨卫电器",
+          "next_change_pct": -2.29,
+          "hit": 0
         },
         {
           "code": "301677",
@@ -554,7 +679,9 @@
           "score": 80,
           "price": 82.4,
           "change_pct": 145.38,
-          "industry": "通用设备"
+          "industry": "通用设备",
+          "next_change_pct": 6.82,
+          "hit": 1
         },
         {
           "code": "300605",
@@ -562,7 +689,9 @@
           "score": 79,
           "price": 10.25,
           "change_pct": 13.51,
-          "industry": "软件开发"
+          "industry": "软件开发",
+          "next_change_pct": 7.32,
+          "hit": 1
         },
         {
           "code": "688260",
@@ -570,7 +699,9 @@
           "score": 79,
           "price": 102.81,
           "change_pct": 16.16,
-          "industry": "消费电子"
+          "industry": "消费电子",
+          "next_change_pct": -2.66,
+          "hit": 0
         },
         {
           "code": "300989",
@@ -578,7 +709,9 @@
           "score": 78,
           "price": 11.17,
           "change_pct": 11.92,
-          "industry": "工程咨询服务Ⅱ"
+          "industry": "工程咨询服务Ⅱ",
+          "next_change_pct": 4.74,
+          "hit": 1
         },
         {
           "code": "000009",
@@ -586,9 +719,14 @@
           "score": 77,
           "price": 7.15,
           "change_pct": 10,
-          "industry": "综合Ⅱ"
+          "industry": "综合Ⅱ",
+          "next_change_pct": 10.07,
+          "hit": 1
         }
-      ]
+      ],
+      "verified_hits": 8,
+      "verified_total": 10,
+      "verified_accuracy": 80
     },
     {
       "name": "smart_money",
@@ -603,7 +741,9 @@
           "score": 78,
           "price": 15.52,
           "change_pct": 20.03,
-          "industry": "软件开发"
+          "industry": "软件开发",
+          "next_change_pct": 19.97,
+          "hit": 1
         },
         {
           "code": "300605",
@@ -611,7 +751,9 @@
           "score": 75,
           "price": 10.25,
           "change_pct": 13.51,
-          "industry": "软件开发"
+          "industry": "软件开发",
+          "next_change_pct": 7.32,
+          "hit": 1
         },
         {
           "code": "301677",
@@ -619,7 +761,9 @@
           "score": 74,
           "price": 82.4,
           "change_pct": 145.38,
-          "industry": "通用设备"
+          "industry": "通用设备",
+          "next_change_pct": 6.82,
+          "hit": 1
         },
         {
           "code": "688260",
@@ -627,7 +771,9 @@
           "score": 74,
           "price": 102.81,
           "change_pct": 16.16,
-          "industry": "消费电子"
+          "industry": "消费电子",
+          "next_change_pct": -2.66,
+          "hit": 0
         },
         {
           "code": "300911",
@@ -635,7 +781,9 @@
           "score": 73,
           "price": 20.52,
           "change_pct": 9.67,
-          "industry": "厨卫电器"
+          "industry": "厨卫电器",
+          "next_change_pct": 4.14,
+          "hit": 1
         },
         {
           "code": "300981",
@@ -643,7 +791,9 @@
           "score": 73,
           "price": 14.18,
           "change_pct": 10.35,
-          "industry": "医疗器械"
+          "industry": "医疗器械",
+          "next_change_pct": 4.3,
+          "hit": 1
         },
         {
           "code": "301449",
@@ -651,7 +801,9 @@
           "score": 73,
           "price": 39.08,
           "change_pct": 19.99,
-          "industry": "专业服务"
+          "industry": "专业服务",
+          "next_change_pct": 2.92,
+          "hit": 1
         },
         {
           "code": "301667",
@@ -659,7 +811,9 @@
           "score": 73,
           "price": 65.82,
           "change_pct": 20,
-          "industry": "汽车零部件"
+          "industry": "汽车零部件",
+          "next_change_pct": 1.05,
+          "hit": 1
         },
         {
           "code": "301668",
@@ -667,7 +821,9 @@
           "score": 73,
           "price": 37.26,
           "change_pct": 20,
-          "industry": "电网设备"
+          "industry": "电网设备",
+          "next_change_pct": 4.27,
+          "hit": 1
         },
         {
           "code": "600105",
@@ -675,9 +831,14 @@
           "score": 72,
           "price": 32.96,
           "change_pct": 7.33,
-          "industry": "通信设备"
+          "industry": "通信设备",
+          "next_change_pct": -2.79,
+          "hit": 0
         }
-      ]
+      ],
+      "verified_hits": 8,
+      "verified_total": 10,
+      "verified_accuracy": 80
     },
     {
       "name": "value_pick",
@@ -692,7 +853,9 @@
           "score": 80,
           "price": 11.61,
           "change_pct": 2.93,
-          "industry": "银行Ⅱ"
+          "industry": "银行Ⅱ",
+          "next_change_pct": 0.17,
+          "hit": 1
         },
         {
           "code": "600000",
@@ -700,7 +863,9 @@
           "score": 80,
           "price": 9.71,
           "change_pct": 4.63,
-          "industry": "银行Ⅱ"
+          "industry": "银行Ⅱ",
+          "next_change_pct": -2.06,
+          "hit": 0
         },
         {
           "code": "600015",
@@ -708,7 +873,9 @@
           "score": 80,
           "price": 7.03,
           "change_pct": 3.84,
-          "industry": "银行Ⅱ"
+          "industry": "银行Ⅱ",
+          "next_change_pct": -0.85,
+          "hit": 0
         },
         {
           "code": "600016",
@@ -716,7 +883,9 @@
           "score": 80,
           "price": 3.63,
           "change_pct": 1.97,
-          "industry": "银行Ⅱ"
+          "industry": "银行Ⅱ",
+          "next_change_pct": -0.28,
+          "hit": 0
         },
         {
           "code": "601166",
@@ -724,7 +893,9 @@
           "score": 80,
           "price": 19.1,
           "change_pct": 2.74,
-          "industry": "银行Ⅱ"
+          "industry": "银行Ⅱ",
+          "next_change_pct": -1.05,
+          "hit": 0
         },
         {
           "code": "601169",
@@ -732,7 +903,9 @@
           "score": 80,
           "price": 5.21,
           "change_pct": 1.76,
-          "industry": "银行Ⅱ"
+          "industry": "银行Ⅱ",
+          "next_change_pct": 0.19,
+          "hit": 1
         },
         {
           "code": "601390",
@@ -740,7 +913,9 @@
           "score": 80,
           "price": 4.69,
           "change_pct": 1.96,
-          "industry": "基础建设"
+          "industry": "基础建设",
+          "next_change_pct": 0.22,
+          "hit": 1
         },
         {
           "code": "601668",
@@ -748,7 +923,9 @@
           "score": 80,
           "price": 4.72,
           "change_pct": 1.72,
-          "industry": "房屋建设Ⅱ"
+          "industry": "房屋建设Ⅱ",
+          "next_change_pct": -0.42,
+          "hit": 0
         },
         {
           "code": "601800",
@@ -756,7 +933,9 @@
           "score": 80,
           "price": 6.34,
           "change_pct": 1.77,
-          "industry": "基础建设"
+          "industry": "基础建设",
+          "next_change_pct": -0.16,
+          "hit": 0
         },
         {
           "code": "601818",
@@ -764,9 +943,15 @@
           "score": 80,
           "price": 3.19,
           "change_pct": 2.57,
-          "industry": "银行Ⅱ"
+          "industry": "银行Ⅱ",
+          "next_change_pct": -0.63,
+          "hit": 0
         }
-      ]
+      ],
+      "verified_hits": 3,
+      "verified_total": 10,
+      "verified_accuracy": 30
     }
-  ]
+  ],
+  "verified": true
 }
