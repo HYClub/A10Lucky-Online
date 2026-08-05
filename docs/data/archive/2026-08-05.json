@@ -1,0 +1,772 @@
+{
+  "date": "2026-08-05",
+  "timestamp": "2026-08-05T15:57:19",
+  "indices": [
+    {
+      "code": "000001",
+      "name": "上证指数",
+      "price": 3878.43,
+      "change_pct": 1.47,
+      "change_amount": 56.15
+    },
+    {
+      "code": "399001",
+      "name": "深证成指",
+      "price": 14144.2,
+      "change_pct": 1.86,
+      "change_amount": 258.49
+    },
+    {
+      "code": "399006",
+      "name": "创业板指",
+      "price": 3535.14,
+      "change_pct": 1.32,
+      "change_amount": 46.17
+    },
+    {
+      "code": "399300",
+      "name": "沪深300",
+      "price": 4658.15,
+      "change_pct": 1.24,
+      "change_amount": 57.22
+    }
+  ],
+  "market": {
+    "up": 3427,
+    "down": 1599,
+    "flat": 519,
+    "limitUp": 181,
+    "limitDown": 2,
+    "total": 5545
+  },
+  "sh": {
+    "up": 1460,
+    "down": 773,
+    "flat": 228,
+    "limitUp": 86,
+    "limitDown": 1,
+    "total": 2461
+  },
+  "sz": {
+    "up": 1967,
+    "down": 826,
+    "flat": 291,
+    "limitUp": 95,
+    "limitDown": 1,
+    "total": 3084
+  },
+  "strategies": [
+    {
+      "name": "all_factor",
+      "displayName": "全因子",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300552",
+          "name": "万集科技",
+          "score": 70,
+          "price": 24.88,
+          "change_pct": 20.02,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "301026",
+          "name": "浩通科技",
+          "score": 70,
+          "price": 21.49,
+          "change_pct": 19.99,
+          "industry": "小金属"
+        },
+        {
+          "code": "600459",
+          "name": "贵研铂业",
+          "score": 68,
+          "price": 20.73,
+          "change_pct": 8.76,
+          "industry": "小金属"
+        },
+        {
+          "code": "001229",
+          "name": "魅视科技",
+          "score": 67,
+          "price": 42.32,
+          "change_pct": 9.98,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "002792",
+          "name": "通宇通讯",
+          "score": 67,
+          "price": 30.74,
+          "change_pct": 6.92,
+          "industry": "通信设备"
+        },
+        {
+          "code": "002827",
+          "name": "高争民爆",
+          "score": 67,
+          "price": 44.76,
+          "change_pct": 6.9,
+          "industry": "化学制品"
+        },
+        {
+          "code": "300139",
+          "name": "晓程科技",
+          "score": 67,
+          "price": 44.71,
+          "change_pct": 11.89,
+          "industry": "贵金属"
+        },
+        {
+          "code": "300248",
+          "name": "新开普",
+          "score": 67,
+          "price": 10.07,
+          "change_pct": 20.02,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "300420",
+          "name": "五洋自控",
+          "score": 67,
+          "price": 7.89,
+          "change_pct": 19.73,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300686",
+          "name": "智动力",
+          "score": 67,
+          "price": 15.06,
+          "change_pct": 20,
+          "industry": "消费电子"
+        }
+      ]
+    },
+    {
+      "name": "alpha_blend",
+      "displayName": "板块轮动+技术",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300552",
+          "name": "万集科技",
+          "score": 73,
+          "price": 24.88,
+          "change_pct": 20.02,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "300615",
+          "name": "欣天科技",
+          "score": 73,
+          "price": 15.02,
+          "change_pct": 19.97,
+          "industry": "通信设备"
+        },
+        {
+          "code": "300686",
+          "name": "智动力",
+          "score": 73,
+          "price": 15.06,
+          "change_pct": 20,
+          "industry": "消费电子"
+        },
+        {
+          "code": "301026",
+          "name": "浩通科技",
+          "score": 73,
+          "price": 21.49,
+          "change_pct": 19.99,
+          "industry": "小金属"
+        },
+        {
+          "code": "300248",
+          "name": "新开普",
+          "score": 70,
+          "price": 10.07,
+          "change_pct": 20.02,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "300420",
+          "name": "五洋自控",
+          "score": 70,
+          "price": 7.89,
+          "change_pct": 19.73,
+          "industry": "通用设备"
+        },
+        {
+          "code": "688600",
+          "name": "皖仪科技",
+          "score": 70,
+          "price": 27.44,
+          "change_pct": 19.98,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300139",
+          "name": "晓程科技",
+          "score": 69,
+          "price": 44.71,
+          "change_pct": 11.89,
+          "industry": "贵金属"
+        },
+        {
+          "code": "300476",
+          "name": "胜宏科技",
+          "score": 69,
+          "price": 236.35,
+          "change_pct": 17.12,
+          "industry": "元件"
+        },
+        {
+          "code": "301016",
+          "name": "雷尔伟",
+          "score": 69,
+          "price": 13.84,
+          "change_pct": 12.52,
+          "industry": "轨交设备Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "displayName": "多因子均衡",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300552",
+          "name": "万集科技",
+          "score": 83,
+          "price": 24.88,
+          "change_pct": 20.02,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "301026",
+          "name": "浩通科技",
+          "score": 83,
+          "price": 21.49,
+          "change_pct": 19.99,
+          "industry": "小金属"
+        },
+        {
+          "code": "300248",
+          "name": "新开普",
+          "score": 82,
+          "price": 10.07,
+          "change_pct": 20.02,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "300420",
+          "name": "五洋自控",
+          "score": 81,
+          "price": 7.89,
+          "change_pct": 19.73,
+          "industry": "通用设备"
+        },
+        {
+          "code": "688600",
+          "name": "皖仪科技",
+          "score": 81,
+          "price": 27.44,
+          "change_pct": 19.98,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300686",
+          "name": "智动力",
+          "score": 80,
+          "price": 15.06,
+          "change_pct": 20,
+          "industry": "消费电子"
+        },
+        {
+          "code": "300654",
+          "name": "世纪天鸿",
+          "score": 79,
+          "price": 12.5,
+          "change_pct": 12.61,
+          "industry": "出版"
+        },
+        {
+          "code": "300820",
+          "name": "英杰电气",
+          "score": 79,
+          "price": 52.99,
+          "change_pct": 16.1,
+          "industry": "其他电源设备Ⅱ"
+        },
+        {
+          "code": "688059",
+          "name": "华锐精密",
+          "score": 79,
+          "price": 88.29,
+          "change_pct": 17.78,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300476",
+          "name": "胜宏科技",
+          "score": 78,
+          "price": 236.35,
+          "change_pct": 17.12,
+          "industry": "元件"
+        }
+      ]
+    },
+    {
+      "name": "fund_momentum",
+      "displayName": "资金动量",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000815",
+          "name": "美利云",
+          "score": 61,
+          "price": 18.85,
+          "change_pct": 2.61,
+          "industry": "IT服务Ⅱ"
+        },
+        {
+          "code": "001229",
+          "name": "魅视科技",
+          "score": 61,
+          "price": 42.32,
+          "change_pct": 9.98,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "001388",
+          "name": "信通电子",
+          "score": 61,
+          "price": 23.41,
+          "change_pct": 4.42,
+          "industry": "电网设备"
+        },
+        {
+          "code": "002291",
+          "name": "遥望科技",
+          "score": 61,
+          "price": 5.9,
+          "change_pct": 2.43,
+          "industry": "广告营销"
+        },
+        {
+          "code": "002348",
+          "name": "高乐股份",
+          "score": 61,
+          "price": 12.12,
+          "change_pct": 9.98,
+          "industry": "文娱用品"
+        },
+        {
+          "code": "002361",
+          "name": "神剑股份",
+          "score": 61,
+          "price": 11.41,
+          "change_pct": 2.79,
+          "industry": "塑料"
+        },
+        {
+          "code": "002607",
+          "name": "中公教育",
+          "score": 61,
+          "price": 2.35,
+          "change_pct": 9.81,
+          "industry": "教育"
+        },
+        {
+          "code": "002792",
+          "name": "通宇通讯",
+          "score": 61,
+          "price": 30.74,
+          "change_pct": 6.92,
+          "industry": "通信设备"
+        },
+        {
+          "code": "002827",
+          "name": "高争民爆",
+          "score": 61,
+          "price": 44.76,
+          "change_pct": 6.9,
+          "industry": "化学制品"
+        },
+        {
+          "code": "002896",
+          "name": "中大力德",
+          "score": 61,
+          "price": 78.92,
+          "change_pct": 3.69,
+          "industry": "通用设备"
+        }
+      ]
+    },
+    {
+      "name": "insider_track",
+      "displayName": "龙虎榜+资金流",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000609",
+          "name": "*ST中迪",
+          "score": 70,
+          "price": 10.4,
+          "change_pct": 4.31,
+          "industry": "房地产开发"
+        },
+        {
+          "code": "000815",
+          "name": "美利云",
+          "score": 70,
+          "price": 18.85,
+          "change_pct": 2.61,
+          "industry": "IT服务Ⅱ"
+        },
+        {
+          "code": "000831",
+          "name": "中国稀土",
+          "score": 70,
+          "price": 51.6,
+          "change_pct": 4.96,
+          "industry": "小金属"
+        },
+        {
+          "code": "001229",
+          "name": "魅视科技",
+          "score": 70,
+          "price": 42.32,
+          "change_pct": 9.98,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "001388",
+          "name": "信通电子",
+          "score": 70,
+          "price": 23.41,
+          "change_pct": 4.42,
+          "industry": "电网设备"
+        },
+        {
+          "code": "002792",
+          "name": "通宇通讯",
+          "score": 70,
+          "price": 30.74,
+          "change_pct": 6.92,
+          "industry": "通信设备"
+        },
+        {
+          "code": "002827",
+          "name": "高争民爆",
+          "score": 70,
+          "price": 44.76,
+          "change_pct": 6.9,
+          "industry": "化学制品"
+        },
+        {
+          "code": "002912",
+          "name": "中新赛克",
+          "score": 70,
+          "price": 22.2,
+          "change_pct": 5.56,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "003032",
+          "name": "传智教育",
+          "score": 70,
+          "price": 11.73,
+          "change_pct": 10.04,
+          "industry": "教育"
+        },
+        {
+          "code": "300127",
+          "name": "银河磁体",
+          "score": 70,
+          "price": 24.71,
+          "change_pct": 3.22,
+          "industry": "金属新材料"
+        }
+      ]
+    },
+    {
+      "name": "reversal",
+      "displayName": "超跌反转",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300248",
+          "name": "新开普",
+          "score": 82,
+          "price": 10.07,
+          "change_pct": 20.02,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "300552",
+          "name": "万集科技",
+          "score": 82,
+          "price": 24.88,
+          "change_pct": 20.02,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "301026",
+          "name": "浩通科技",
+          "score": 82,
+          "price": 21.49,
+          "change_pct": 19.99,
+          "industry": "小金属"
+        },
+        {
+          "code": "688600",
+          "name": "皖仪科技",
+          "score": 82,
+          "price": 27.44,
+          "change_pct": 19.98,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300420",
+          "name": "五洋自控",
+          "score": 81,
+          "price": 7.89,
+          "change_pct": 19.73,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300686",
+          "name": "智动力",
+          "score": 81,
+          "price": 15.06,
+          "change_pct": 20,
+          "industry": "消费电子"
+        },
+        {
+          "code": "688059",
+          "name": "华锐精密",
+          "score": 80,
+          "price": 88.29,
+          "change_pct": 17.78,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300476",
+          "name": "胜宏科技",
+          "score": 79,
+          "price": 236.35,
+          "change_pct": 17.12,
+          "industry": "元件"
+        },
+        {
+          "code": "300820",
+          "name": "英杰电气",
+          "score": 79,
+          "price": 52.99,
+          "change_pct": 16.1,
+          "industry": "其他电源设备Ⅱ"
+        },
+        {
+          "code": "300948",
+          "name": "冠中生态",
+          "score": 79,
+          "price": 20.19,
+          "change_pct": 15.44,
+          "industry": "基础建设"
+        }
+      ]
+    },
+    {
+      "name": "smart_money",
+      "displayName": "量价异动",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300552",
+          "name": "万集科技",
+          "score": 78,
+          "price": 24.88,
+          "change_pct": 20.02,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "301026",
+          "name": "浩通科技",
+          "score": 78,
+          "price": 21.49,
+          "change_pct": 19.99,
+          "industry": "小金属"
+        },
+        {
+          "code": "001229",
+          "name": "魅视科技",
+          "score": 73,
+          "price": 42.32,
+          "change_pct": 9.98,
+          "industry": "计算机设备"
+        },
+        {
+          "code": "002348",
+          "name": "高乐股份",
+          "score": 73,
+          "price": 12.12,
+          "change_pct": 9.98,
+          "industry": "文娱用品"
+        },
+        {
+          "code": "003032",
+          "name": "传智教育",
+          "score": 73,
+          "price": 11.73,
+          "change_pct": 10.04,
+          "industry": "教育"
+        },
+        {
+          "code": "300686",
+          "name": "智动力",
+          "score": 73,
+          "price": 15.06,
+          "change_pct": 20,
+          "industry": "消费电子"
+        },
+        {
+          "code": "600721",
+          "name": "百花医药",
+          "score": 73,
+          "price": 8.71,
+          "change_pct": 9.97,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "601700",
+          "name": "风范股份",
+          "score": 73,
+          "price": 6.51,
+          "change_pct": 9.97,
+          "industry": "电网设备"
+        },
+        {
+          "code": "300139",
+          "name": "晓程科技",
+          "score": 72,
+          "price": 44.71,
+          "change_pct": 11.89,
+          "industry": "贵金属"
+        },
+        {
+          "code": "300311",
+          "name": "任子行",
+          "score": 72,
+          "price": 5.97,
+          "change_pct": 7.57,
+          "industry": "软件开发"
+        }
+      ]
+    },
+    {
+      "name": "value_pick",
+      "displayName": "价值精选",
+      "up": 1,
+      "down": 9,
+      "accuracy": 10,
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "score": 80,
+          "price": 11.25,
+          "change_pct": -1.66,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "score": 80,
+          "price": 9.26,
+          "change_pct": -1.49,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "score": 80,
+          "price": 6.78,
+          "change_pct": -1.6,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600016",
+          "name": "民生银行",
+          "score": 80,
+          "price": 3.52,
+          "change_pct": -1.12,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601166",
+          "name": "兴业银行",
+          "score": 80,
+          "price": 18.36,
+          "change_pct": -1.08,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601169",
+          "name": "北京银行",
+          "score": 80,
+          "price": 5.03,
+          "change_pct": -1.37,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601390",
+          "name": "中国中铁",
+          "score": 80,
+          "price": 4.49,
+          "change_pct": -0.66,
+          "industry": "基础建设"
+        },
+        {
+          "code": "601668",
+          "name": "中国建筑",
+          "score": 80,
+          "price": 4.58,
+          "change_pct": -1.29,
+          "industry": "房屋建设Ⅱ"
+        },
+        {
+          "code": "601818",
+          "name": "光大银行",
+          "score": 80,
+          "price": 3.07,
+          "change_pct": -1.92,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "002142",
+          "name": "宁波银行",
+          "score": 77,
+          "price": 31.65,
+          "change_pct": 0.48,
+          "industry": "银行Ⅱ"
+        }
+      ]
+    }
+  ]
+}
