@@ -1,0 +1,772 @@
+{
+  "date": "2026-08-10",
+  "timestamp": "2026-08-10T16:27:32",
+  "indices": [
+    {
+      "code": "000001",
+      "name": "上证指数",
+      "price": 3966.59,
+      "change_pct": 0.67,
+      "change_amount": 26.55
+    },
+    {
+      "code": "399001",
+      "name": "深证成指",
+      "price": 14316.96,
+      "change_pct": 0.04,
+      "change_amount": 5.95
+    },
+    {
+      "code": "399006",
+      "name": "创业板指",
+      "price": 3537.21,
+      "change_pct": -0.73,
+      "change_amount": -25.91
+    },
+    {
+      "code": "399300",
+      "name": "沪深300",
+      "price": 4702.02,
+      "change_pct": 0.16,
+      "change_amount": 7.58
+    }
+  ],
+  "market": {
+    "up": 3878,
+    "down": 1253,
+    "flat": 416,
+    "limitUp": 126,
+    "limitDown": 9,
+    "total": 5547
+  },
+  "sh": {
+    "up": 1688,
+    "down": 582,
+    "flat": 192,
+    "limitUp": 58,
+    "limitDown": 2,
+    "total": 2462
+  },
+  "sz": {
+    "up": 2190,
+    "down": 671,
+    "flat": 224,
+    "limitUp": 68,
+    "limitDown": 7,
+    "total": 3085
+  },
+  "strategies": [
+    {
+      "name": "all_factor",
+      "displayName": "全因子",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "301080",
+          "name": "百普赛斯",
+          "score": 70,
+          "price": 77.7,
+          "change_pct": 20,
+          "industry": "生物制品"
+        },
+        {
+          "code": "688073",
+          "name": "毕得医药",
+          "score": 70,
+          "price": 73.92,
+          "change_pct": 20,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "688137",
+          "name": "近岸蛋白",
+          "score": 69,
+          "price": 54.9,
+          "change_pct": 17.51,
+          "industry": "生物制品"
+        },
+        {
+          "code": "002437",
+          "name": "誉衡药业",
+          "score": 68,
+          "price": 3.43,
+          "change_pct": 9.94,
+          "industry": "化学制药"
+        },
+        {
+          "code": "002589",
+          "name": "瑞康医药",
+          "score": 68,
+          "price": 3.34,
+          "change_pct": 9.87,
+          "industry": "医药商业"
+        },
+        {
+          "code": "301357",
+          "name": "北方长龙",
+          "score": 68,
+          "price": 113.23,
+          "change_pct": 20,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "600267",
+          "name": "海正药业",
+          "score": 68,
+          "price": 14.24,
+          "change_pct": 8.62,
+          "industry": "化学制药"
+        },
+        {
+          "code": "002739",
+          "name": "儒意电影",
+          "score": 67,
+          "price": 9.93,
+          "change_pct": 9.97,
+          "industry": "影视院线"
+        },
+        {
+          "code": "300426",
+          "name": "华智数媒",
+          "score": 67,
+          "price": 6.5,
+          "change_pct": 9.43,
+          "industry": "影视院线"
+        },
+        {
+          "code": "301051",
+          "name": "信濠光电",
+          "score": 67,
+          "price": 20.72,
+          "change_pct": 19.98,
+          "industry": "消费电子"
+        }
+      ]
+    },
+    {
+      "name": "alpha_blend",
+      "displayName": "板块轮动+技术",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "301080",
+          "name": "百普赛斯",
+          "score": 73,
+          "price": 77.7,
+          "change_pct": 20,
+          "industry": "生物制品"
+        },
+        {
+          "code": "688073",
+          "name": "毕得医药",
+          "score": 73,
+          "price": 73.92,
+          "change_pct": 20,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "688137",
+          "name": "近岸蛋白",
+          "score": 72,
+          "price": 54.9,
+          "change_pct": 17.51,
+          "industry": "生物制品"
+        },
+        {
+          "code": "300862",
+          "name": "蓝盾光电",
+          "score": 70,
+          "price": 22.81,
+          "change_pct": 19.99,
+          "industry": "通用设备"
+        },
+        {
+          "code": "301357",
+          "name": "北方长龙",
+          "score": 70,
+          "price": 113.23,
+          "change_pct": 20,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "688046",
+          "name": "药康生物",
+          "score": 69,
+          "price": 37.39,
+          "change_pct": 12.25,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "688203",
+          "name": "海正生材",
+          "score": 69,
+          "price": 12.17,
+          "change_pct": 17.36,
+          "industry": "塑料"
+        },
+        {
+          "code": "001300",
+          "name": "三柏硕",
+          "score": 68,
+          "price": 11.57,
+          "change_pct": 9.98,
+          "industry": "文娱用品"
+        },
+        {
+          "code": "002112",
+          "name": "三变科技",
+          "score": 68,
+          "price": 17.7,
+          "change_pct": 10.01,
+          "industry": "电网设备"
+        },
+        {
+          "code": "002437",
+          "name": "誉衡药业",
+          "score": 68,
+          "price": 3.43,
+          "change_pct": 9.94,
+          "industry": "化学制药"
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "displayName": "多因子均衡",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "301051",
+          "name": "信濠光电",
+          "score": 83,
+          "price": 20.72,
+          "change_pct": 19.98,
+          "industry": "消费电子"
+        },
+        {
+          "code": "301080",
+          "name": "百普赛斯",
+          "score": 83,
+          "price": 77.7,
+          "change_pct": 20,
+          "industry": "生物制品"
+        },
+        {
+          "code": "301357",
+          "name": "北方长龙",
+          "score": 83,
+          "price": 113.23,
+          "change_pct": 20,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "688073",
+          "name": "毕得医药",
+          "score": 83,
+          "price": 73.92,
+          "change_pct": 20,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "688130",
+          "name": "晶华微",
+          "score": 82,
+          "price": 25.76,
+          "change_pct": 17.36,
+          "industry": "半导体"
+        },
+        {
+          "code": "688137",
+          "name": "近岸蛋白",
+          "score": 82,
+          "price": 54.9,
+          "change_pct": 17.51,
+          "industry": "生物制品"
+        },
+        {
+          "code": "300062",
+          "name": "中能电气",
+          "score": 81,
+          "price": 7.63,
+          "change_pct": 15.43,
+          "industry": "电网设备"
+        },
+        {
+          "code": "301552",
+          "name": "科力装备",
+          "score": 81,
+          "price": 26.79,
+          "change_pct": 15.52,
+          "industry": "汽车零部件"
+        },
+        {
+          "code": "688203",
+          "name": "海正生材",
+          "score": 81,
+          "price": 12.17,
+          "change_pct": 17.36,
+          "industry": "塑料"
+        },
+        {
+          "code": "300828",
+          "name": "锐新科技",
+          "score": 79,
+          "price": 17.35,
+          "change_pct": 11.86,
+          "industry": "通用设备"
+        }
+      ]
+    },
+    {
+      "name": "fund_momentum",
+      "displayName": "资金动量",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "002248",
+          "name": "华东数控",
+          "score": 61,
+          "price": 10.05,
+          "change_pct": 9.96,
+          "industry": "通用设备"
+        },
+        {
+          "code": "002437",
+          "name": "誉衡药业",
+          "score": 61,
+          "price": 3.43,
+          "change_pct": 9.94,
+          "industry": "化学制药"
+        },
+        {
+          "code": "002455",
+          "name": "百川股份",
+          "score": 61,
+          "price": 7.38,
+          "change_pct": 4.68,
+          "industry": "化学制品"
+        },
+        {
+          "code": "002589",
+          "name": "瑞康医药",
+          "score": 61,
+          "price": 3.34,
+          "change_pct": 9.87,
+          "industry": "医药商业"
+        },
+        {
+          "code": "002742",
+          "name": "冀衡医药",
+          "score": 61,
+          "price": 4.31,
+          "change_pct": 4.36,
+          "industry": "化学制药"
+        },
+        {
+          "code": "002900",
+          "name": "哈三联",
+          "score": 61,
+          "price": 14.83,
+          "change_pct": 10.01,
+          "industry": "化学制药"
+        },
+        {
+          "code": "300051",
+          "name": "琏升科技",
+          "score": 61,
+          "price": 8.3,
+          "change_pct": 2.34,
+          "industry": "光伏设备"
+        },
+        {
+          "code": "300062",
+          "name": "中能电气",
+          "score": 61,
+          "price": 7.63,
+          "change_pct": 15.43,
+          "industry": "电网设备"
+        },
+        {
+          "code": "300363",
+          "name": "博腾股份",
+          "score": 61,
+          "price": 21.65,
+          "change_pct": 5.92,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "300426",
+          "name": "华智数媒",
+          "score": 61,
+          "price": 6.5,
+          "change_pct": 9.43,
+          "industry": "影视院线"
+        }
+      ]
+    },
+    {
+      "name": "insider_track",
+      "displayName": "龙虎榜+资金流",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "001300",
+          "name": "三柏硕",
+          "score": 70,
+          "price": 11.57,
+          "change_pct": 9.98,
+          "industry": "文娱用品"
+        },
+        {
+          "code": "002437",
+          "name": "誉衡药业",
+          "score": 70,
+          "price": 3.43,
+          "change_pct": 9.94,
+          "industry": "化学制药"
+        },
+        {
+          "code": "002455",
+          "name": "百川股份",
+          "score": 70,
+          "price": 7.38,
+          "change_pct": 4.68,
+          "industry": "化学制品"
+        },
+        {
+          "code": "002589",
+          "name": "瑞康医药",
+          "score": 70,
+          "price": 3.34,
+          "change_pct": 9.87,
+          "industry": "医药商业"
+        },
+        {
+          "code": "002626",
+          "name": "金达威",
+          "score": 70,
+          "price": 16.46,
+          "change_pct": 10.03,
+          "industry": "食品加工"
+        },
+        {
+          "code": "002662",
+          "name": "峰璟股份",
+          "score": 70,
+          "price": 3.31,
+          "change_pct": 4.09,
+          "industry": "汽车零部件"
+        },
+        {
+          "code": "002739",
+          "name": "儒意电影",
+          "score": 70,
+          "price": 9.93,
+          "change_pct": 9.97,
+          "industry": "影视院线"
+        },
+        {
+          "code": "002821",
+          "name": "凯莱英",
+          "score": 70,
+          "price": 176,
+          "change_pct": 2.17,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "002900",
+          "name": "哈三联",
+          "score": 70,
+          "price": 14.83,
+          "change_pct": 10.01,
+          "industry": "化学制药"
+        },
+        {
+          "code": "300152",
+          "name": "*ST动力",
+          "score": 70,
+          "price": 1.67,
+          "change_pct": 10.6,
+          "industry": "环境治理"
+        }
+      ]
+    },
+    {
+      "name": "reversal",
+      "displayName": "超跌反转",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "301051",
+          "name": "信濠光电",
+          "score": 82,
+          "price": 20.72,
+          "change_pct": 19.98,
+          "industry": "消费电子"
+        },
+        {
+          "code": "301080",
+          "name": "百普赛斯",
+          "score": 82,
+          "price": 77.7,
+          "change_pct": 20,
+          "industry": "生物制品"
+        },
+        {
+          "code": "301357",
+          "name": "北方长龙",
+          "score": 82,
+          "price": 113.23,
+          "change_pct": 20,
+          "industry": "地面兵装Ⅱ"
+        },
+        {
+          "code": "688073",
+          "name": "毕得医药",
+          "score": 82,
+          "price": 73.92,
+          "change_pct": 20,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "688130",
+          "name": "晶华微",
+          "score": 81,
+          "price": 25.76,
+          "change_pct": 17.36,
+          "industry": "半导体"
+        },
+        {
+          "code": "688137",
+          "name": "近岸蛋白",
+          "score": 81,
+          "price": 54.9,
+          "change_pct": 17.51,
+          "industry": "生物制品"
+        },
+        {
+          "code": "688203",
+          "name": "海正生材",
+          "score": 81,
+          "price": 12.17,
+          "change_pct": 17.36,
+          "industry": "塑料"
+        },
+        {
+          "code": "300062",
+          "name": "中能电气",
+          "score": 80,
+          "price": 7.63,
+          "change_pct": 15.43,
+          "industry": "电网设备"
+        },
+        {
+          "code": "301552",
+          "name": "科力装备",
+          "score": 80,
+          "price": 26.79,
+          "change_pct": 15.52,
+          "industry": "汽车零部件"
+        },
+        {
+          "code": "301239",
+          "name": "普瑞眼科",
+          "score": 79,
+          "price": 38,
+          "change_pct": 13.94,
+          "industry": "医疗服务"
+        }
+      ]
+    },
+    {
+      "name": "smart_money",
+      "displayName": "量价异动",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "301080",
+          "name": "百普赛斯",
+          "score": 78,
+          "price": 77.7,
+          "change_pct": 20,
+          "industry": "生物制品"
+        },
+        {
+          "code": "688073",
+          "name": "毕得医药",
+          "score": 78,
+          "price": 73.92,
+          "change_pct": 20,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "688130",
+          "name": "晶华微",
+          "score": 77,
+          "price": 25.76,
+          "change_pct": 17.36,
+          "industry": "半导体"
+        },
+        {
+          "code": "688137",
+          "name": "近岸蛋白",
+          "score": 77,
+          "price": 54.9,
+          "change_pct": 17.51,
+          "industry": "生物制品"
+        },
+        {
+          "code": "002437",
+          "name": "誉衡药业",
+          "score": 73,
+          "price": 3.43,
+          "change_pct": 9.94,
+          "industry": "化学制药"
+        },
+        {
+          "code": "002589",
+          "name": "瑞康医药",
+          "score": 73,
+          "price": 3.34,
+          "change_pct": 9.87,
+          "industry": "医药商业"
+        },
+        {
+          "code": "002900",
+          "name": "哈三联",
+          "score": 73,
+          "price": 14.83,
+          "change_pct": 10.01,
+          "industry": "化学制药"
+        },
+        {
+          "code": "300426",
+          "name": "华智数媒",
+          "score": 73,
+          "price": 6.5,
+          "change_pct": 9.43,
+          "industry": "影视院线"
+        },
+        {
+          "code": "301051",
+          "name": "信濠光电",
+          "score": 73,
+          "price": 20.72,
+          "change_pct": 19.98,
+          "industry": "消费电子"
+        },
+        {
+          "code": "301357",
+          "name": "北方长龙",
+          "score": 73,
+          "price": 113.23,
+          "change_pct": 20,
+          "industry": "地面兵装Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "value_pick",
+      "displayName": "价值精选",
+      "up": 7,
+      "down": 0,
+      "accuracy": 70,
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "score": 80,
+          "price": 11.29,
+          "change_pct": 0.89,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "score": 80,
+          "price": 9.29,
+          "change_pct": 0.87,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "score": 80,
+          "price": 6.76,
+          "change_pct": 0.45,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600016",
+          "name": "民生银行",
+          "score": 80,
+          "price": 3.53,
+          "change_pct": 0,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600104",
+          "name": "上汽集团",
+          "score": 80,
+          "price": 10.48,
+          "change_pct": 0.29,
+          "industry": "乘用车"
+        },
+        {
+          "code": "601166",
+          "name": "兴业银行",
+          "score": 80,
+          "price": 18.34,
+          "change_pct": 0,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601169",
+          "name": "北京银行",
+          "score": 80,
+          "price": 5.03,
+          "change_pct": 0.4,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601390",
+          "name": "中国中铁",
+          "score": 80,
+          "price": 4.52,
+          "change_pct": 0.89,
+          "industry": "基础建设"
+        },
+        {
+          "code": "601668",
+          "name": "中国建筑",
+          "score": 80,
+          "price": 4.54,
+          "change_pct": 0.44,
+          "industry": "房屋建设Ⅱ"
+        },
+        {
+          "code": "601818",
+          "name": "光大银行",
+          "score": 80,
+          "price": 3.05,
+          "change_pct": 0,
+          "industry": "银行Ⅱ"
+        }
+      ]
+    }
+  ]
+}
