@@ -1,0 +1,772 @@
+{
+  "date": "2026-08-14",
+  "timestamp": "2026-08-14T16:16:51",
+  "indices": [
+    {
+      "code": "000001",
+      "name": "上证指数",
+      "price": 3927.18,
+      "change_pct": 0.01,
+      "change_amount": 0.22
+    },
+    {
+      "code": "399001",
+      "name": "深证成指",
+      "price": 14354.31,
+      "change_pct": 0.45,
+      "change_amount": 64.87
+    },
+    {
+      "code": "399006",
+      "name": "创业板指",
+      "price": 3626.3,
+      "change_pct": 1.12,
+      "change_amount": 40.26
+    },
+    {
+      "code": "399300",
+      "name": "沪深300",
+      "price": 4665.88,
+      "change_pct": 0.04,
+      "change_amount": 1.93
+    }
+  ],
+  "market": {
+    "up": 2322,
+    "down": 2720,
+    "flat": 507,
+    "limitUp": 81,
+    "limitDown": 19,
+    "total": 5549
+  },
+  "sh": {
+    "up": 995,
+    "down": 1238,
+    "flat": 230,
+    "limitUp": 38,
+    "limitDown": 11,
+    "total": 2463
+  },
+  "sz": {
+    "up": 1327,
+    "down": 1482,
+    "flat": 277,
+    "limitUp": 43,
+    "limitDown": 8,
+    "total": 3086
+  },
+  "strategies": [
+    {
+      "name": "all_factor",
+      "displayName": "全因子",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "301419",
+          "name": "阿莱德",
+          "score": 70,
+          "price": 37.62,
+          "change_pct": 20,
+          "industry": "通信设备"
+        },
+        {
+          "code": "300120",
+          "name": "经纬辉开",
+          "score": 68,
+          "price": 9.26,
+          "change_pct": 19.95,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "300243",
+          "name": "瑞丰高材",
+          "score": 68,
+          "price": 16.88,
+          "change_pct": 16.09,
+          "industry": "塑料"
+        },
+        {
+          "code": "300862",
+          "name": "蓝盾光电",
+          "score": 68,
+          "price": 47.29,
+          "change_pct": 19.99,
+          "industry": "通用设备"
+        },
+        {
+          "code": "301348",
+          "name": "蓝箭电子",
+          "score": 68,
+          "price": 22.47,
+          "change_pct": 11.51,
+          "industry": "半导体"
+        },
+        {
+          "code": "301489",
+          "name": "思泉新材",
+          "score": 68,
+          "price": 119.8,
+          "change_pct": 14.96,
+          "industry": "电子化学品Ⅱ"
+        },
+        {
+          "code": "002081",
+          "name": "金 螳 螂",
+          "score": 67,
+          "price": 5.29,
+          "change_pct": 9.98,
+          "industry": "装修装饰Ⅱ"
+        },
+        {
+          "code": "688286",
+          "name": "敏芯股份",
+          "score": 67,
+          "price": 53.56,
+          "change_pct": 20.01,
+          "industry": "半导体"
+        },
+        {
+          "code": "688485",
+          "name": "九州一轨",
+          "score": 67,
+          "price": 72.1,
+          "change_pct": 20.01,
+          "industry": "轨交设备Ⅱ"
+        },
+        {
+          "code": "688662",
+          "name": "富信科技",
+          "score": 67,
+          "price": 98.4,
+          "change_pct": 20,
+          "industry": "其他电子Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "alpha_blend",
+      "displayName": "板块轮动+技术",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "301419",
+          "name": "阿莱德",
+          "score": 73,
+          "price": 37.62,
+          "change_pct": 20,
+          "industry": "通信设备"
+        },
+        {
+          "code": "688662",
+          "name": "富信科技",
+          "score": 73,
+          "price": 98.4,
+          "change_pct": 20,
+          "industry": "其他电子Ⅱ"
+        },
+        {
+          "code": "300243",
+          "name": "瑞丰高材",
+          "score": 71,
+          "price": 16.88,
+          "change_pct": 16.09,
+          "industry": "塑料"
+        },
+        {
+          "code": "301489",
+          "name": "思泉新材",
+          "score": 71,
+          "price": 119.8,
+          "change_pct": 14.96,
+          "industry": "电子化学品Ⅱ"
+        },
+        {
+          "code": "300120",
+          "name": "经纬辉开",
+          "score": 70,
+          "price": 9.26,
+          "change_pct": 19.95,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "300684",
+          "name": "中石科技",
+          "score": 70,
+          "price": 67.36,
+          "change_pct": 20.01,
+          "industry": "电子化学品Ⅱ"
+        },
+        {
+          "code": "688286",
+          "name": "敏芯股份",
+          "score": 70,
+          "price": 53.56,
+          "change_pct": 20.01,
+          "industry": "半导体"
+        },
+        {
+          "code": "300862",
+          "name": "蓝盾光电",
+          "score": 69,
+          "price": 47.29,
+          "change_pct": 19.99,
+          "industry": "通用设备"
+        },
+        {
+          "code": "301348",
+          "name": "蓝箭电子",
+          "score": 69,
+          "price": 22.47,
+          "change_pct": 11.51,
+          "industry": "半导体"
+        },
+        {
+          "code": "688449",
+          "name": "联芸科技",
+          "score": 69,
+          "price": 69.65,
+          "change_pct": 11.26,
+          "industry": "半导体"
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "displayName": "多因子均衡",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300017",
+          "name": "网宿科技",
+          "score": 83,
+          "price": 17.33,
+          "change_pct": 20.01,
+          "industry": "IT服务Ⅱ"
+        },
+        {
+          "code": "300120",
+          "name": "经纬辉开",
+          "score": 83,
+          "price": 9.26,
+          "change_pct": 19.95,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "300862",
+          "name": "蓝盾光电",
+          "score": 83,
+          "price": 47.29,
+          "change_pct": 19.99,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300929",
+          "name": "华骐环保",
+          "score": 83,
+          "price": 16.82,
+          "change_pct": 19.97,
+          "industry": "环境治理"
+        },
+        {
+          "code": "301130",
+          "name": "西点药业",
+          "score": 83,
+          "price": 30.85,
+          "change_pct": 19.99,
+          "industry": "化学制药"
+        },
+        {
+          "code": "301160",
+          "name": "翔楼新材",
+          "score": 83,
+          "price": 44.8,
+          "change_pct": 18.49,
+          "industry": "通用设备"
+        },
+        {
+          "code": "301419",
+          "name": "阿莱德",
+          "score": 83,
+          "price": 37.62,
+          "change_pct": 20,
+          "industry": "通信设备"
+        },
+        {
+          "code": "688286",
+          "name": "敏芯股份",
+          "score": 83,
+          "price": 53.56,
+          "change_pct": 20.01,
+          "industry": "半导体"
+        },
+        {
+          "code": "688485",
+          "name": "九州一轨",
+          "score": 83,
+          "price": 72.1,
+          "change_pct": 20.01,
+          "industry": "轨交设备Ⅱ"
+        },
+        {
+          "code": "300985",
+          "name": "致远新能",
+          "score": 82,
+          "price": 42.05,
+          "change_pct": 18.28,
+          "industry": "通用设备"
+        }
+      ]
+    },
+    {
+      "name": "fund_momentum",
+      "displayName": "资金动量",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000620",
+          "name": "盈新发展",
+          "score": 61,
+          "price": 3.03,
+          "change_pct": 10.18,
+          "industry": "房地产开发"
+        },
+        {
+          "code": "000716",
+          "name": "黑芝麻",
+          "score": 61,
+          "price": 5.09,
+          "change_pct": 4.3,
+          "industry": "休闲食品"
+        },
+        {
+          "code": "000936",
+          "name": "华西股份",
+          "score": 61,
+          "price": 6.97,
+          "change_pct": 9.94,
+          "industry": "化学纤维"
+        },
+        {
+          "code": "001312",
+          "name": "福恩股份",
+          "score": 61,
+          "price": 18.44,
+          "change_pct": 2.22,
+          "industry": "纺织制造"
+        },
+        {
+          "code": "002081",
+          "name": "金 螳 螂",
+          "score": 61,
+          "price": 5.29,
+          "change_pct": 9.98,
+          "industry": "装修装饰Ⅱ"
+        },
+        {
+          "code": "002437",
+          "name": "誉衡药业",
+          "score": 61,
+          "price": 4.53,
+          "change_pct": 6.59,
+          "industry": "化学制药"
+        },
+        {
+          "code": "002467",
+          "name": "二六三",
+          "score": 61,
+          "price": 5.13,
+          "change_pct": 5.77,
+          "industry": "通信服务"
+        },
+        {
+          "code": "002520",
+          "name": "日发精机",
+          "score": 61,
+          "price": 6.65,
+          "change_pct": 4.07,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300004",
+          "name": "南风股份",
+          "score": 61,
+          "price": 8.91,
+          "change_pct": 6.83,
+          "industry": "专用设备"
+        },
+        {
+          "code": "300017",
+          "name": "网宿科技",
+          "score": 61,
+          "price": 17.33,
+          "change_pct": 20.01,
+          "industry": "IT服务Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "insider_track",
+      "displayName": "龙虎榜+资金流",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300243",
+          "name": "瑞丰高材",
+          "score": 70,
+          "price": 16.88,
+          "change_pct": 16.09,
+          "industry": "塑料"
+        },
+        {
+          "code": "300627",
+          "name": "华测导航",
+          "score": 70,
+          "price": 28.74,
+          "change_pct": 4.02,
+          "industry": "通信设备"
+        },
+        {
+          "code": "301348",
+          "name": "蓝箭电子",
+          "score": 70,
+          "price": 22.47,
+          "change_pct": 11.51,
+          "industry": "半导体"
+        },
+        {
+          "code": "301419",
+          "name": "阿莱德",
+          "score": 70,
+          "price": 37.62,
+          "change_pct": 20,
+          "industry": "通信设备"
+        },
+        {
+          "code": "301459",
+          "name": "丰茂股份",
+          "score": 70,
+          "price": 37.57,
+          "change_pct": 6.61,
+          "industry": "橡胶"
+        },
+        {
+          "code": "301489",
+          "name": "思泉新材",
+          "score": 70,
+          "price": 119.8,
+          "change_pct": 14.96,
+          "industry": "电子化学品Ⅱ"
+        },
+        {
+          "code": "603025",
+          "name": "大豪科技",
+          "score": 70,
+          "price": 15.18,
+          "change_pct": 10,
+          "industry": "自动化设备"
+        },
+        {
+          "code": "603236",
+          "name": "移远通信",
+          "score": 70,
+          "price": 60.69,
+          "change_pct": 2.12,
+          "industry": "通信设备"
+        },
+        {
+          "code": "002724",
+          "name": "海洋王",
+          "score": 69,
+          "price": 6.78,
+          "change_pct": 10.06,
+          "industry": "照明设备Ⅱ"
+        },
+        {
+          "code": "300709",
+          "name": "精研科技",
+          "score": 69,
+          "price": 40.15,
+          "change_pct": 5.38,
+          "industry": "消费电子"
+        }
+      ]
+    },
+    {
+      "name": "reversal",
+      "displayName": "超跌反转",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300017",
+          "name": "网宿科技",
+          "score": 82,
+          "price": 17.33,
+          "change_pct": 20.01,
+          "industry": "IT服务Ⅱ"
+        },
+        {
+          "code": "300120",
+          "name": "经纬辉开",
+          "score": 82,
+          "price": 9.26,
+          "change_pct": 19.95,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "300862",
+          "name": "蓝盾光电",
+          "score": 82,
+          "price": 47.29,
+          "change_pct": 19.99,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300929",
+          "name": "华骐环保",
+          "score": 82,
+          "price": 16.82,
+          "change_pct": 19.97,
+          "industry": "环境治理"
+        },
+        {
+          "code": "301130",
+          "name": "西点药业",
+          "score": 82,
+          "price": 30.85,
+          "change_pct": 19.99,
+          "industry": "化学制药"
+        },
+        {
+          "code": "301419",
+          "name": "阿莱德",
+          "score": 82,
+          "price": 37.62,
+          "change_pct": 20,
+          "industry": "通信设备"
+        },
+        {
+          "code": "688286",
+          "name": "敏芯股份",
+          "score": 82,
+          "price": 53.56,
+          "change_pct": 20.01,
+          "industry": "半导体"
+        },
+        {
+          "code": "688485",
+          "name": "九州一轨",
+          "score": 82,
+          "price": 72.1,
+          "change_pct": 20.01,
+          "industry": "轨交设备Ⅱ"
+        },
+        {
+          "code": "300404",
+          "name": "博济医药",
+          "score": 81,
+          "price": 17.34,
+          "change_pct": 20,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "300985",
+          "name": "致远新能",
+          "score": 81,
+          "price": 42.05,
+          "change_pct": 18.28,
+          "industry": "通用设备"
+        }
+      ]
+    },
+    {
+      "name": "smart_money",
+      "displayName": "量价异动",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300862",
+          "name": "蓝盾光电",
+          "score": 78,
+          "price": 47.29,
+          "change_pct": 19.99,
+          "industry": "通用设备"
+        },
+        {
+          "code": "301419",
+          "name": "阿莱德",
+          "score": 78,
+          "price": 37.62,
+          "change_pct": 20,
+          "industry": "通信设备"
+        },
+        {
+          "code": "300243",
+          "name": "瑞丰高材",
+          "score": 76,
+          "price": 16.88,
+          "change_pct": 16.09,
+          "industry": "塑料"
+        },
+        {
+          "code": "300404",
+          "name": "博济医药",
+          "score": 76,
+          "price": 17.34,
+          "change_pct": 20,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "301489",
+          "name": "思泉新材",
+          "score": 75,
+          "price": 119.8,
+          "change_pct": 14.96,
+          "industry": "电子化学品Ⅱ"
+        },
+        {
+          "code": "301348",
+          "name": "蓝箭电子",
+          "score": 74,
+          "price": 22.47,
+          "change_pct": 11.51,
+          "industry": "半导体"
+        },
+        {
+          "code": "000936",
+          "name": "华西股份",
+          "score": 73,
+          "price": 6.97,
+          "change_pct": 9.94,
+          "industry": "化学纤维"
+        },
+        {
+          "code": "002081",
+          "name": "金 螳 螂",
+          "score": 73,
+          "price": 5.29,
+          "change_pct": 9.98,
+          "industry": "装修装饰Ⅱ"
+        },
+        {
+          "code": "300017",
+          "name": "网宿科技",
+          "score": 73,
+          "price": 17.33,
+          "change_pct": 20.01,
+          "industry": "IT服务Ⅱ"
+        },
+        {
+          "code": "300120",
+          "name": "经纬辉开",
+          "score": 73,
+          "price": 9.26,
+          "change_pct": 19.95,
+          "industry": "光学光电子"
+        }
+      ]
+    },
+    {
+      "name": "value_pick",
+      "displayName": "价值精选",
+      "up": 0,
+      "down": 10,
+      "accuracy": 0,
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "score": 80,
+          "price": 11.11,
+          "change_pct": -1.24,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "score": 80,
+          "price": 9.1,
+          "change_pct": -0.87,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "score": 80,
+          "price": 6.61,
+          "change_pct": -0.75,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600016",
+          "name": "民生银行",
+          "score": 80,
+          "price": 3.42,
+          "change_pct": -1.44,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600104",
+          "name": "上汽集团",
+          "score": 80,
+          "price": 10.1,
+          "change_pct": -0.69,
+          "industry": "乘用车"
+        },
+        {
+          "code": "601166",
+          "name": "兴业银行",
+          "score": 80,
+          "price": 18.03,
+          "change_pct": -0.77,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601169",
+          "name": "北京银行",
+          "score": 80,
+          "price": 4.96,
+          "change_pct": -0.6,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601390",
+          "name": "中国中铁",
+          "score": 80,
+          "price": 4.36,
+          "change_pct": -0.68,
+          "industry": "基础建设"
+        },
+        {
+          "code": "601668",
+          "name": "中国建筑",
+          "score": 80,
+          "price": 4.4,
+          "change_pct": -0.9,
+          "industry": "房屋建设Ⅱ"
+        },
+        {
+          "code": "601818",
+          "name": "光大银行",
+          "score": 80,
+          "price": 3,
+          "change_pct": -0.66,
+          "industry": "银行Ⅱ"
+        }
+      ]
+    }
+  ]
+}
