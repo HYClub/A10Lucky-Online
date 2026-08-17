@@ -1,0 +1,772 @@
+{
+  "date": "2026-08-17",
+  "timestamp": "2026-08-17T15:53:49",
+  "indices": [
+    {
+      "code": "000001",
+      "name": "上证指数",
+      "price": 3982.65,
+      "change_pct": 1.41,
+      "change_amount": 55.47
+    },
+    {
+      "code": "399001",
+      "name": "深证成指",
+      "price": 14704.27,
+      "change_pct": 2.44,
+      "change_amount": 349.96
+    },
+    {
+      "code": "399006",
+      "name": "创业板指",
+      "price": 3740.16,
+      "change_pct": 3.14,
+      "change_amount": 113.86
+    },
+    {
+      "code": "399300",
+      "name": "沪深300",
+      "price": 4741.1,
+      "change_pct": 1.61,
+      "change_amount": 75.22
+    }
+  ],
+  "market": {
+    "up": 4067,
+    "down": 1000,
+    "flat": 482,
+    "limitUp": 151,
+    "limitDown": 2,
+    "total": 5549
+  },
+  "sh": {
+    "up": 1761,
+    "down": 472,
+    "flat": 230,
+    "limitUp": 83,
+    "limitDown": 0,
+    "total": 2463
+  },
+  "sz": {
+    "up": 2306,
+    "down": 528,
+    "flat": 252,
+    "limitUp": 68,
+    "limitDown": 2,
+    "total": 3086
+  },
+  "strategies": [
+    {
+      "name": "all_factor",
+      "displayName": "全因子",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "301127",
+          "name": "武汉天源",
+          "score": 70,
+          "price": 18.14,
+          "change_pct": 19.97,
+          "industry": "环境治理"
+        },
+        {
+          "code": "688503",
+          "name": "聚和材料",
+          "score": 70,
+          "price": 95.68,
+          "change_pct": 20.01,
+          "industry": "光伏设备"
+        },
+        {
+          "code": "300862",
+          "name": "蓝盾光电",
+          "score": 69,
+          "price": 54.77,
+          "change_pct": 15.82,
+          "industry": "通用设备"
+        },
+        {
+          "code": "688003",
+          "name": "天准科技",
+          "score": 69,
+          "price": 94.8,
+          "change_pct": 20,
+          "industry": "自动化设备"
+        },
+        {
+          "code": "000737",
+          "name": "北方铜业",
+          "score": 68,
+          "price": 14.95,
+          "change_pct": 10.01,
+          "industry": "工业金属"
+        },
+        {
+          "code": "002081",
+          "name": "金 螳 螂",
+          "score": 68,
+          "price": 5.82,
+          "change_pct": 10.02,
+          "industry": "装修装饰Ⅱ"
+        },
+        {
+          "code": "300314",
+          "name": "戴维医疗",
+          "score": 68,
+          "price": 14.74,
+          "change_pct": 20.03,
+          "industry": "医疗器械"
+        },
+        {
+          "code": "300345",
+          "name": "华民股份",
+          "score": 68,
+          "price": 8.9,
+          "change_pct": 19.95,
+          "industry": "光伏设备"
+        },
+        {
+          "code": "300570",
+          "name": "太辰光",
+          "score": 68,
+          "price": 193.8,
+          "change_pct": 20,
+          "industry": "通信设备"
+        },
+        {
+          "code": "300679",
+          "name": "电连技术",
+          "score": 68,
+          "price": 51.17,
+          "change_pct": 20,
+          "industry": "消费电子"
+        }
+      ]
+    },
+    {
+      "name": "alpha_blend",
+      "displayName": "板块轮动+技术",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300570",
+          "name": "太辰光",
+          "score": 73,
+          "price": 193.8,
+          "change_pct": 20,
+          "industry": "通信设备"
+        },
+        {
+          "code": "301127",
+          "name": "武汉天源",
+          "score": 73,
+          "price": 18.14,
+          "change_pct": 19.97,
+          "industry": "环境治理"
+        },
+        {
+          "code": "688003",
+          "name": "天准科技",
+          "score": 73,
+          "price": 94.8,
+          "change_pct": 20,
+          "industry": "自动化设备"
+        },
+        {
+          "code": "688503",
+          "name": "聚和材料",
+          "score": 73,
+          "price": 95.68,
+          "change_pct": 20.01,
+          "industry": "光伏设备"
+        },
+        {
+          "code": "688380",
+          "name": "中微半导",
+          "score": 72,
+          "price": 47.05,
+          "change_pct": 16.81,
+          "industry": "半导体"
+        },
+        {
+          "code": "300862",
+          "name": "蓝盾光电",
+          "score": 71,
+          "price": 54.77,
+          "change_pct": 15.82,
+          "industry": "通用设备"
+        },
+        {
+          "code": "300313",
+          "name": "天山生物",
+          "score": 70,
+          "price": 10.73,
+          "change_pct": 20.02,
+          "industry": "养殖业"
+        },
+        {
+          "code": "300345",
+          "name": "华民股份",
+          "score": 70,
+          "price": 8.9,
+          "change_pct": 19.95,
+          "industry": "光伏设备"
+        },
+        {
+          "code": "300566",
+          "name": "激智科技",
+          "score": 70,
+          "price": 31.5,
+          "change_pct": 13.72,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "300679",
+          "name": "电连技术",
+          "score": 70,
+          "price": 51.17,
+          "change_pct": 20,
+          "industry": "消费电子"
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "displayName": "多因子均衡",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300313",
+          "name": "天山生物",
+          "score": 83,
+          "price": 10.73,
+          "change_pct": 20.02,
+          "industry": "养殖业"
+        },
+        {
+          "code": "300314",
+          "name": "戴维医疗",
+          "score": 83,
+          "price": 14.74,
+          "change_pct": 20.03,
+          "industry": "医疗器械"
+        },
+        {
+          "code": "300345",
+          "name": "华民股份",
+          "score": 83,
+          "price": 8.9,
+          "change_pct": 19.95,
+          "industry": "光伏设备"
+        },
+        {
+          "code": "300679",
+          "name": "电连技术",
+          "score": 83,
+          "price": 51.17,
+          "change_pct": 20,
+          "industry": "消费电子"
+        },
+        {
+          "code": "301127",
+          "name": "武汉天源",
+          "score": 83,
+          "price": 18.14,
+          "change_pct": 19.97,
+          "industry": "环境治理"
+        },
+        {
+          "code": "301282",
+          "name": "金禄电子",
+          "score": 83,
+          "price": 35.17,
+          "change_pct": 19.99,
+          "industry": "元件"
+        },
+        {
+          "code": "301516",
+          "name": "中远通",
+          "score": 83,
+          "price": 19.32,
+          "change_pct": 20,
+          "industry": "其他电源设备Ⅱ"
+        },
+        {
+          "code": "688003",
+          "name": "天准科技",
+          "score": 82,
+          "price": 94.8,
+          "change_pct": 20,
+          "industry": "自动化设备"
+        },
+        {
+          "code": "688378",
+          "name": "奥来德",
+          "score": 82,
+          "price": 50.36,
+          "change_pct": 19.99,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "300862",
+          "name": "蓝盾光电",
+          "score": 81,
+          "price": 54.77,
+          "change_pct": 15.82,
+          "industry": "通用设备"
+        }
+      ]
+    },
+    {
+      "name": "fund_momentum",
+      "displayName": "资金动量",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000620",
+          "name": "盈新发展",
+          "score": 61,
+          "price": 3.1,
+          "change_pct": 2.31,
+          "industry": "房地产开发"
+        },
+        {
+          "code": "000678",
+          "name": "襄阳轴承",
+          "score": 61,
+          "price": 9.55,
+          "change_pct": 6.82,
+          "industry": "汽车零部件"
+        },
+        {
+          "code": "000716",
+          "name": "黑芝麻",
+          "score": 61,
+          "price": 5.28,
+          "change_pct": 3.73,
+          "industry": "休闲食品"
+        },
+        {
+          "code": "001230",
+          "name": "劲旅环境",
+          "score": 61,
+          "price": 22.73,
+          "change_pct": 8.29,
+          "industry": "环境治理"
+        },
+        {
+          "code": "001386",
+          "name": "马可波罗",
+          "score": 61,
+          "price": 15.82,
+          "change_pct": 6.6,
+          "industry": "家居用品"
+        },
+        {
+          "code": "002081",
+          "name": "金 螳 螂",
+          "score": 61,
+          "price": 5.82,
+          "change_pct": 10.02,
+          "industry": "装修装饰Ⅱ"
+        },
+        {
+          "code": "002172",
+          "name": "澳洋健康",
+          "score": 61,
+          "price": 4.99,
+          "change_pct": 9.91,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "002724",
+          "name": "海洋王",
+          "score": 61,
+          "price": 7.18,
+          "change_pct": 5.9,
+          "industry": "照明设备Ⅱ"
+        },
+        {
+          "code": "300120",
+          "name": "经纬辉开",
+          "score": 61,
+          "price": 9.55,
+          "change_pct": 3.13,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "300163",
+          "name": "先锋新材",
+          "score": 61,
+          "price": 6.94,
+          "change_pct": 8.95,
+          "industry": "化学制品"
+        }
+      ]
+    },
+    {
+      "name": "insider_track",
+      "displayName": "龙虎榜+资金流",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000698",
+          "name": "ST沈化",
+          "score": 70,
+          "price": 3.54,
+          "change_pct": 2.91,
+          "industry": "炼化及贸易"
+        },
+        {
+          "code": "000716",
+          "name": "黑芝麻",
+          "score": 70,
+          "price": 5.28,
+          "change_pct": 3.73,
+          "industry": "休闲食品"
+        },
+        {
+          "code": "000735",
+          "name": "罗 牛 山",
+          "score": 70,
+          "price": 5.62,
+          "change_pct": 9.98,
+          "industry": "养殖业"
+        },
+        {
+          "code": "000737",
+          "name": "北方铜业",
+          "score": 70,
+          "price": 14.95,
+          "change_pct": 10.01,
+          "industry": "工业金属"
+        },
+        {
+          "code": "002081",
+          "name": "金 螳 螂",
+          "score": 70,
+          "price": 5.82,
+          "change_pct": 10.02,
+          "industry": "装修装饰Ⅱ"
+        },
+        {
+          "code": "002651",
+          "name": "利君股份",
+          "score": 70,
+          "price": 9.23,
+          "change_pct": 10.01,
+          "industry": "航空装备Ⅱ"
+        },
+        {
+          "code": "002724",
+          "name": "海洋王",
+          "score": 70,
+          "price": 7.18,
+          "change_pct": 5.9,
+          "industry": "照明设备Ⅱ"
+        },
+        {
+          "code": "002863",
+          "name": "今飞凯达",
+          "score": 70,
+          "price": 4.99,
+          "change_pct": 9.91,
+          "industry": "汽车零部件"
+        },
+        {
+          "code": "300189",
+          "name": "神农种业",
+          "score": 70,
+          "price": 5.19,
+          "change_pct": 11.13,
+          "industry": "种植业"
+        },
+        {
+          "code": "300403",
+          "name": "汉宇集团",
+          "score": 70,
+          "price": 10.04,
+          "change_pct": 5.8,
+          "industry": "家电零部件Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "reversal",
+      "displayName": "超跌反转",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300313",
+          "name": "天山生物",
+          "score": 82,
+          "price": 10.73,
+          "change_pct": 20.02,
+          "industry": "养殖业"
+        },
+        {
+          "code": "300314",
+          "name": "戴维医疗",
+          "score": 82,
+          "price": 14.74,
+          "change_pct": 20.03,
+          "industry": "医疗器械"
+        },
+        {
+          "code": "300345",
+          "name": "华民股份",
+          "score": 82,
+          "price": 8.9,
+          "change_pct": 19.95,
+          "industry": "光伏设备"
+        },
+        {
+          "code": "300679",
+          "name": "电连技术",
+          "score": 82,
+          "price": 51.17,
+          "change_pct": 20,
+          "industry": "消费电子"
+        },
+        {
+          "code": "301127",
+          "name": "武汉天源",
+          "score": 82,
+          "price": 18.14,
+          "change_pct": 19.97,
+          "industry": "环境治理"
+        },
+        {
+          "code": "301282",
+          "name": "金禄电子",
+          "score": 82,
+          "price": 35.17,
+          "change_pct": 19.99,
+          "industry": "元件"
+        },
+        {
+          "code": "301516",
+          "name": "中远通",
+          "score": 82,
+          "price": 19.32,
+          "change_pct": 20,
+          "industry": "其他电源设备Ⅱ"
+        },
+        {
+          "code": "688003",
+          "name": "天准科技",
+          "score": 82,
+          "price": 94.8,
+          "change_pct": 20,
+          "industry": "自动化设备"
+        },
+        {
+          "code": "688378",
+          "name": "奥来德",
+          "score": 82,
+          "price": 50.36,
+          "change_pct": 19.99,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "301626",
+          "name": "苏州天脉",
+          "score": 81,
+          "price": 307.08,
+          "change_pct": 20,
+          "industry": "消费电子"
+        }
+      ]
+    },
+    {
+      "name": "smart_money",
+      "displayName": "量价异动",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300314",
+          "name": "戴维医疗",
+          "score": 78,
+          "price": 14.74,
+          "change_pct": 20.03,
+          "industry": "医疗器械"
+        },
+        {
+          "code": "301127",
+          "name": "武汉天源",
+          "score": 78,
+          "price": 18.14,
+          "change_pct": 19.97,
+          "industry": "环境治理"
+        },
+        {
+          "code": "300862",
+          "name": "蓝盾光电",
+          "score": 76,
+          "price": 54.77,
+          "change_pct": 15.82,
+          "industry": "通用设备"
+        },
+        {
+          "code": "688003",
+          "name": "天准科技",
+          "score": 76,
+          "price": 94.8,
+          "change_pct": 20,
+          "industry": "自动化设备"
+        },
+        {
+          "code": "688503",
+          "name": "聚和材料",
+          "score": 76,
+          "price": 95.68,
+          "change_pct": 20.01,
+          "industry": "光伏设备"
+        },
+        {
+          "code": "688380",
+          "name": "中微半导",
+          "score": 74,
+          "price": 47.05,
+          "change_pct": 16.81,
+          "industry": "半导体"
+        },
+        {
+          "code": "002081",
+          "name": "金 螳 螂",
+          "score": 73,
+          "price": 5.82,
+          "change_pct": 10.02,
+          "industry": "装修装饰Ⅱ"
+        },
+        {
+          "code": "002172",
+          "name": "澳洋健康",
+          "score": 73,
+          "price": 4.99,
+          "change_pct": 9.91,
+          "industry": "医疗服务"
+        },
+        {
+          "code": "300189",
+          "name": "神农种业",
+          "score": 73,
+          "price": 5.19,
+          "change_pct": 11.13,
+          "industry": "种植业"
+        },
+        {
+          "code": "300313",
+          "name": "天山生物",
+          "score": 73,
+          "price": 10.73,
+          "change_pct": 20.02,
+          "industry": "养殖业"
+        }
+      ]
+    },
+    {
+      "name": "value_pick",
+      "displayName": "价值精选",
+      "up": 1,
+      "down": 9,
+      "accuracy": 10,
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "score": 80,
+          "price": 11.1,
+          "change_pct": -0.09,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "score": 80,
+          "price": 9.04,
+          "change_pct": -0.66,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "score": 80,
+          "price": 6.59,
+          "change_pct": -0.3,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600016",
+          "name": "民生银行",
+          "score": 80,
+          "price": 3.41,
+          "change_pct": -0.29,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600104",
+          "name": "上汽集团",
+          "score": 80,
+          "price": 10.07,
+          "change_pct": -0.3,
+          "industry": "乘用车"
+        },
+        {
+          "code": "601166",
+          "name": "兴业银行",
+          "score": 80,
+          "price": 17.83,
+          "change_pct": -1.11,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601169",
+          "name": "北京银行",
+          "score": 80,
+          "price": 4.95,
+          "change_pct": -0.2,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601390",
+          "name": "中国中铁",
+          "score": 80,
+          "price": 4.37,
+          "change_pct": 0.23,
+          "industry": "基础建设"
+        },
+        {
+          "code": "601668",
+          "name": "中国建筑",
+          "score": 80,
+          "price": 4.36,
+          "change_pct": -0.91,
+          "industry": "房屋建设Ⅱ"
+        },
+        {
+          "code": "601818",
+          "name": "光大银行",
+          "score": 80,
+          "price": 2.99,
+          "change_pct": -0.33,
+          "industry": "银行Ⅱ"
+        }
+      ]
+    }
+  ]
+}
