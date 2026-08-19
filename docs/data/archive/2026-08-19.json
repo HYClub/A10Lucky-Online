@@ -1,0 +1,772 @@
+{
+  "date": "2026-08-19",
+  "timestamp": "2026-08-19T15:38:46",
+  "indices": [
+    {
+      "code": "000001",
+      "name": "上证指数",
+      "price": 3894.42,
+      "change_pct": -2.4,
+      "change_amount": -95.88
+    },
+    {
+      "code": "399001",
+      "name": "深证成指",
+      "price": 13890.15,
+      "change_pct": -5.01,
+      "change_amount": -732.35
+    },
+    {
+      "code": "399006",
+      "name": "创业板指",
+      "price": 3473.49,
+      "change_pct": -6.26,
+      "change_amount": -232.07
+    },
+    {
+      "code": "399300",
+      "name": "沪深300",
+      "price": 4588.7,
+      "change_pct": -2.9,
+      "change_amount": -137.11
+    }
+  ],
+  "market": {
+    "up": 421,
+    "down": 4760,
+    "flat": 370,
+    "limitUp": 41,
+    "limitDown": 366,
+    "total": 5551
+  },
+  "sh": {
+    "up": 236,
+    "down": 2063,
+    "flat": 165,
+    "limitUp": 17,
+    "limitDown": 154,
+    "total": 2464
+  },
+  "sz": {
+    "up": 185,
+    "down": 2697,
+    "flat": 205,
+    "limitUp": 24,
+    "limitDown": 212,
+    "total": 3087
+  },
+  "strategies": [
+    {
+      "name": "all_factor",
+      "displayName": "全因子",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000560",
+          "name": "我爱我家",
+          "score": 68,
+          "price": 2.38,
+          "change_pct": 10.19,
+          "industry": "房地产服务"
+        },
+        {
+          "code": "300911",
+          "name": "亿田智能",
+          "score": 67,
+          "price": 26.66,
+          "change_pct": 19.98,
+          "industry": "厨卫电器"
+        },
+        {
+          "code": "002543",
+          "name": "万和电气",
+          "score": 66,
+          "price": 7.57,
+          "change_pct": 10.03,
+          "industry": "厨卫电器"
+        },
+        {
+          "code": "000723",
+          "name": "美锦能源",
+          "score": 65,
+          "price": 3.89,
+          "change_pct": 9.89,
+          "industry": "焦炭Ⅱ"
+        },
+        {
+          "code": "300069",
+          "name": "金利华电",
+          "score": 65,
+          "price": 34.66,
+          "change_pct": 20.01,
+          "industry": "电网设备"
+        },
+        {
+          "code": "301106",
+          "name": "骏成科技",
+          "score": 65,
+          "price": 25.42,
+          "change_pct": 20.02,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "601015",
+          "name": "陕西黑猫",
+          "score": 65,
+          "price": 3.71,
+          "change_pct": 10.09,
+          "industry": "焦炭Ⅱ"
+        },
+        {
+          "code": "603366",
+          "name": "日出东方",
+          "score": 65,
+          "price": 7.63,
+          "change_pct": 9.94,
+          "industry": "厨卫电器"
+        },
+        {
+          "code": "603506",
+          "name": "南都物业",
+          "score": 65,
+          "price": 11.88,
+          "change_pct": 10,
+          "industry": "房地产服务"
+        },
+        {
+          "code": "002040",
+          "name": "南 京 港",
+          "score": 64,
+          "price": 9.06,
+          "change_pct": 9.95,
+          "industry": "航运港口"
+        }
+      ]
+    },
+    {
+      "name": "alpha_blend",
+      "displayName": "板块轮动+技术",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300911",
+          "name": "亿田智能",
+          "score": 70,
+          "price": 26.66,
+          "change_pct": 19.98,
+          "industry": "厨卫电器"
+        },
+        {
+          "code": "000560",
+          "name": "我爱我家",
+          "score": 68,
+          "price": 2.38,
+          "change_pct": 10.19,
+          "industry": "房地产服务"
+        },
+        {
+          "code": "000736",
+          "name": "中交发展",
+          "score": 68,
+          "price": 4.9,
+          "change_pct": 10.11,
+          "industry": "房地产服务"
+        },
+        {
+          "code": "601011",
+          "name": "宝泰隆",
+          "score": 68,
+          "price": 3.04,
+          "change_pct": 10.14,
+          "industry": "焦炭Ⅱ"
+        },
+        {
+          "code": "603506",
+          "name": "南都物业",
+          "score": 68,
+          "price": 11.88,
+          "change_pct": 10,
+          "industry": "房地产服务"
+        },
+        {
+          "code": "000723",
+          "name": "美锦能源",
+          "score": 65,
+          "price": 3.89,
+          "change_pct": 9.89,
+          "industry": "焦炭Ⅱ"
+        },
+        {
+          "code": "002543",
+          "name": "万和电气",
+          "score": 65,
+          "price": 7.57,
+          "change_pct": 10.03,
+          "industry": "厨卫电器"
+        },
+        {
+          "code": "601015",
+          "name": "陕西黑猫",
+          "score": 65,
+          "price": 3.71,
+          "change_pct": 10.09,
+          "industry": "焦炭Ⅱ"
+        },
+        {
+          "code": "603366",
+          "name": "日出东方",
+          "score": 65,
+          "price": 7.63,
+          "change_pct": 9.94,
+          "industry": "厨卫电器"
+        },
+        {
+          "code": "300917",
+          "name": "特发服务",
+          "score": 64,
+          "price": 26.62,
+          "change_pct": 0.99,
+          "industry": "房地产服务"
+        }
+      ]
+    },
+    {
+      "name": "balanced",
+      "displayName": "多因子均衡",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300069",
+          "name": "金利华电",
+          "score": 83,
+          "price": 34.66,
+          "change_pct": 20.01,
+          "industry": "电网设备"
+        },
+        {
+          "code": "300911",
+          "name": "亿田智能",
+          "score": 83,
+          "price": 26.66,
+          "change_pct": 19.98,
+          "industry": "厨卫电器"
+        },
+        {
+          "code": "301106",
+          "name": "骏成科技",
+          "score": 83,
+          "price": 25.42,
+          "change_pct": 20.02,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "301130",
+          "name": "西点药业",
+          "score": 83,
+          "price": 33.38,
+          "change_pct": 19.99,
+          "industry": "化学制药"
+        },
+        {
+          "code": "301211",
+          "name": "亨迪药业",
+          "score": 83,
+          "price": 14.54,
+          "change_pct": 19.97,
+          "industry": "化学制药"
+        },
+        {
+          "code": "300313",
+          "name": "天山生物",
+          "score": 79,
+          "price": 14.45,
+          "change_pct": 12.19,
+          "industry": "养殖业"
+        },
+        {
+          "code": "688836",
+          "name": "N宇树-W",
+          "score": 79,
+          "price": 845,
+          "change_pct": 460.34,
+          "industry": "自动化设备"
+        },
+        {
+          "code": "688569",
+          "name": "铁科轨道",
+          "score": 78,
+          "price": 19.7,
+          "change_pct": 13.28,
+          "industry": "轨交设备Ⅱ"
+        },
+        {
+          "code": "000020",
+          "name": "深华发Ａ",
+          "score": 77,
+          "price": 13.74,
+          "change_pct": 10.01,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "000505",
+          "name": "京粮控股",
+          "score": 77,
+          "price": 7.47,
+          "change_pct": 10.01,
+          "industry": "农产品加工"
+        }
+      ]
+    },
+    {
+      "name": "fund_momentum",
+      "displayName": "资金动量",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000020",
+          "name": "深华发Ａ",
+          "score": 61,
+          "price": 13.74,
+          "change_pct": 10.01,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "000505",
+          "name": "京粮控股",
+          "score": 61,
+          "price": 7.47,
+          "change_pct": 10.01,
+          "industry": "农产品加工"
+        },
+        {
+          "code": "000523",
+          "name": "红棉股份",
+          "score": 61,
+          "price": 3.21,
+          "change_pct": 5.59,
+          "industry": "综合Ⅱ"
+        },
+        {
+          "code": "000560",
+          "name": "我爱我家",
+          "score": 61,
+          "price": 2.38,
+          "change_pct": 10.19,
+          "industry": "房地产服务"
+        },
+        {
+          "code": "000620",
+          "name": "盈新发展",
+          "score": 61,
+          "price": 3.54,
+          "change_pct": 3.81,
+          "industry": "房地产开发"
+        },
+        {
+          "code": "000788",
+          "name": "北大医药",
+          "score": 61,
+          "price": 5.9,
+          "change_pct": 2.97,
+          "industry": "化学制药"
+        },
+        {
+          "code": "001233",
+          "name": "海安集团",
+          "score": 61,
+          "price": 46.69,
+          "change_pct": 4.45,
+          "industry": "汽车零部件"
+        },
+        {
+          "code": "001400",
+          "name": "江顺科技",
+          "score": 61,
+          "price": 85.94,
+          "change_pct": 10,
+          "industry": "专用设备"
+        },
+        {
+          "code": "002165",
+          "name": "红 宝 丽",
+          "score": 61,
+          "price": 7.41,
+          "change_pct": 5.86,
+          "industry": "化学制品"
+        },
+        {
+          "code": "002907",
+          "name": "华森制药",
+          "score": 61,
+          "price": 16.15,
+          "change_pct": 2.09,
+          "industry": "中药Ⅱ"
+        }
+      ]
+    },
+    {
+      "name": "insider_track",
+      "displayName": "龙虎榜+资金流",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "000560",
+          "name": "我爱我家",
+          "score": 70,
+          "price": 2.38,
+          "change_pct": 10.19,
+          "industry": "房地产服务"
+        },
+        {
+          "code": "603506",
+          "name": "南都物业",
+          "score": 70,
+          "price": 11.88,
+          "change_pct": 10,
+          "industry": "房地产服务"
+        },
+        {
+          "code": "601011",
+          "name": "宝泰隆",
+          "score": 69,
+          "price": 3.04,
+          "change_pct": 10.14,
+          "industry": "焦炭Ⅱ"
+        },
+        {
+          "code": "000736",
+          "name": "中交发展",
+          "score": 68,
+          "price": 4.9,
+          "change_pct": 10.11,
+          "industry": "房地产服务"
+        },
+        {
+          "code": "300917",
+          "name": "特发服务",
+          "score": 68,
+          "price": 26.62,
+          "change_pct": 0.99,
+          "industry": "房地产服务"
+        },
+        {
+          "code": "600403",
+          "name": "大有能源",
+          "score": 65,
+          "price": 6.82,
+          "change_pct": 10,
+          "industry": "煤炭开采"
+        },
+        {
+          "code": "000723",
+          "name": "美锦能源",
+          "score": 64,
+          "price": 3.89,
+          "change_pct": 9.89,
+          "industry": "焦炭Ⅱ"
+        },
+        {
+          "code": "002035",
+          "name": "华帝股份",
+          "score": 64,
+          "price": 4.96,
+          "change_pct": 3.12,
+          "industry": "厨卫电器"
+        },
+        {
+          "code": "002508",
+          "name": "老板电器",
+          "score": 64,
+          "price": 16.43,
+          "change_pct": 4.32,
+          "industry": "厨卫电器"
+        },
+        {
+          "code": "002543",
+          "name": "万和电气",
+          "score": 64,
+          "price": 7.57,
+          "change_pct": 10.03,
+          "industry": "厨卫电器"
+        }
+      ]
+    },
+    {
+      "name": "reversal",
+      "displayName": "超跌反转",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300069",
+          "name": "金利华电",
+          "score": 82,
+          "price": 34.66,
+          "change_pct": 20.01,
+          "industry": "电网设备"
+        },
+        {
+          "code": "300911",
+          "name": "亿田智能",
+          "score": 82,
+          "price": 26.66,
+          "change_pct": 19.98,
+          "industry": "厨卫电器"
+        },
+        {
+          "code": "301106",
+          "name": "骏成科技",
+          "score": 82,
+          "price": 25.42,
+          "change_pct": 20.02,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "301130",
+          "name": "西点药业",
+          "score": 82,
+          "price": 33.38,
+          "change_pct": 19.99,
+          "industry": "化学制药"
+        },
+        {
+          "code": "301211",
+          "name": "亨迪药业",
+          "score": 82,
+          "price": 14.54,
+          "change_pct": 19.97,
+          "industry": "化学制药"
+        },
+        {
+          "code": "688836",
+          "name": "N宇树-W",
+          "score": 80,
+          "price": 845,
+          "change_pct": 460.34,
+          "industry": "自动化设备"
+        },
+        {
+          "code": "688569",
+          "name": "铁科轨道",
+          "score": 79,
+          "price": 19.7,
+          "change_pct": 13.28,
+          "industry": "轨交设备Ⅱ"
+        },
+        {
+          "code": "300313",
+          "name": "天山生物",
+          "score": 78,
+          "price": 14.45,
+          "change_pct": 12.19,
+          "industry": "养殖业"
+        },
+        {
+          "code": "000020",
+          "name": "深华发Ａ",
+          "score": 77,
+          "price": 13.74,
+          "change_pct": 10.01,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "000059",
+          "name": "华锦股份",
+          "score": 77,
+          "price": 5.07,
+          "change_pct": 9.98,
+          "industry": "炼化及贸易"
+        }
+      ]
+    },
+    {
+      "name": "smart_money",
+      "displayName": "量价异动",
+      "up": 10,
+      "down": 0,
+      "accuracy": 100,
+      "stocks": [
+        {
+          "code": "300069",
+          "name": "金利华电",
+          "score": 78,
+          "price": 34.66,
+          "change_pct": 20.01,
+          "industry": "电网设备"
+        },
+        {
+          "code": "301106",
+          "name": "骏成科技",
+          "score": 78,
+          "price": 25.42,
+          "change_pct": 20.02,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "300313",
+          "name": "天山生物",
+          "score": 74,
+          "price": 14.45,
+          "change_pct": 12.19,
+          "industry": "养殖业"
+        },
+        {
+          "code": "688836",
+          "name": "N宇树-W",
+          "score": 74,
+          "price": 845,
+          "change_pct": 460.34,
+          "industry": "自动化设备"
+        },
+        {
+          "code": "000020",
+          "name": "深华发Ａ",
+          "score": 73,
+          "price": 13.74,
+          "change_pct": 10.01,
+          "industry": "光学光电子"
+        },
+        {
+          "code": "000505",
+          "name": "京粮控股",
+          "score": 73,
+          "price": 7.47,
+          "change_pct": 10.01,
+          "industry": "农产品加工"
+        },
+        {
+          "code": "000560",
+          "name": "我爱我家",
+          "score": 73,
+          "price": 2.38,
+          "change_pct": 10.19,
+          "industry": "房地产服务"
+        },
+        {
+          "code": "300911",
+          "name": "亿田智能",
+          "score": 73,
+          "price": 26.66,
+          "change_pct": 19.98,
+          "industry": "厨卫电器"
+        },
+        {
+          "code": "301130",
+          "name": "西点药业",
+          "score": 73,
+          "price": 33.38,
+          "change_pct": 19.99,
+          "industry": "化学制药"
+        },
+        {
+          "code": "301211",
+          "name": "亨迪药业",
+          "score": 73,
+          "price": 14.54,
+          "change_pct": 19.97,
+          "industry": "化学制药"
+        }
+      ]
+    },
+    {
+      "name": "value_pick",
+      "displayName": "价值精选",
+      "up": 7,
+      "down": 2,
+      "accuracy": 70,
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "score": 80,
+          "price": 11.27,
+          "change_pct": 1.99,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "score": 80,
+          "price": 9.08,
+          "change_pct": 1.23,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "score": 80,
+          "price": 6.59,
+          "change_pct": 0,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600016",
+          "name": "民生银行",
+          "score": 80,
+          "price": 3.43,
+          "change_pct": 1.18,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "600104",
+          "name": "上汽集团",
+          "score": 80,
+          "price": 9.99,
+          "change_pct": -0.2,
+          "industry": "乘用车"
+        },
+        {
+          "code": "601166",
+          "name": "兴业银行",
+          "score": 80,
+          "price": 18.24,
+          "change_pct": 2.18,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601169",
+          "name": "北京银行",
+          "score": 80,
+          "price": 5.02,
+          "change_pct": 1.21,
+          "industry": "银行Ⅱ"
+        },
+        {
+          "code": "601390",
+          "name": "中国中铁",
+          "score": 80,
+          "price": 4.31,
+          "change_pct": -0.69,
+          "industry": "基础建设"
+        },
+        {
+          "code": "601668",
+          "name": "中国建筑",
+          "score": 80,
+          "price": 4.41,
+          "change_pct": 1.15,
+          "industry": "房屋建设Ⅱ"
+        },
+        {
+          "code": "601818",
+          "name": "光大银行",
+          "score": 80,
+          "price": 3,
+          "change_pct": 0.67,
+          "industry": "银行Ⅱ"
+        }
+      ]
+    }
+  ]
+}
